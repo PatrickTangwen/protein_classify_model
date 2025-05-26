@@ -18,15 +18,34 @@ from scipy.special import softmax
 import os
 import sys
 from datetime import datetime
+from tabulate import tabulate
 
 
 # Create model_results directory outside scripts folder if it doesn't exist
 results_dir = os.path.join('..', 'model_results')
-os.makedirs(results_dir, exist_ok=True)
+try:
+    os.makedirs(results_dir, exist_ok=True)
+    print(f"Results directory created/verified at: {results_dir}")
+except Exception as e:
+    print(f"Warning: Could not create results directory: {e}")
+    results_dir = '.'  # Fallback to current directory
+    print(f"Using current directory for results instead: {results_dir}")
 
 # Set up logging to capture terminal output
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-log_file = os.path.join(results_dir, f'training_log_{timestamp}.txt')
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")  # Keep timestamp for reference
+log_file = os.path.join(results_dir, 'training_log.txt')  # Remove timestamp from filename
+
+# Load superfamily data
+try:
+    superfamily_data_path = os.path.join('..', 'data_source', 'fam2supefamily.csv')
+    superfamily_df = pd.read_csv(superfamily_data_path)
+    # Clean up whitespace in column names
+    superfamily_df.columns = [col.strip() for col in superfamily_df.columns]
+    # Create a mapping from family to superfamily
+    family_to_superfamily = dict(zip(superfamily_df['family'].str.strip(), superfamily_df['label'].str.strip()))
+except Exception as e:
+    print(f"Warning: Could not load superfamily data: {e}")
+    family_to_superfamily = {}
 
 class Logger:
     def __init__(self, filename):
@@ -65,8 +84,9 @@ print(f"Results will be saved to: {results_dir}")
 print("="*80)
 
 # Load data
-new_data = r'c:\Users\11944\Desktop\protein_cal\data_source\data_new.csv'
-df = pd.read_csv(new_data)
+data_path = os.path.join('..', 'data_source', 'data_new.csv')
+df = pd.read_csv(data_path)
+
 
 class ProteinDataset(Dataset):
     def __init__(self, df, max_domains=50):
@@ -252,13 +272,16 @@ def custom_split_dataset(df):
     - 2 members: split 1:1
     - >2 members: split 80:20
     """
+    print("Starting data splitting process...")
     train_indices = []
     test_indices = []
     
     # Group by subfamily to handle each case
+    subfamily_counts = {}
     for subfamily, group in df.groupby('Subfamily'):
         indices = group.index.tolist()
         n_samples = len(indices)
+        subfamily_counts[subfamily] = n_samples
         
         if n_samples == 1:
             # Case 1: Single member goes to both sets
@@ -274,9 +297,130 @@ def custom_split_dataset(df):
             train_indices.extend(indices[:n_train])
             test_indices.extend(indices[n_train:])
     
+    print(f"Data splitting complete")
     return train_indices, test_indices
 
-def evaluate_model_detailed(model, data_loader, dataset, device, original_df, train_indices):
+def generate_negative_controls(df, test_indices, train_indices):
+    """
+    For each subfamily in the test set, generate negative control proteins from other superfamilies.
+    
+    Returns:
+    - negative_control_indices: Dictionary mapping subfamily to list of negative control indices
+    - subfamily_to_test_indices: Dictionary mapping subfamily to its test indices
+    """
+    print("Generating negative control sets...")
+    # Get subfamily for each test index
+    subfamily_to_test_indices = defaultdict(list)
+    for idx in test_indices:
+        subfamily = df.iloc[idx]['Subfamily']
+        subfamily_to_test_indices[subfamily].append(idx)
+    
+    # Extract family prefix (first three parts) from each subfamily
+    def get_family_prefix(subfamily):
+        return '.'.join(subfamily.split('.')[:3])
+    
+    # Create mapping from subfamily to family
+    subfamily_to_family = {subfamily: get_family_prefix(subfamily) for subfamily in df['Subfamily'].unique()}
+    
+    # Create mapping from family to superfamily
+    family_superfamily_map = {}
+    for subfamily in df['Subfamily'].unique():
+        family = subfamily_to_family[subfamily]
+        if family in family_to_superfamily:
+            family_superfamily_map[family] = family_to_superfamily[family]
+    
+    print(f"Found {len(family_superfamily_map)} families with superfamily assignments")
+    
+    # Generate negative controls for each subfamily
+    negative_control_indices = {}
+    
+    for subfamily, subfamily_test_indices in subfamily_to_test_indices.items():
+        family = subfamily_to_family[subfamily]
+        target_superfamily = family_superfamily_map.get(family)
+        
+        # Determine how many negative controls we need
+        n_test = len(subfamily_test_indices)
+        n_negative = max(n_test, 5)  # At least 5 negative controls
+        
+        # Find eligible proteins from other superfamilies
+        eligible_indices = []
+        
+        for idx, row in df.iterrows():
+            if idx in train_indices:  # Skip training proteins
+                continue
+                
+            other_subfamily = row['Subfamily']
+            other_family = subfamily_to_family[other_subfamily]
+            
+            # Skip if same subfamily
+            if other_subfamily == subfamily:
+                continue
+                
+            # If target subfamily has no superfamily, only use proteins from families with superfamily assignments
+            if target_superfamily is None:
+                if other_family in family_superfamily_map:
+                    eligible_indices.append(idx)
+            # If target has superfamily, use proteins from different superfamilies
+            else:
+                other_superfamily = family_superfamily_map.get(other_family)
+                if other_superfamily is not None and other_superfamily != target_superfamily:
+                    eligible_indices.append(idx)
+        
+        # Randomly select negative controls
+        if len(eligible_indices) >= n_negative:
+            negative_control_indices[subfamily] = random.sample(eligible_indices, n_negative)
+        else:
+            # If not enough eligible proteins, use all available
+            negative_control_indices[subfamily] = eligible_indices
+            print(f"Warning: Not enough negative controls for subfamily {subfamily}. "
+                  f"Needed {n_negative}, found {len(eligible_indices)}.")
+    
+    return negative_control_indices, subfamily_to_test_indices
+
+def custom_split_dataset_with_negatives(df):
+    """
+    Creates train and test splits with negative controls added to test set.
+    
+    Returns:
+    - train_indices: List of indices for training
+    - test_indices_with_negatives: List of indices for testing (includes original test + negative controls)
+    - is_negative_control: Dictionary mapping test index to boolean (True if negative control)
+    - subfamily_test_mapping: Dictionary mapping subfamily to its test indices (both positive and negative)
+    """
+    print("\n=== Starting Data Preparation Process ===")
+    # Get basic train/test split
+    train_indices, test_indices = custom_split_dataset(df)
+    
+    # Generate negative controls
+    negative_control_dict, subfamily_to_test_indices = generate_negative_controls(df, test_indices, train_indices)
+    
+    # Create combined test set with negative controls
+    test_indices_with_negatives = test_indices.copy()
+    is_negative_control = {idx: False for idx in test_indices}  # Track which are negative controls
+    
+    # Create mapping from subfamily to all its test indices (positive and negative)
+    subfamily_test_mapping = {}
+    
+    for subfamily, subfamily_test_indices in subfamily_to_test_indices.items():
+        negative_indices = negative_control_dict.get(subfamily, [])
+        
+        # Add negative controls to test set
+        for idx in negative_indices:
+            if idx not in test_indices_with_negatives:  # Avoid duplicates
+                test_indices_with_negatives.append(idx)
+                is_negative_control[idx] = True
+        
+        # Store mapping of subfamily to all its test indices
+        subfamily_test_mapping[subfamily] = {
+            'positive': subfamily_test_indices,
+            'negative': negative_indices
+        }
+    
+    print("=== Data Preparation Complete ===\n")
+    
+    return train_indices, test_indices_with_negatives, is_negative_control, subfamily_test_mapping
+
+def evaluate_model_detailed(model, data_loader, dataset, device, original_df, train_indices, is_negative_control=None, subfamily_test_mapping=None):
     model.eval()
     predictions = []
     true_labels = []
@@ -289,7 +433,13 @@ def evaluate_model_detailed(model, data_loader, dataset, device, original_df, tr
         'size': 0,  # Total size of subfamily
         'misclassified': [],
         'same_family_errors': 0,
-        'different_family_errors': 0
+        'different_family_errors': 0,
+        # New metrics for binary classification
+        'TP': 0,  # True Positives
+        'FP': 0,  # False Positives
+        'TN': 0,  # True Negatives
+        'FN': 0,  # False Negatives
+        'negative_count': 0  # Number of negative controls
     })
     
     # Calculate total size of each subfamily
@@ -301,6 +451,11 @@ def evaluate_model_detailed(model, data_loader, dataset, device, original_df, tr
     for idx in train_indices:
         subfamily = original_df.iloc[idx]['Subfamily']
         subfamily_metrics[subfamily]['train_count'] += 1
+    
+    # Count negative controls if provided
+    if subfamily_test_mapping:
+        for subfamily, mapping in subfamily_test_mapping.items():
+            subfamily_metrics[subfamily]['negative_count'] = len(mapping['negative'])
     
     with torch.no_grad():
         for i, batch in enumerate(data_loader):
@@ -320,7 +475,7 @@ def evaluate_model_detailed(model, data_loader, dataset, device, original_df, tr
                                                           (i+1)*data_loader.batch_size]
             else:
                 batch_indices = list(range(i*data_loader.batch_size,
-                                         (i+1)*data_loader.batch_size))
+                                         min((i+1)*data_loader.batch_size, len(data_loader.dataset))))
             protein_ids.extend(original_df.iloc[batch_indices]['Accession'].values)
     
     true_subfamilies = dataset.label_encoder.inverse_transform(true_labels)
@@ -330,30 +485,55 @@ def evaluate_model_detailed(model, data_loader, dataset, device, original_df, tr
         'Protein': protein_ids,
         'True_Subfamily': true_subfamilies,
         'Predicted_Subfamily': pred_subfamilies,
-        'Confidence': confidences
+        'Confidence': confidences,
+        'Index': [data_loader.dataset.indices[i] if hasattr(data_loader.dataset, 'indices') 
+                  else i for i in range(len(true_labels))]
     })
     
     # Calculate metrics
     for idx, row in results_df.iterrows():
         true_sf = row['True_Subfamily']
         pred_sf = row['Predicted_Subfamily']
-        subfamily_metrics[true_sf]['test_count'] += 1
+        data_idx = row['Index']
         
-        if true_sf == pred_sf:
-            subfamily_metrics[true_sf]['correct'] += 1
-        else:
-            error_type = analyze_misclassification_type(true_sf, pred_sf)
-            if error_type == 'same_family':
-                subfamily_metrics[true_sf]['same_family_errors'] += 1
+        # For standard metrics (original test set)
+        if is_negative_control is None or not is_negative_control.get(data_idx, False):
+            subfamily_metrics[true_sf]['test_count'] += 1
+            
+            if true_sf == pred_sf:
+                subfamily_metrics[true_sf]['correct'] += 1
             else:
-                subfamily_metrics[true_sf]['different_family_errors'] += 1
+                error_type = analyze_misclassification_type(true_sf, pred_sf)
+                if error_type == 'same_family':
+                    subfamily_metrics[true_sf]['same_family_errors'] += 1
+                else:
+                    subfamily_metrics[true_sf]['different_family_errors'] += 1
+                    
+                subfamily_metrics[true_sf]['misclassified'].append({
+                    'Protein': row['Protein'],
+                    'Predicted_as': pred_sf,
+                    'Confidence': row['Confidence'],
+                    'Error_Type': error_type
+                })
+        
+        # For binary classification metrics (with negative controls)
+        if is_negative_control is not None and subfamily_test_mapping is not None:
+            # Process each subfamily's test set (positive and negative examples)
+            for sf, mapping in subfamily_test_mapping.items():
+                # Check if this protein is part of this subfamily's test set
+                if data_idx in mapping['positive']:
+                    # This is a positive example for this subfamily
+                    if pred_sf == sf:
+                        subfamily_metrics[sf]['TP'] += 1  # Correctly predicted as this subfamily
+                    else:
+                        subfamily_metrics[sf]['FN'] += 1  # Should be this subfamily but predicted as another
                 
-            subfamily_metrics[true_sf]['misclassified'].append({
-                'Protein': row['Protein'],
-                'Predicted_as': pred_sf,
-                'Confidence': row['Confidence'],
-                'Error_Type': error_type
-            })
+                elif data_idx in mapping['negative']:
+                    # This is a negative example for this subfamily
+                    if pred_sf != sf:
+                        subfamily_metrics[sf]['TN'] += 1  # Correctly predicted as not this subfamily
+                    else:
+                        subfamily_metrics[sf]['FP'] += 1  # Should not be this subfamily but predicted as it
     
     # Create detailed report
     subfamily_report = {}
@@ -362,28 +542,58 @@ def evaluate_model_detailed(model, data_loader, dataset, device, original_df, tr
         correct = metrics['correct']
         accuracy = (correct / test_count * 100) if test_count > 0 else 0
         
+        # Calculate binary classification metrics if we have negative controls
+        precision = 0
+        recall = 0
+        specificity = 0
+        f1_score = 0
+        
+        if metrics['TP'] + metrics['FP'] > 0:
+            precision = metrics['TP'] / (metrics['TP'] + metrics['FP'])
+        
+        if metrics['TP'] + metrics['FN'] > 0:
+            recall = metrics['TP'] / (metrics['TP'] + metrics['FN'])
+        
+        if metrics['TN'] + metrics['FP'] > 0:
+            specificity = metrics['TN'] / (metrics['TN'] + metrics['FP'])
+        
+        if precision + recall > 0:
+            f1_score = 2 * precision * recall / (precision + recall)
+        
         subfamily_report[subfamily] = {
             'Size': metrics['size'],
             'Train_Samples': metrics['train_count'],
             'Test_Samples': test_count,
+            'Negative_Controls': metrics['negative_count'],
             'Correct_Predictions': correct,
             'Accuracy': accuracy,
             'Same_Family_Errors': metrics['same_family_errors'],
             'Different_Family_Errors': metrics['different_family_errors'],
-            'Misclassified_Details': metrics['misclassified']
+            'Misclassified_Details': metrics['misclassified'],
+            # Binary classification metrics
+            'TP': metrics['TP'],
+            'FP': metrics['FP'],
+            'TN': metrics['TN'],
+            'FN': metrics['FN'],
+            'Precision': precision,
+            'Recall': recall,
+            'Specificity': specificity,
+            'F1_Score': f1_score
         }
     
     return subfamily_report, results_df
 
 # Create dataset
+print("\n=== Creating Protein Dataset ===")
+print("Processing protein features and encoding labels...")
 dataset = ProteinDataset(df)
 
-# Use custom split
-train_indices, test_indices = custom_split_dataset(df)
+# Use custom split with negative controls
+train_indices, test_indices_with_negatives, is_negative_control, subfamily_test_mapping = custom_split_dataset_with_negatives(df)
 
 # Create custom subsets
 train_dataset = torch.utils.data.Subset(dataset, train_indices)
-val_dataset = torch.utils.data.Subset(dataset, test_indices)
+val_dataset = torch.utils.data.Subset(dataset, test_indices_with_negatives)
 
 # Calculate class weights for loss function
 all_labels = dataset.labels.numpy()
@@ -420,7 +630,12 @@ num_epochs = 200
 best_val_acc = 0
 patience = 15
 patience_counter = 0
+best_model_state = None
+best_epoch = 0
 history = {'train_loss': [], 'train_acc': [], 'val_loss': [], 'val_acc': []}
+
+print("\n=== Starting Model Training ===")
+print("-" * 50)
 
 start_time = time.time()
 
@@ -502,16 +717,10 @@ for epoch in range(num_epochs):
     # Save best model and check early stopping
     if val_acc > best_val_acc:
         best_val_acc = val_acc
-        model_path = os.path.join(results_dir, 'best_protein_classifier.pth')
-        torch.save({
-            'epoch': epoch,
-            'model_state_dict': model.state_dict(),
-            'optimizer_state_dict': optimizer.state_dict(),
-            'best_val_acc': best_val_acc,
-        }, model_path)
-        # Force terminal output for completion message
-        logger.terminal.write(f"Model checkpoint saved: {model_path}\n")
-        logger.terminal.flush()
+        # Store best model in memory instead of saving to file
+        best_model_state = model.state_dict().copy()
+        best_epoch = epoch
+        print(f"New best model found at epoch {epoch+1} with validation accuracy: {val_acc:.2f}%")
         patience_counter = 0
     else:
         patience_counter += 1
@@ -523,46 +732,61 @@ total_time = time.time() - start_time
 print(f'Total training time: {total_time:.2f}s')
 
 # Plot training history
-plt.figure(figsize=(12, 4))
+try:
+    plt.figure(figsize=(12, 4))
 
-plt.subplot(1, 2, 1)
-plt.plot(history['train_loss'], label='Train Loss')
-plt.plot(history['val_loss'], label='Val Loss')
-plt.title('Loss History')
-plt.xlabel('Epoch')
-plt.ylabel('Loss')
-plt.legend()
+    plt.subplot(1, 2, 1)
+    plt.plot(history['train_loss'], label='Train Loss')
+    plt.plot(history['val_loss'], label='Val Loss')
+    plt.title('Loss History')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
 
-plt.subplot(1, 2, 2)
-plt.plot(history['train_acc'], label='Train Acc')
-plt.plot(history['val_acc'], label='Val Acc')
-plt.title('Accuracy History')
-plt.xlabel('Epoch')
-plt.ylabel('Accuracy (%)')
-plt.legend()
+    plt.subplot(1, 2, 2)
+    plt.plot(history['train_acc'], label='Train Acc')
+    plt.plot(history['val_acc'], label='Val Acc')
+    plt.title('Accuracy History')
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy (%)')
+    plt.legend()
 
-plt.tight_layout()
-# Save the plot to model_results folder
-plot_path = os.path.join(results_dir, f'training_history_{timestamp}.png')
-plt.savefig(plot_path, dpi=300, bbox_inches='tight')
-plt.close()  # Close the figure to free memory
-print(f"Training history plot saved as '{plot_path}'")
-# Force terminal output for completion message
-logger.terminal.write(f"Training history plot completed: {plot_path}\n")
-logger.terminal.flush()
+    plt.tight_layout()
+    # Save the plot to model_results folder
+    plot_path = os.path.join(results_dir, f'training_history.png')
+    plt.savefig(plot_path, dpi=300, bbox_inches='tight')
+    plt.close()  # Close the figure to free memory
+    print(f"Training history plot saved as '{plot_path}'")
+    # Force terminal output for completion message
+    logger.terminal.write(f"Training history plot completed: {plot_path}\n")
+    logger.terminal.flush()
+except Exception as e:
+    print(f"Warning: Could not create or save training history plot: {e}")
+    plt.close()  # Make sure to close any open figures
 
 # Load best model for evaluation
-model_path = os.path.join(results_dir, 'best_protein_classifier.pth')
-checkpoint = torch.load(model_path)
-model.load_state_dict(checkpoint['model_state_dict'])
+print(f"\nUsing best model from epoch {best_epoch+1} with validation accuracy: {best_val_acc:.2f}%")
+model.load_state_dict(best_model_state)
+
+# Optional: Try to save the model only at the end
+try:
+    model_path = os.path.join(results_dir, 'best_protein_classifier.pth')
+    torch.save({
+        'epoch': best_epoch,
+        'model_state_dict': best_model_state,
+        'best_val_acc': best_val_acc,
+    }, model_path)
+    print(f"Model saved to {model_path}")
+except Exception as e:
+    print(f"Warning: Could not save model to file: {e}")
+    print("Continuing with in-memory model for evaluation...")
 
 # Detailed evaluation
 print("\nPerforming detailed evaluation...")
-subfamily_report, results_df = evaluate_model_detailed(model, val_loader, dataset, device, df, train_indices)
+subfamily_report, results_df = evaluate_model_detailed(model, val_loader, dataset, device, df, train_indices, 
+                                                      is_negative_control, subfamily_test_mapping)
 
 # After the evaluation part, modify the printing section:
-
-from tabulate import tabulate
 
 print("\n=== Detailed Subfamily Classification Report ===")
 print("-" * 100)
@@ -588,8 +812,40 @@ for subfamily, metrics in subfamily_report.items():
     
     print("\nTesting Set Statistics:")
     print(f"  - Number of test proteins: {metrics['Test_Samples']}")
+    
+    # Print test proteins details if we have the mapping
+    if subfamily_test_mapping and subfamily in subfamily_test_mapping:
+        positive_indices = subfamily_test_mapping[subfamily]['positive']
+        if positive_indices:
+            print("    Test Protein" + ("s:" if len(positive_indices) > 1 else ":"))
+            for idx in positive_indices:
+                protein = df.iloc[idx]
+                print(f"      - Accession: {protein['Accession']} | Subfamily: {protein['Subfamily']}")
+    
+    print(f"  - Number of negative controls: {metrics['Negative_Controls']}")
+    
+    # Print negative controls details if we have the mapping
+    if subfamily_test_mapping and subfamily in subfamily_test_mapping:
+        negative_indices = subfamily_test_mapping[subfamily]['negative']
+        if negative_indices:
+            print("    Negative Controls:")
+            for i, idx in enumerate(negative_indices, 1):
+                protein = df.iloc[idx]
+                print(f"      {i}. Accession: {protein['Accession']} | Subfamily: {protein['Subfamily']}")
+    
     print(f"  - Correct predictions: {metrics['Correct_Predictions']}")
     print(f"  - Accuracy: {metrics['Accuracy']:.2f}%")
+    
+    # Binary classification metrics with negative controls
+    print("\nBinary Classification Metrics (with negative controls):")
+    print(f"  - True Positives (TP): {metrics['TP']}")
+    print(f"  - False Positives (FP): {metrics['FP']}")
+    print(f"  - True Negatives (TN): {metrics['TN']}")
+    print(f"  - False Negatives (FN): {metrics['FN']}")
+    print(f"  - Precision: {metrics['Precision']:.4f}")
+    print(f"  - Recall/Sensitivity: {metrics['Recall']:.4f}")
+    print(f"  - Specificity: {metrics['Specificity']:.4f}")
+    print(f"  - F1 Score: {metrics['F1_Score']:.4f}")
     
     misclassified_count = len(metrics['Misclassified_Details'])
     if misclassified_count > 0:
@@ -621,6 +877,18 @@ total_correct = sum(m['Correct_Predictions'] for m in subfamily_report.values())
 total_misclassifications = sum(len(m['Misclassified_Details']) for m in subfamily_report.values())
 total_same_family_errors = sum(m['Same_Family_Errors'] for m in subfamily_report.values())
 total_different_family_errors = sum(m['Different_Family_Errors'] for m in subfamily_report.values())
+
+# Calculate overall binary classification metrics
+total_tp = sum(m['TP'] for m in subfamily_report.values())
+total_fp = sum(m['FP'] for m in subfamily_report.values())
+total_tn = sum(m['TN'] for m in subfamily_report.values())
+total_fn = sum(m['FN'] for m in subfamily_report.values())
+
+overall_precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0
+overall_recall = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0
+overall_specificity = total_tn / (total_tn + total_fp) if (total_tn + total_fp) > 0 else 0
+overall_f1 = 2 * overall_precision * overall_recall / (overall_precision + overall_recall) if (overall_precision + overall_recall) > 0 else 0
+overall_accuracy = (total_tp + total_tn) / (total_tp + total_tn + total_fp + total_fn) if (total_tp + total_tn + total_fp + total_fn) > 0 else 0
 
 # Initialize counters for family analysis
 perfect_accuracy_single_subfamily = defaultdict(int)
@@ -666,6 +934,20 @@ classification_stats = [
 ]
 print(tabulate(classification_stats, headers=["Metric", "Value"], tablefmt="grid"))
 
+print("\n=== Binary Classification Metrics with Negative Controls ===")
+binary_stats = [
+    ["True Positives (TP)", total_tp],
+    ["False Positives (FP)", total_fp],
+    ["True Negatives (TN)", total_tn],
+    ["False Negatives (FN)", total_fn],
+    ["Precision", f"{overall_precision:.4f}"],
+    ["Recall/Sensitivity", f"{overall_recall:.4f}"],
+    ["Specificity", f"{overall_specificity:.4f}"],
+    ["F1 Score", f"{overall_f1:.4f}"],
+    ["Accuracy", f"{overall_accuracy:.4f}"]
+]
+print(tabulate(binary_stats, headers=["Metric", "Value"], tablefmt="grid"))
+
 print("\n=== Misclassification Statistics ===")
 if total_misclassifications > 0:
     misclassification_stats = [
@@ -710,12 +992,36 @@ else:
 print("-" * 100)
 
 # Save detailed results to CSV in model_results folder
-results_csv_path = os.path.join(results_dir, f'detailed_classification_results_{timestamp}.csv')
-results_df.to_csv(results_csv_path, index=False)
-print(f"\nDetailed results saved to: {results_csv_path}")
+try:
+    results_csv_path = os.path.join(results_dir, f'detailed_classification_results.csv')
+    results_df.to_csv(results_csv_path, index=False)
+    print(f"\nDetailed results saved to: {results_csv_path}")
 
-# Force terminal output for completion messages
-logger.terminal.write(f"Classification results CSV completed: {results_csv_path}\n")
+    # Save binary classification metrics to CSV
+    binary_metrics_df = pd.DataFrame([{
+        'Subfamily': subfamily,
+        'TP': metrics['TP'],
+        'FP': metrics['FP'],
+        'TN': metrics['TN'],
+        'FN': metrics['FN'],
+        'Precision': metrics['Precision'],
+        'Recall': metrics['Recall'],
+        'Specificity': metrics['Specificity'],
+        'F1_Score': metrics['F1_Score'],
+        'Test_Samples': metrics['Test_Samples'],
+        'Negative_Controls': metrics['Negative_Controls']
+    } for subfamily, metrics in subfamily_report.items()])
+
+    binary_metrics_path = os.path.join(results_dir, f'binary_classification_metrics.csv')
+    binary_metrics_df.to_csv(binary_metrics_path, index=False)
+    print(f"Binary classification metrics saved to: {binary_metrics_path}")
+
+    # Force terminal output for completion messages
+    logger.terminal.write(f"Classification results CSV completed: {results_csv_path}\n")
+    logger.terminal.write(f"Binary classification metrics CSV completed: {binary_metrics_path}\n")
+except Exception as e:
+    print(f"Warning: Could not save CSV results: {e}")
+
 logger.terminal.write(f"Training log completed: {log_file}\n")
 logger.terminal.write("="*80 + "\n")
 logger.terminal.write(f"All results completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
