@@ -1,0 +1,24 @@
+=== Confidence Threshold Analysis ===
+
++------------------------+--------------------+-----------------------+-----------------------+--------------------------+
+| Confidence Threshold   |   Samples Retained |   % of Total Test Set |   Family Accuracy (%) |   Subfamily Accuracy (%) |
++========================+====================+=======================+=======================+==========================+
+| 0.0 (Full Test Set)    |               1561 |                 100   |                 95.26 |                    80.27 |
++------------------------+--------------------+-----------------------+-----------------------+--------------------------+
+| 0.1                    |               1557 |                  99.7 |                 95.44 |                    80.41 |
++------------------------+--------------------+-----------------------+-----------------------+--------------------------+
+| 0.3                    |               1487 |                  95.3 |                 99.06 |                    83.79 |
++------------------------+--------------------+-----------------------+-----------------------+--------------------------+
+| 0.5                    |               1390 |                  89   |                 99.64 |                    86.69 |
++------------------------+--------------------+-----------------------+-----------------------+--------------------------+
+| 0.7                    |               1187 |                  76   |                 99.66 |                    92.25 |
++------------------------+--------------------+-----------------------+-----------------------+--------------------------+
+| 0.9                    |               1045 |                  66.9 |                 99.62 |                    96.08 |
++------------------------+--------------------+-----------------------+-----------------------+--------------------------+
+
+Column Definitions:
+* Confidence Threshold: The threshold value applied. '0.0' indicates the evaluation on the complete test set without filtering.
+* Samples Retained: The absolute number of test samples whose predictions had a confidence score >= the specified threshold.
+* % of Total Test Set: The percentage of the *original total number of test samples* that were retained (calculated as Samples Retained / Total Test Set Size * 100).
+* Family Accuracy (%): The accuracy of Family-level classification calculated *only* on the samples retained at this threshold.
+* Subfamily Accuracy (%): The accuracy of Subfamily-level classification calculated *only* on the samples retained at this threshold.

@@ -52,15 +52,28 @@ class Logger:
         self.terminal = sys.stdout
         self.log = open(filename, 'w', encoding='utf-8')
         self.silent_mode = False  # Flag to control when to stop terminal output
+        
+        # For classification report
+        self.classification_report_file = None
+        self.classification_mode = False
 
     def write(self, message):
-        # Always write to log file
-        self.log.write(message)
-        self.log.flush()
+        # Always write to log file or classification report file
+        if self.classification_mode and self.classification_report_file:
+            self.classification_report_file.write(message)
+            self.classification_report_file.flush()
+        else:
+            self.log.write(message)
+            self.log.flush()
         
         # Check if we should enter silent mode
         if "=== Detailed Subfamily Classification Report ===" in message:
             self.silent_mode = True
+            # Switch to classification report file
+            self.classification_mode = True
+            self.classification_report_file = open(os.path.join(results_dir, 'classification_report.txt'), 'w', encoding='utf-8')
+            self.classification_report_file.write(message)
+            self.classification_report_file.flush()
         
         # Write to terminal only if not in silent mode
         if not self.silent_mode:
@@ -68,12 +81,18 @@ class Logger:
             self.terminal.flush()
 
     def flush(self):
-        self.log.flush()
+        if self.classification_mode and self.classification_report_file:
+            self.classification_report_file.flush()
+        else:
+            self.log.flush()
+            
         if not self.silent_mode:
             self.terminal.flush()
 
     def close(self):
         self.log.close()
+        if self.classification_report_file:
+            self.classification_report_file.close()
 
 # Start logging
 logger = Logger(log_file)
@@ -810,6 +829,21 @@ for subfamily, metrics in subfamily_report.items():
     print("\nTraining Set Statistics:")
     print(f"  - Number of training proteins: {metrics['Train_Samples']}")
     
+    # Print training proteins details if we have the mapping
+    if subfamily_test_mapping:
+        # Get all training proteins for this subfamily
+        training_proteins = []
+        for idx in train_indices:
+            if idx < len(df):  # Ensure index is valid
+                protein = df.iloc[idx]
+                if protein['Subfamily'] == subfamily:
+                    training_proteins.append((idx, protein))
+        
+        if training_proteins:
+            print("    Training Protein" + ("s:" if len(training_proteins) > 1 else ":"))
+            for idx, protein in training_proteins:
+                print(f"      - Accession: {protein['Accession']} | Subfamily: {protein['Subfamily']}")
+    
     print("\nTesting Set Statistics:")
     print(f"  - Number of test proteins: {metrics['Test_Samples']}")
     
@@ -877,6 +911,77 @@ total_correct = sum(m['Correct_Predictions'] for m in subfamily_report.values())
 total_misclassifications = sum(len(m['Misclassified_Details']) for m in subfamily_report.values())
 total_same_family_errors = sum(m['Same_Family_Errors'] for m in subfamily_report.values())
 total_different_family_errors = sum(m['Different_Family_Errors'] for m in subfamily_report.values())
+
+# Extract family information from subfamilies
+results_df['True_Family'] = results_df['True_Subfamily'].apply(lambda x: '.'.join(x.split('.')[:3]))
+results_df['Predicted_Family'] = results_df['Predicted_Subfamily'].apply(lambda x: '.'.join(x.split('.')[:3]))
+
+# Add Confidence Threshold Analysis
+print("\n=== Confidence Threshold Analysis ===")
+thresholds = [0.0, 0.1, 0.3, 0.5, 0.7, 0.9]
+confidence_analysis_data = []
+total_test_set_size = len(results_df)
+
+for threshold in thresholds:
+    # Filter results based on confidence threshold
+    if threshold == 0.0:
+        retained_df = results_df # Full test set
+        threshold_label = "0.0 (Full Test Set)"
+    else:
+        retained_df = results_df[results_df['Confidence'] >= threshold]
+        threshold_label = f"{threshold:.1f}"
+
+    samples_retained = len(retained_df)
+    
+    if total_test_set_size > 0:
+        percent_retained = (samples_retained / total_test_set_size) * 100
+    else:
+        percent_retained = 0.0
+
+    if samples_retained > 0:
+        family_correct = (retained_df['True_Family'] == retained_df['Predicted_Family']).sum()
+        subfamily_correct = (retained_df['True_Subfamily'] == retained_df['Predicted_Subfamily']).sum()
+        family_accuracy = (family_correct / samples_retained) * 100
+        subfamily_accuracy = (subfamily_correct / samples_retained) * 100
+    else:
+        family_accuracy = 0.0
+        subfamily_accuracy = 0.0
+
+    confidence_analysis_data.append([
+        threshold_label,
+        samples_retained,
+        f"{percent_retained:.1f}",
+        f"{family_accuracy:.2f}",
+        f"{subfamily_accuracy:.2f}"
+    ])
+
+confidence_table = tabulate(confidence_analysis_data,
+                           headers=["Confidence Threshold", "Samples Retained", "% of Total Test Set", "Family Accuracy (%)", "Subfamily Accuracy (%)"],
+                           tablefmt="grid")
+print(confidence_table)
+
+# Add column definitions
+confidence_column_definitions = """
+Column Definitions:
+* Confidence Threshold: The threshold value applied. '0.0' indicates the evaluation on the complete test set without filtering.
+* Samples Retained: The absolute number of test samples whose predictions had a confidence score >= the specified threshold.
+* % of Total Test Set: The percentage of the *original total number of test samples* that were retained (calculated as Samples Retained / Total Test Set Size * 100).
+* Family Accuracy (%): The accuracy of Family-level classification calculated *only* on the samples retained at this threshold.
+* Subfamily Accuracy (%): The accuracy of Subfamily-level classification calculated *only* on the samples retained at this threshold.
+"""
+print(confidence_column_definitions)
+
+# Save confidence analysis to text file
+try:
+    confidence_txt_path = os.path.join(results_dir, 'confidence_threshold_analysis.txt')
+    with open(confidence_txt_path, 'w') as f:
+        f.write("=== Confidence Threshold Analysis ===\n\n")
+        f.write(confidence_table)
+        f.write("\n")
+        f.write(confidence_column_definitions)
+    print(f"Confidence threshold analysis saved to: {confidence_txt_path}")
+except Exception as e:
+    print(f"Warning: Could not save confidence analysis: {e}")
 
 # Calculate overall binary classification metrics
 total_tp = sum(m['TP'] for m in subfamily_report.values())
@@ -1022,7 +1127,11 @@ try:
 except Exception as e:
     print(f"Warning: Could not save CSV results: {e}")
 
+# Force terminal output for completion messages
+logger.terminal.write(f"Classification results CSV completed: {results_csv_path}\n")
+logger.terminal.write(f"Binary classification metrics CSV completed: {binary_metrics_path}\n")
 logger.terminal.write(f"Training log completed: {log_file}\n")
+logger.terminal.write(f"Classification report completed: {os.path.join(results_dir, 'classification_report.txt')}\n")
 logger.terminal.write("="*80 + "\n")
 logger.terminal.write(f"All results completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 logger.terminal.write(f"All files saved to: {results_dir}\n")
