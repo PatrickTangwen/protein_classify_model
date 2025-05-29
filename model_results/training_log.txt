@@ -1,4 +1,4 @@
-Training started at: 2025-05-26 16:49:00
+Training started at: 2025-05-29 03:21:56
 Results will be saved to: ..\model_results
 ================================================================================
 
@@ -15,336 +15,246 @@ Found 198 families with superfamily assignments
 
 === Starting Model Training ===
 --------------------------------------------------
-Epoch [1/200] - Time: 1.30s
-Train Loss: 7.3014, Train Acc: 0.79%
-Val Loss: 6.6423, Val Acc: 16.02%
+Epoch [1/200] - Time: 1.25s
+Train Loss: 7.3002, Train Acc: 0.61%
+Val Loss: 6.6374, Val Acc: 16.85%
 --------------------------------------------------
-New best model found at epoch 1 with validation accuracy: 16.02%
-Epoch [2/200] - Time: 0.98s
-Train Loss: 6.7697, Train Acc: 7.69%
-Val Loss: 6.1582, Val Acc: 43.75%
+New best model found at epoch 1 with validation accuracy: 16.85%
+Epoch [2/200] - Time: 0.94s
+Train Loss: 6.7659, Train Acc: 8.09%
+Val Loss: 6.1435, Val Acc: 42.79%
 --------------------------------------------------
-New best model found at epoch 2 with validation accuracy: 43.75%
-Epoch [3/200] - Time: 1.00s
-Train Loss: 6.2171, Train Acc: 22.91%
-Val Loss: 5.5167, Val Acc: 56.50%
+New best model found at epoch 2 with validation accuracy: 42.79%
+Epoch [3/200] - Time: 1.10s
+Train Loss: 6.2294, Train Acc: 23.34%
+Val Loss: 5.5298, Val Acc: 56.82%
 --------------------------------------------------
-New best model found at epoch 3 with validation accuracy: 56.50%
-Epoch [4/200] - Time: 0.99s
-Train Loss: 5.5708, Train Acc: 37.63%
-Val Loss: 4.6928, Val Acc: 64.77%
+New best model found at epoch 3 with validation accuracy: 56.82%
+Epoch [4/200] - Time: 1.07s
+Train Loss: 5.5770, Train Acc: 37.66%
+Val Loss: 4.8579, Val Acc: 62.78%
 --------------------------------------------------
-New best model found at epoch 4 with validation accuracy: 64.77%
-Epoch [5/200] - Time: 0.97s
-Train Loss: 4.8489, Train Acc: 48.23%
-Val Loss: 3.9951, Val Acc: 67.46%
+New best model found at epoch 4 with validation accuracy: 62.78%
+Epoch [5/200] - Time: 0.96s
+Train Loss: 4.8739, Train Acc: 48.41%
+Val Loss: 4.0634, Val Acc: 67.39%
 --------------------------------------------------
-New best model found at epoch 5 with validation accuracy: 67.46%
-Epoch [6/200] - Time: 1.00s
-Train Loss: 4.1897, Train Acc: 56.92%
-Val Loss: 3.2119, Val Acc: 70.08%
+New best model found at epoch 5 with validation accuracy: 67.39%
+Epoch [6/200] - Time: 1.06s
+Train Loss: 4.2157, Train Acc: 55.79%
+Val Loss: 3.2537, Val Acc: 70.02%
 --------------------------------------------------
-New best model found at epoch 6 with validation accuracy: 70.08%
-Epoch [7/200] - Time: 0.97s
-Train Loss: 3.5385, Train Acc: 64.09%
-Val Loss: 2.5140, Val Acc: 72.65%
+New best model found at epoch 6 with validation accuracy: 70.02%
+Epoch [7/200] - Time: 1.00s
+Train Loss: 3.5794, Train Acc: 63.56%
+Val Loss: 2.5604, Val Acc: 72.52%
 --------------------------------------------------
-New best model found at epoch 7 with validation accuracy: 72.65%
-Epoch [8/200] - Time: 1.02s
-Train Loss: 2.9972, Train Acc: 68.00%
-Val Loss: 2.0114, Val Acc: 74.95%
+New best model found at epoch 7 with validation accuracy: 72.52%
+Epoch [8/200] - Time: 1.03s
+Train Loss: 3.0231, Train Acc: 66.70%
+Val Loss: 2.0004, Val Acc: 74.31%
 --------------------------------------------------
-New best model found at epoch 8 with validation accuracy: 74.95%
-Epoch [9/200] - Time: 1.01s
-Train Loss: 2.5585, Train Acc: 70.53%
-Val Loss: 1.6037, Val Acc: 75.40%
+New best model found at epoch 8 with validation accuracy: 74.31%
+Epoch [9/200] - Time: 0.94s
+Train Loss: 2.5537, Train Acc: 70.77%
+Val Loss: 1.5575, Val Acc: 75.53%
 --------------------------------------------------
-New best model found at epoch 9 with validation accuracy: 75.40%
-Epoch [10/200] - Time: 1.00s
-Train Loss: 2.1698, Train Acc: 72.15%
-Val Loss: 1.3294, Val Acc: 77.19%
+New best model found at epoch 9 with validation accuracy: 75.53%
+Epoch [10/200] - Time: 0.97s
+Train Loss: 2.1919, Train Acc: 73.12%
+Val Loss: 1.3772, Val Acc: 75.53%
 --------------------------------------------------
-New best model found at epoch 10 with validation accuracy: 77.19%
-Epoch [11/200] - Time: 1.00s
-Train Loss: 1.8655, Train Acc: 74.63%
-Val Loss: 1.1250, Val Acc: 77.00%
+Epoch [11/200] - Time: 0.95s
+Train Loss: 1.8724, Train Acc: 74.23%
+Val Loss: 1.1944, Val Acc: 76.55%
 --------------------------------------------------
-Epoch [12/200] - Time: 1.02s
-Train Loss: 1.6550, Train Acc: 76.03%
-Val Loss: 1.0360, Val Acc: 77.39%
+New best model found at epoch 11 with validation accuracy: 76.55%
+Epoch [12/200] - Time: 0.94s
+Train Loss: 1.6832, Train Acc: 74.60%
+Val Loss: 1.0369, Val Acc: 76.75%
 --------------------------------------------------
-New best model found at epoch 12 with validation accuracy: 77.39%
-Epoch [13/200] - Time: 0.99s
-Train Loss: 1.5399, Train Acc: 76.32%
-Val Loss: 0.9380, Val Acc: 77.83%
+New best model found at epoch 12 with validation accuracy: 76.75%
+Epoch [13/200] - Time: 0.93s
+Train Loss: 1.5199, Train Acc: 75.61%
+Val Loss: 0.9860, Val Acc: 76.75%
 --------------------------------------------------
-New best model found at epoch 13 with validation accuracy: 77.83%
-Epoch [14/200] - Time: 0.96s
-Train Loss: 1.3532, Train Acc: 77.64%
-Val Loss: 0.9310, Val Acc: 76.62%
+Epoch [14/200] - Time: 0.95s
+Train Loss: 1.4086, Train Acc: 76.98%
+Val Loss: 0.9475, Val Acc: 75.98%
 --------------------------------------------------
-Epoch [15/200] - Time: 0.90s
-Train Loss: 1.2813, Train Acc: 77.40%
-Val Loss: 0.9108, Val Acc: 77.26%
+Epoch [15/200] - Time: 0.95s
+Train Loss: 1.3316, Train Acc: 76.82%
+Val Loss: 0.9278, Val Acc: 77.07%
 --------------------------------------------------
-Epoch [16/200] - Time: 0.91s
-Train Loss: 1.2649, Train Acc: 77.22%
-Val Loss: 0.8936, Val Acc: 77.00%
+New best model found at epoch 15 with validation accuracy: 77.07%
+Epoch [16/200] - Time: 0.93s
+Train Loss: 1.2897, Train Acc: 77.88%
+Val Loss: 0.8909, Val Acc: 77.71%
 --------------------------------------------------
+New best model found at epoch 16 with validation accuracy: 77.71%
 Epoch [17/200] - Time: 0.90s
-Train Loss: 1.1657, Train Acc: 79.44%
-Val Loss: 0.8723, Val Acc: 77.39%
+Train Loss: 1.1946, Train Acc: 77.48%
+Val Loss: 0.9109, Val Acc: 77.58%
 --------------------------------------------------
-Epoch [18/200] - Time: 0.90s
-Train Loss: 1.1596, Train Acc: 79.33%
-Val Loss: 0.9061, Val Acc: 77.39%
+Epoch [18/200] - Time: 0.91s
+Train Loss: 1.1459, Train Acc: 79.76%
+Val Loss: 0.8974, Val Acc: 76.81%
 --------------------------------------------------
-Epoch [19/200] - Time: 0.88s
-Train Loss: 1.1409, Train Acc: 80.15%
-Val Loss: 0.9126, Val Acc: 77.58%
+Epoch [19/200] - Time: 0.91s
+Train Loss: 1.1396, Train Acc: 78.88%
+Val Loss: 0.9257, Val Acc: 76.36%
 --------------------------------------------------
-Epoch [20/200] - Time: 0.91s
-Train Loss: 1.0380, Train Acc: 80.44%
-Val Loss: 0.8917, Val Acc: 77.77%
+Epoch [20/200] - Time: 0.93s
+Train Loss: 1.0869, Train Acc: 78.70%
+Val Loss: 0.9144, Val Acc: 78.60%
 --------------------------------------------------
-Epoch [21/200] - Time: 0.90s
-Train Loss: 0.9841, Train Acc: 81.84%
-Val Loss: 0.8761, Val Acc: 78.28%
+New best model found at epoch 20 with validation accuracy: 78.60%
+Epoch [21/200] - Time: 0.93s
+Train Loss: 1.0670, Train Acc: 79.65%
+Val Loss: 0.9087, Val Acc: 77.71%
 --------------------------------------------------
-New best model found at epoch 21 with validation accuracy: 78.28%
-Epoch [22/200] - Time: 0.91s
-Train Loss: 0.9214, Train Acc: 82.29%
-Val Loss: 0.8876, Val Acc: 78.92%
+Epoch [22/200] - Time: 0.97s
+Train Loss: 1.0657, Train Acc: 80.13%
+Val Loss: 0.9258, Val Acc: 77.83%
 --------------------------------------------------
-New best model found at epoch 22 with validation accuracy: 78.92%
-Epoch [23/200] - Time: 0.90s
-Train Loss: 0.9566, Train Acc: 81.71%
-Val Loss: 0.8772, Val Acc: 78.60%
+Epoch [23/200] - Time: 0.96s
+Train Loss: 1.0300, Train Acc: 80.76%
+Val Loss: 0.9090, Val Acc: 77.32%
 --------------------------------------------------
-Epoch [24/200] - Time: 0.98s
-Train Loss: 0.8995, Train Acc: 83.09%
-Val Loss: 0.8827, Val Acc: 78.92%
+Epoch [24/200] - Time: 0.93s
+Train Loss: 0.9822, Train Acc: 81.63%
+Val Loss: 0.9254, Val Acc: 77.83%
 --------------------------------------------------
-Epoch [25/200] - Time: 0.98s
-Train Loss: 0.9147, Train Acc: 81.95%
-Val Loss: 0.8909, Val Acc: 78.54%
+Epoch [25/200] - Time: 0.97s
+Train Loss: 0.9986, Train Acc: 80.44%
+Val Loss: 0.9242, Val Acc: 78.22%
 --------------------------------------------------
-Epoch [26/200] - Time: 0.98s
-Train Loss: 0.8891, Train Acc: 82.72%
-Val Loss: 0.9024, Val Acc: 78.09%
+Epoch [26/200] - Time: 0.95s
+Train Loss: 1.0055, Train Acc: 81.58%
+Val Loss: 0.9200, Val Acc: 77.45%
 --------------------------------------------------
-Epoch [27/200] - Time: 1.00s
-Train Loss: 0.8387, Train Acc: 83.35%
-Val Loss: 0.9034, Val Acc: 78.80%
+Epoch [27/200] - Time: 0.94s
+Train Loss: 0.9473, Train Acc: 81.74%
+Val Loss: 0.8989, Val Acc: 78.86%
 --------------------------------------------------
-Epoch [28/200] - Time: 1.03s
-Train Loss: 0.8402, Train Acc: 83.30%
-Val Loss: 0.8946, Val Acc: 79.76%
+New best model found at epoch 27 with validation accuracy: 78.86%
+Epoch [28/200] - Time: 0.92s
+Train Loss: 0.9136, Train Acc: 81.95%
+Val Loss: 0.9123, Val Acc: 78.80%
 --------------------------------------------------
-New best model found at epoch 28 with validation accuracy: 79.76%
-Epoch [29/200] - Time: 1.01s
-Train Loss: 0.8381, Train Acc: 83.62%
-Val Loss: 0.9024, Val Acc: 79.12%
+Epoch [29/200] - Time: 0.92s
+Train Loss: 0.9101, Train Acc: 82.14%
+Val Loss: 0.9031, Val Acc: 78.99%
 --------------------------------------------------
-Epoch [30/200] - Time: 1.04s
-Train Loss: 0.8422, Train Acc: 83.43%
-Val Loss: 0.8962, Val Acc: 78.92%
+New best model found at epoch 29 with validation accuracy: 78.99%
+Epoch [30/200] - Time: 0.90s
+Train Loss: 0.8718, Train Acc: 83.11%
+Val Loss: 0.8987, Val Acc: 78.92%
 --------------------------------------------------
-Epoch [31/200] - Time: 1.02s
-Train Loss: 0.8341, Train Acc: 82.95%
-Val Loss: 0.8937, Val Acc: 79.63%
+Epoch [31/200] - Time: 0.92s
+Train Loss: 0.9017, Train Acc: 83.03%
+Val Loss: 0.9109, Val Acc: 78.99%
 --------------------------------------------------
-Epoch [32/200] - Time: 1.00s
-Train Loss: 0.8091, Train Acc: 83.30%
-Val Loss: 0.9025, Val Acc: 78.80%
+Epoch [32/200] - Time: 0.93s
+Train Loss: 0.8232, Train Acc: 83.96%
+Val Loss: 0.9139, Val Acc: 78.80%
 --------------------------------------------------
-Epoch [33/200] - Time: 0.99s
-Train Loss: 0.8232, Train Acc: 84.46%
-Val Loss: 0.9077, Val Acc: 79.31%
+Epoch [33/200] - Time: 0.96s
+Train Loss: 0.8404, Train Acc: 83.32%
+Val Loss: 0.9154, Val Acc: 78.67%
 --------------------------------------------------
 Epoch [34/200] - Time: 0.97s
-Train Loss: 0.8112, Train Acc: 83.88%
-Val Loss: 0.9111, Val Acc: 78.28%
+Train Loss: 0.8262, Train Acc: 83.75%
+Val Loss: 0.9167, Val Acc: 78.73%
 --------------------------------------------------
 Epoch [35/200] - Time: 0.98s
-Train Loss: 0.7917, Train Acc: 84.06%
-Val Loss: 0.9017, Val Acc: 78.86%
+Train Loss: 0.8204, Train Acc: 84.09%
+Val Loss: 0.9205, Val Acc: 78.99%
 --------------------------------------------------
 Epoch [36/200] - Time: 0.99s
-Train Loss: 0.7672, Train Acc: 84.43%
-Val Loss: 0.8960, Val Acc: 79.44%
+Train Loss: 0.7814, Train Acc: 84.36%
+Val Loss: 0.9229, Val Acc: 78.48%
 --------------------------------------------------
-Epoch [37/200] - Time: 1.00s
-Train Loss: 0.7396, Train Acc: 84.99%
-Val Loss: 0.8989, Val Acc: 79.69%
+Epoch [37/200] - Time: 0.99s
+Train Loss: 0.7836, Train Acc: 84.46%
+Val Loss: 0.9264, Val Acc: 79.12%
 --------------------------------------------------
-Epoch [38/200] - Time: 0.98s
-Train Loss: 0.7482, Train Acc: 85.44%
-Val Loss: 0.8939, Val Acc: 80.08%
+New best model found at epoch 37 with validation accuracy: 79.12%
+Epoch [38/200] - Time: 1.05s
+Train Loss: 0.7484, Train Acc: 84.65%
+Val Loss: 0.9247, Val Acc: 79.63%
 --------------------------------------------------
-New best model found at epoch 38 with validation accuracy: 80.08%
-Epoch [39/200] - Time: 1.01s
-Train Loss: 0.7448, Train Acc: 85.31%
-Val Loss: 0.9022, Val Acc: 79.95%
+New best model found at epoch 38 with validation accuracy: 79.63%
+Epoch [39/200] - Time: 1.10s
+Train Loss: 0.7431, Train Acc: 85.28%
+Val Loss: 0.9270, Val Acc: 80.27%
 --------------------------------------------------
-Epoch [40/200] - Time: 1.00s
-Train Loss: 0.7500, Train Acc: 84.54%
-Val Loss: 0.8988, Val Acc: 80.08%
+New best model found at epoch 39 with validation accuracy: 80.27%
+Epoch [40/200] - Time: 1.12s
+Train Loss: 0.7363, Train Acc: 85.65%
+Val Loss: 0.9412, Val Acc: 80.01%
 --------------------------------------------------
-Epoch [41/200] - Time: 1.00s
-Train Loss: 0.7322, Train Acc: 85.33%
-Val Loss: 0.9060, Val Acc: 79.56%
+Epoch [41/200] - Time: 1.07s
+Train Loss: 0.7536, Train Acc: 84.73%
+Val Loss: 0.9405, Val Acc: 80.08%
 --------------------------------------------------
-Epoch [42/200] - Time: 1.04s
-Train Loss: 0.6999, Train Acc: 85.81%
-Val Loss: 0.9116, Val Acc: 79.05%
+Epoch [42/200] - Time: 1.02s
+Train Loss: 0.7134, Train Acc: 86.23%
+Val Loss: 0.9389, Val Acc: 79.56%
 --------------------------------------------------
-Epoch [43/200] - Time: 1.01s
-Train Loss: 0.7381, Train Acc: 85.73%
-Val Loss: 0.9114, Val Acc: 79.44%
+Epoch [43/200] - Time: 0.99s
+Train Loss: 0.7604, Train Acc: 84.70%
+Val Loss: 0.9342, Val Acc: 78.80%
 --------------------------------------------------
-Epoch [44/200] - Time: 0.99s
-Train Loss: 0.7430, Train Acc: 85.31%
-Val Loss: 0.9265, Val Acc: 79.76%
+Epoch [44/200] - Time: 1.04s
+Train Loss: 0.7124, Train Acc: 86.81%
+Val Loss: 0.9318, Val Acc: 80.27%
 --------------------------------------------------
-Epoch [45/200] - Time: 0.96s
-Train Loss: 0.6999, Train Acc: 85.62%
-Val Loss: 0.9247, Val Acc: 80.14%
+Epoch [45/200] - Time: 1.01s
+Train Loss: 0.7221, Train Acc: 85.65%
+Val Loss: 0.9340, Val Acc: 79.37%
 --------------------------------------------------
-New best model found at epoch 45 with validation accuracy: 80.14%
-Epoch [46/200] - Time: 0.98s
-Train Loss: 0.6936, Train Acc: 86.73%
-Val Loss: 0.9225, Val Acc: 80.20%
+Epoch [46/200] - Time: 0.94s
+Train Loss: 0.7134, Train Acc: 85.89%
+Val Loss: 0.9319, Val Acc: 79.69%
 --------------------------------------------------
-New best model found at epoch 46 with validation accuracy: 80.20%
-Epoch [47/200] - Time: 0.99s
-Train Loss: 0.6919, Train Acc: 86.50%
-Val Loss: 0.9173, Val Acc: 80.14%
+Epoch [47/200] - Time: 0.95s
+Train Loss: 0.7185, Train Acc: 86.10%
+Val Loss: 0.9241, Val Acc: 79.24%
 --------------------------------------------------
-Epoch [48/200] - Time: 0.98s
-Train Loss: 0.6730, Train Acc: 85.68%
-Val Loss: 0.9170, Val Acc: 79.69%
+Epoch [48/200] - Time: 0.94s
+Train Loss: 0.6924, Train Acc: 85.89%
+Val Loss: 0.9344, Val Acc: 80.27%
 --------------------------------------------------
 Epoch [49/200] - Time: 0.91s
-Train Loss: 0.6914, Train Acc: 86.15%
-Val Loss: 0.9265, Val Acc: 79.37%
+Train Loss: 0.6971, Train Acc: 85.86%
+Val Loss: 0.9314, Val Acc: 80.01%
 --------------------------------------------------
-Epoch [50/200] - Time: 0.92s
-Train Loss: 0.6726, Train Acc: 86.68%
-Val Loss: 0.9260, Val Acc: 79.76%
+Epoch [50/200] - Time: 0.93s
+Train Loss: 0.7033, Train Acc: 86.65%
+Val Loss: 0.9317, Val Acc: 79.82%
 --------------------------------------------------
-Epoch [51/200] - Time: 0.91s
-Train Loss: 0.6607, Train Acc: 86.63%
-Val Loss: 0.9256, Val Acc: 79.88%
+Epoch [51/200] - Time: 0.93s
+Train Loss: 0.6799, Train Acc: 86.42%
+Val Loss: 0.9328, Val Acc: 79.37%
 --------------------------------------------------
-Epoch [52/200] - Time: 0.97s
-Train Loss: 0.6747, Train Acc: 86.34%
-Val Loss: 0.9217, Val Acc: 79.76%
+Epoch [52/200] - Time: 0.90s
+Train Loss: 0.6625, Train Acc: 86.44%
+Val Loss: 0.9326, Val Acc: 79.69%
 --------------------------------------------------
-Epoch [53/200] - Time: 0.98s
-Train Loss: 0.6787, Train Acc: 86.42%
-Val Loss: 0.9276, Val Acc: 80.01%
---------------------------------------------------
-Epoch [54/200] - Time: 0.99s
-Train Loss: 0.6542, Train Acc: 87.37%
-Val Loss: 0.9252, Val Acc: 80.33%
---------------------------------------------------
-New best model found at epoch 54 with validation accuracy: 80.33%
-Epoch [55/200] - Time: 0.94s
-Train Loss: 0.6857, Train Acc: 86.05%
-Val Loss: 0.9302, Val Acc: 80.27%
---------------------------------------------------
-Epoch [56/200] - Time: 0.90s
-Train Loss: 0.6646, Train Acc: 86.73%
-Val Loss: 0.9199, Val Acc: 80.20%
---------------------------------------------------
-Epoch [57/200] - Time: 0.92s
-Train Loss: 0.6739, Train Acc: 86.68%
-Val Loss: 0.9282, Val Acc: 80.08%
---------------------------------------------------
-Epoch [58/200] - Time: 0.97s
-Train Loss: 0.6552, Train Acc: 86.76%
-Val Loss: 0.9250, Val Acc: 80.27%
---------------------------------------------------
-Epoch [59/200] - Time: 0.98s
-Train Loss: 0.6664, Train Acc: 86.50%
-Val Loss: 0.9249, Val Acc: 80.40%
---------------------------------------------------
-New best model found at epoch 59 with validation accuracy: 80.40%
-Epoch [60/200] - Time: 0.99s
-Train Loss: 0.6697, Train Acc: 87.79%
-Val Loss: 0.9269, Val Acc: 80.14%
---------------------------------------------------
-Epoch [61/200] - Time: 1.00s
-Train Loss: 0.6747, Train Acc: 86.95%
-Val Loss: 0.9255, Val Acc: 80.85%
---------------------------------------------------
-New best model found at epoch 61 with validation accuracy: 80.85%
-Epoch [62/200] - Time: 1.00s
-Train Loss: 0.6494, Train Acc: 86.68%
-Val Loss: 0.9251, Val Acc: 80.33%
---------------------------------------------------
-Epoch [63/200] - Time: 1.00s
-Train Loss: 0.6764, Train Acc: 86.55%
-Val Loss: 0.9274, Val Acc: 80.27%
---------------------------------------------------
-Epoch [64/200] - Time: 1.00s
-Train Loss: 0.6680, Train Acc: 87.26%
-Val Loss: 0.9216, Val Acc: 80.27%
---------------------------------------------------
-Epoch [65/200] - Time: 0.98s
-Train Loss: 0.6521, Train Acc: 87.24%
-Val Loss: 0.9242, Val Acc: 80.08%
---------------------------------------------------
-Epoch [66/200] - Time: 0.97s
-Train Loss: 0.6539, Train Acc: 86.76%
-Val Loss: 0.9257, Val Acc: 80.08%
---------------------------------------------------
-Epoch [67/200] - Time: 0.97s
-Train Loss: 0.6612, Train Acc: 87.00%
-Val Loss: 0.9297, Val Acc: 79.82%
---------------------------------------------------
-Epoch [68/200] - Time: 0.99s
-Train Loss: 0.6430, Train Acc: 87.37%
-Val Loss: 0.9245, Val Acc: 80.08%
---------------------------------------------------
-Epoch [69/200] - Time: 0.99s
-Train Loss: 0.6510, Train Acc: 87.24%
-Val Loss: 0.9309, Val Acc: 80.20%
---------------------------------------------------
-Epoch [70/200] - Time: 0.97s
-Train Loss: 0.6477, Train Acc: 86.73%
-Val Loss: 0.9303, Val Acc: 79.69%
---------------------------------------------------
-Epoch [71/200] - Time: 0.98s
-Train Loss: 0.6468, Train Acc: 86.97%
-Val Loss: 0.9276, Val Acc: 79.88%
---------------------------------------------------
-Epoch [72/200] - Time: 0.98s
-Train Loss: 0.6652, Train Acc: 87.02%
-Val Loss: 0.9275, Val Acc: 79.69%
---------------------------------------------------
-Epoch [73/200] - Time: 0.90s
-Train Loss: 0.6488, Train Acc: 86.68%
-Val Loss: 0.9244, Val Acc: 79.95%
---------------------------------------------------
-Epoch [74/200] - Time: 0.89s
-Train Loss: 0.6494, Train Acc: 87.02%
+Epoch [53/200] - Time: 0.91s
+Train Loss: 0.6982, Train Acc: 86.18%
 Val Loss: 0.9296, Val Acc: 79.95%
 --------------------------------------------------
-Epoch [75/200] - Time: 0.98s
-Train Loss: 0.6619, Train Acc: 86.76%
-Val Loss: 0.9219, Val Acc: 80.14%
+Epoch [54/200] - Time: 0.94s
+Train Loss: 0.6883, Train Acc: 85.97%
+Val Loss: 0.9317, Val Acc: 80.20%
 --------------------------------------------------
-Epoch [76/200] - Time: 1.00s
-Train Loss: 0.6563, Train Acc: 87.50%
-Val Loss: 0.9278, Val Acc: 80.27%
---------------------------------------------------
-Early stopping triggered after 76 epochs
-Total training time: 74.30s
+Early stopping triggered after 54 epochs
+Total training time: 52.56s
 Training history plot saved as '..\model_results\training_history.png'
 
-Using best model from epoch 61 with validation accuracy: 80.85%
+Using best model from epoch 39 with validation accuracy: 80.27%
 Model saved to ..\model_results\best_protein_classifier.pth
 
 Performing detailed evaluation...
