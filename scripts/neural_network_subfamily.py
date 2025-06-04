@@ -450,18 +450,18 @@ def evaluate_model_detailed(model, data_loader, dataset, device, original_df, tr
     protein_ids = []
     subfamily_metrics = defaultdict(lambda: {
         'train_count': 0,
-        'test_count': 0,
-        'correct': 0,
+        'test_count': 0, # Count of original test samples
+        'correct': 0,    # Correct predictions on original test samples
         'size': 0,  # Total size of subfamily
         'misclassified': [],
         'same_family_errors': 0,
         'different_family_errors': 0,
-        # New metrics for binary classification
+        # New metrics for binary classification (subfamily vs others, including negative controls)
         'TP': 0,  # True Positives
         'FP': 0,  # False Positives
         'TN': 0,  # True Negatives
         'FN': 0,  # False Negatives
-        'negative_count': 0  # Number of negative controls
+        'negative_count': 0  # Number of negative controls associated with this subfamily's test
     })
     
     # Calculate total size of each subfamily
@@ -560,9 +560,9 @@ def evaluate_model_detailed(model, data_loader, dataset, device, original_df, tr
     # Create detailed report
     subfamily_report = {}
     for subfamily, metrics in subfamily_metrics.items():
-        test_count = metrics['test_count']
-        correct = metrics['correct']
-        accuracy = (correct / test_count * 100) if test_count > 0 else 0
+        test_count = metrics['test_count'] # Original test samples for this subfamily
+        correct = metrics['correct']    # Correct predictions on original test samples
+        accuracy_original_test_set = (correct / test_count * 100) if test_count > 0 else 0.0
         
         # Calculate binary classification metrics if we have negative controls
         precision = 0
@@ -582,13 +582,17 @@ def evaluate_model_detailed(model, data_loader, dataset, device, original_df, tr
         if precision + recall > 0:
             f1_score = 2 * precision * recall / (precision + recall)
         
+        # Accuracy including negative controls for this subfamily's binary classification context
+        num_instances_binary = metrics['TP'] + metrics['TN'] + metrics['FP'] + metrics['FN']
+        accuracy_incl_negative_controls = (metrics['TP'] + metrics['TN']) / num_instances_binary if num_instances_binary > 0 else 0.0
+        
         subfamily_report[subfamily] = {
             'Size': metrics['size'],
             'Train_Samples': metrics['train_count'],
             'Test_Samples': test_count,
             'Negative_Controls': metrics['negative_count'],
             'Correct_Predictions': correct,
-            'Accuracy': accuracy,
+            'Accuracy_Original_Test_Set': accuracy_original_test_set,
             'Same_Family_Errors': metrics['same_family_errors'],
             'Different_Family_Errors': metrics['different_family_errors'],
             'Misclassified_Details': metrics['misclassified'],
@@ -600,7 +604,8 @@ def evaluate_model_detailed(model, data_loader, dataset, device, original_df, tr
             'Precision': precision,
             'Recall': recall,
             'Specificity': specificity,
-            'F1_Score': f1_score
+            'F1_Score': f1_score,
+            'Accuracy_incl_Negative_Controls': accuracy_incl_negative_controls
         }
     
     return subfamily_report, results_df
@@ -871,7 +876,7 @@ for subfamily, metrics in subfamily_report.items():
                 print(f"      {i}. Accession: {protein['Accession']} | Subfamily: {protein['Subfamily']}")
     
     print(f"  - Correct predictions: {metrics['Correct_Predictions']}")
-    print(f"  - Accuracy: {metrics['Accuracy']:.2f}%")
+    print(f"  - Accuracy (Original Test Set): {metrics['Accuracy_Original_Test_Set']:.2f}%")
     
     # Binary classification metrics with negative controls
     print("\nBinary Classification Metrics (with negative controls):")
@@ -883,6 +888,7 @@ for subfamily, metrics in subfamily_report.items():
     print(f"  - Recall/Sensitivity: {metrics['Recall']:.4f}")
     print(f"  - Specificity: {metrics['Specificity']:.4f}")
     print(f"  - F1 Score: {metrics['F1_Score']:.4f}")
+    print(f"  - Accuracy (incl. Negative Controls): {metrics['Accuracy_incl_Negative_Controls']:.4f}")
     
     misclassified_count = len(metrics['Misclassified_Details'])
     if misclassified_count > 0:
@@ -923,54 +929,57 @@ results_df['Predicted_Family'] = results_df['Predicted_Subfamily'].apply(lambda 
 print("\n=== Confidence Threshold Analysis ===")
 thresholds = [0.0, 0.1, 0.3, 0.5, 0.7, 0.9]
 confidence_analysis_data = []
-total_test_set_size = len(results_df)
+# Calculate total number of original test proteins
+total_original_test_proteins_count = sum(m['Test_Samples'] for m in subfamily_report.values() if m['Test_Samples'] > 0)
 
 for threshold in thresholds:
     # Filter results based on confidence threshold
     if threshold == 0.0:
-        retained_df = results_df # Full test set
+        retained_df_all = results_df # Full combined test set
         threshold_label = "0.0 (Full Test Set)"
     else:
-        retained_df = results_df[results_df['Confidence'] >= threshold]
+        retained_df_all = results_df[results_df['Confidence'] >= threshold]
         threshold_label = f"{threshold:.1f}"
 
-    samples_retained = len(retained_df)
+    # Filter for original test proteins from the retained set
+    # These will have the 'True_Family' and 'Predicted_Family' columns added earlier
+    retained_df_original_test = retained_df_all[~retained_df_all['Index'].apply(lambda idx: is_negative_control.get(idx, False))]
+    samples_retained_original_test = len(retained_df_original_test)
     
-    if total_test_set_size > 0:
-        percent_retained = (samples_retained / total_test_set_size) * 100
+    if total_original_test_proteins_count > 0:
+        percent_retained_vs_original_test_set = (samples_retained_original_test / total_original_test_proteins_count) * 100
     else:
-        percent_retained = 0.0
+        percent_retained_vs_original_test_set = 0.0
 
-    if samples_retained > 0:
-        family_correct = (retained_df['True_Family'] == retained_df['Predicted_Family']).sum()
-        subfamily_correct = (retained_df['True_Subfamily'] == retained_df['Predicted_Subfamily']).sum()
-        family_accuracy = (family_correct / samples_retained) * 100
-        subfamily_accuracy = (subfamily_correct / samples_retained) * 100
-    else:
-        family_accuracy = 0.0
-        subfamily_accuracy = 0.0
+    family_accuracy_on_original_retained = 0.0
+    subfamily_accuracy_on_original_retained = 0.0
+    if samples_retained_original_test > 0:
+        family_correct_on_original_retained = (retained_df_original_test['True_Family'] == retained_df_original_test['Predicted_Family']).sum()
+        subfamily_correct_on_original_retained = (retained_df_original_test['True_Subfamily'] == retained_df_original_test['Predicted_Subfamily']).sum()
+        family_accuracy_on_original_retained = (family_correct_on_original_retained / samples_retained_original_test) * 100
+        subfamily_accuracy_on_original_retained = (subfamily_correct_on_original_retained / samples_retained_original_test) * 100
 
     confidence_analysis_data.append([
         threshold_label,
-        samples_retained,
-        f"{percent_retained:.1f}",
-        f"{family_accuracy:.2f}",
-        f"{subfamily_accuracy:.2f}"
+        samples_retained_original_test,
+        f"{percent_retained_vs_original_test_set:.1f}",
+        f"{family_accuracy_on_original_retained:.2f}",
+        f"{subfamily_accuracy_on_original_retained:.2f}"
     ])
 
 confidence_table_str = tabulate(confidence_analysis_data,
-                           headers=["Confidence Threshold", "Test Proteins Above Threshold", "% of Total Test Set", "Family Accuracy (%)", "Subfamily Accuracy (%)"],
+                           headers=["Confidence Threshold", "Original Test Proteins Above Threshold", "% of Original Test Set Retained", "Family Accuracy (Original Test Set, %)", "Subfamily Accuracy (Original Test Set, %)"],
                            tablefmt="grid")
 print(confidence_table_str)
 
 # Add column definitions
 confidence_column_definitions_str = """
 Column Definitions:
-* Confidence Threshold: The threshold value applied. '0.0' indicates the evaluation on the complete test set without filtering.
-* Test Proteins Above Threshold: The absolute number of proteins from the combined test set (original test proteins + negative controls) whose model predictions had a confidence score >= the specified threshold. The combined test set includes: (1) proteins from the original train/test split (following the 1-member→both sets, 2-member→1:1, >2-member→80:20 rule), and (2) negative control proteins selected from different superfamilies for each family.
-* % of Total Test Set: The percentage of the *original total number of test proteins* that were retained (calculated as Test Proteins Above Threshold / Total Test Set Size * 100).
-* Family Accuracy (%): The accuracy of Family-level classification calculated *only* on the proteins above the specified threshold.
-* Subfamily Accuracy (%): The accuracy of Subfamily-level classification calculated *only* on the proteins above the specified threshold.
+* Confidence Threshold: The threshold value applied. '0.0' indicates the evaluation on the complete test set without filtering by confidence.
+* Original Test Proteins Above Threshold: The absolute number of *original test proteins* (excluding negative controls) whose model predictions had a confidence score >= the specified threshold.
+* % of Original Test Set Retained: The percentage of the *total original test proteins* that were retained (calculated as 'Original Test Proteins Above Threshold' / Total Original Test Proteins * 100).
+* Family Accuracy (Original Test Set, %): The accuracy of Family-level classification calculated *only* on the *original test proteins* that were retained above the specified threshold.
+* Subfamily Accuracy (Original Test Set, %): The accuracy of Subfamily-level classification calculated *only* on the *original test proteins* that were retained above the specified threshold.
 """
 print(confidence_column_definitions_str)
 
@@ -988,11 +997,11 @@ overall_accuracy_binary = (total_tp + total_tn) / (total_tp + total_tn + total_f
 
 # Prepare Overall Classification Statistics string
 classification_stats_list = [
-    ["Total Test Proteins", total_test],
-    ["Total Correct Predictions", total_correct],
-    ["Overall Accuracy", f"{(total_correct/total_test*100):.2f}%"]
+    ["Total Test Proteins (Original Set)", total_test],
+    ["Total Correct Predictions (Original Set)", total_correct],
+    ["Overall Accuracy (Original Test Set)", f"{(total_correct/total_test*100):.2f}%"]
 ]
-overall_classification_stats_str = "\n=== Overall Classification Statistics ===\n"
+overall_classification_stats_str = "\n=== Overall Classification Statistics (Original Test Set) ===\n"
 overall_classification_stats_str += tabulate(classification_stats_list, headers=["Metric", "Value"], tablefmt="grid")
 
 # Prepare Binary Classification Metrics string
@@ -1005,13 +1014,13 @@ binary_stats_list = [
     ["Recall/Sensitivity", f"{overall_recall:.4f}"],
     ["Specificity", f"{overall_specificity:.4f}"],
     ["F1 Score", f"{overall_f1:.4f}"],
-    ["Accuracy", f"{overall_accuracy_binary:.4f}"]
+    ["Accuracy (incl. Negative Controls)", f"{overall_accuracy_binary:.4f}"]
 ]
 binary_classification_metrics_str = "\n=== Binary Classification Metrics with Negative Controls ===\n"
 binary_classification_metrics_str += tabulate(binary_stats_list, headers=["Metric", "Value"], tablefmt="grid")
 
 # Prepare Misclassification Statistics string
-misclassification_stats_str = "\n=== Misclassification Statistics ===\n"
+misclassification_stats_str = "\n=== Misclassification Statistics (Original Test Set) ===\n"
 if total_misclassifications > 0:
     misclassification_stats_list = [
         ["Total Misclassifications", total_misclassifications, "100%"],
