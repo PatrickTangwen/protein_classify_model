@@ -22,7 +22,7 @@ from tabulate import tabulate
 
 
 # Create model_results directory outside scripts folder if it doesn't exist
-results_dir = os.path.join('..', 'model_results')
+results_dir = os.path.join('..', 'neural_network','model_results_subfamily')
 try:
     os.makedirs(results_dir, exist_ok=True)
     print(f"Results directory created/verified at: {results_dir}")

@@ -1,0 +1,70 @@
+=== Confidence Threshold Analysis ===
+
++------------------------+------------------------------------------+-----------------------------------+---------------------------------------------+
+| Confidence Threshold   |   Original Test Proteins Above Threshold |   % of Original Test Set Retained |   Subfamily Accuracy (Original Test Set, %) |
++========================+==========================================+===================================+=============================================+
+| 0.0 (Full Test Set)    |                                     1561 |                             100   |                                        4.61 |
++------------------------+------------------------------------------+-----------------------------------+---------------------------------------------+
+| 0.1                    |                                       73 |                               4.7 |                                       93.15 |
++------------------------+------------------------------------------+-----------------------------------+---------------------------------------------+
+| 0.3                    |                                       73 |                               4.7 |                                       93.15 |
++------------------------+------------------------------------------+-----------------------------------+---------------------------------------------+
+| 0.5                    |                                       73 |                               4.7 |                                       93.15 |
++------------------------+------------------------------------------+-----------------------------------+---------------------------------------------+
+| 0.7                    |                                       71 |                               4.5 |                                       94.37 |
++------------------------+------------------------------------------+-----------------------------------+---------------------------------------------+
+| 0.9                    |                                       71 |                               4.5 |                                       94.37 |
++------------------------+------------------------------------------+-----------------------------------+---------------------------------------------+
+
+
+Column Definitions:
+* Confidence Threshold: The threshold value applied. '0.0' indicates the evaluation on the complete test set without filtering by confidence.
+* Original Test Proteins Above Threshold: The absolute number of *original test proteins* (excluding negative controls) whose model predictions had a confidence score >= the specified threshold.
+* % of Original Test Set Retained: The percentage of the *total original test proteins* that were retained (calculated as 'Original Test Proteins Above Threshold' / Total Original Test Proteins * 100).
+* Subfamily Accuracy (Original Test Set, %): The accuracy of Subfamily-level classification calculated *only* on the *original test proteins* that were retained above the specified threshold.
+
+
+=== Overall Classification Statistics (Original Test Set) ===
++------------------------------------------+---------+
+| Metric                                   | Value   |
++==========================================+=========+
+| Total Test Proteins (Original Set)       | 1561    |
++------------------------------------------+---------+
+| Total Correct Predictions (Original Set) | 72      |
++------------------------------------------+---------+
+| Overall Accuracy (Original Test Set)     | 4.61%   |
++------------------------------------------+---------+
+
+=== Binary Classification Metrics with Negative Controls ===
++------------------------------------+-----------+
+| Metric                             |     Value |
++====================================+===========+
+| True Positives (TP)                |   72      |
++------------------------------------+-----------+
+| False Positives (FP)               |    5      |
++------------------------------------+-----------+
+| True Negatives (TN)                | 5630      |
++------------------------------------+-----------+
+| False Negatives (FN)               | 1489      |
++------------------------------------+-----------+
+| Precision                          |    0.9351 |
++------------------------------------+-----------+
+| Recall/Sensitivity                 |    0.0461 |
++------------------------------------+-----------+
+| Specificity                        |    0.9991 |
++------------------------------------+-----------+
+| F1 Score                           |    0.0879 |
++------------------------------------+-----------+
+| Accuracy (incl. Negative Controls) |    0.7924 |
++------------------------------------+-----------+
+
+=== Misclassification Statistics (Original Test Set) ===
++--------------------------+---------+--------------+
+| Error Type               |   Count | Percentage   |
++==========================+=========+==============+
+| Total Misclassifications |    1489 | 100%         |
++--------------------------+---------+--------------+
+| Same Family Errors       |       1 | 0.07%        |
++--------------------------+---------+--------------+
+| Different Family Errors  |    1488 | 99.93%       |
++--------------------------+---------+--------------+

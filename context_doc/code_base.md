@@ -2,7 +2,7 @@
 
 ## Overview
 
-This documentation describes a suite of Python scripts designed for protein classification tasks using deep learning. The primary scripts are `neural_network_subfamily.py` for subfamily-level classification and `neural_network_family.py` for family-level classification. A utility script, `run.py`, allows users to choose which classification level to execute. The system processes protein domain data to predict protein classifications using a neural network, with detailed evaluation and reporting.
+This documentation describes a suite of Python scripts designed for protein classification tasks using deep learning. The primary scripts are `neural_network_subfamily.py` for subfamily-level classification and `neural_network_family.py` for family-level classification. A utility script, `run.py`, allows users to choose which classification level to execute. Additional utility scripts include `raw_plot_roc_curve.py` for generating ROC curve analysis. The system processes protein domain data to predict protein classifications using a neural network, with detailed evaluation and reporting.
 
 ## Execution
 
@@ -20,6 +20,14 @@ The primary way to run the classification is via `run.py`:
     ```
     This will execute `neural_network_family.py`.
 
+### Additional Utility Scripts
+
+-   **ROC Curve Analysis:**
+    ```bash
+    python raw_plot_roc_curve.py
+    ```
+    This script automatically detects and processes all available classification results (both subfamily and family levels if present) and generates ROC curves showing the relationship between prediction confidence and classification correctness.
+
 ## Core Scripts
 
 ### 1. `neural_network_subfamily.py`
@@ -27,7 +35,7 @@ The primary way to run the classification is via `run.py`:
    - **Output Directory**: `../model_results/`
    - **Key Report Files**:
      - `../model_results/classification_report.txt` (Detailed per-subfamily breakdown)
-     - `../model_results/confidence_threshold_analysis.txt` (Confidence analysis, overall statistics, binary metrics, misclassification summary)
+     - `../model_results/classification_stats_subfamily.txt` (Confidence analysis, overall statistics, binary metrics, misclassification summary)
      - `../model_results/detailed_classification_results.csv`
      - `../model_results/binary_classification_metrics.csv`
      - `../model_results/training_log.txt`
@@ -39,12 +47,21 @@ The primary way to run the classification is via `run.py`:
    - **Output Directory**: `../model_results_family/`
    - **Key Report Files** (note the `_family` suffix):
      - `../model_results_family/classification_report_family.txt` (Detailed per-family breakdown)
-     - `../model_results_family/confidence_threshold_analysis_family.txt` (Confidence analysis, overall statistics, binary metrics, misclassification summary)
+     - `../model_results_family/classification_stats_family.txt` (Confidence analysis, overall statistics, binary metrics, misclassification summary)
      - `../model_results_family/detailed_classification_results_family.csv`
      - `../model_results_family/binary_classification_metrics_family.csv`
      - `../model_results_family/training_log_family.txt`
      - `../model_results_family/training_history_family.png`
      - `../model_results_family/best_protein_classifier_family.pth`
+
+### 3. `raw_plot_roc_curve.py`
+   - **Purpose**: Generates ROC curve analysis for classification results.
+   - **Features**:
+     - Automatically detects available results files (subfamily and/or family level)
+     - Processes all found results in a single run
+     - Generates separate ROC plots for each classification level
+     - Saves plots as `roc_confidence_correctness_subfamily.png` and/or `roc_confidence_correctness_family.png`
+   - **Output**: ROC plots saved in the same directories as the corresponding results files
 
 ## Data Input and Structure (Common for both classification levels)
 
@@ -229,6 +246,14 @@ The primary way to run the classification is via `run.py`:
 
 ## Evaluation and Reporting
 
+### Accuracy Definitions
+
+The system now provides two distinct accuracy measures to ensure clarity about what is being evaluated:
+
+1. **Accuracy (Original Test Set)**: Conventional accuracy calculated only on the original test proteins (excluding negative controls). This represents the traditional classification accuracy where we evaluate how well the model predicts the correct class for proteins that naturally belong to the classes we're testing.
+
+2. **Accuracy (incl. Negative Controls)**: Binary classification accuracy calculated as (TP + TN) / Total Instances, where total instances include both original test proteins and negative controls for a given class's binary classification context. This measures the model's ability to distinguish a specific class from other classes in a one-vs-rest scenario.
+
 ### 1. Training Visualization
 - **Loss Curves**: Training and validation loss over epochs.
 - **Accuracy Curves**: Training and validation accuracy over epochs.
@@ -244,36 +269,46 @@ For each class, the system reports:
 - **Testing Set Statistics**:
     - Number of original test proteins from this class and their accessions/labels.
     - Number of negative controls used for this class's binary evaluation and their accessions/labels.
-    - Correct predictions and accuracy on original test proteins.
-- **Binary Classification Metrics (with negative controls)**: TP, FP, TN, FN, Precision, Recall, Specificity, F1-Score.
+    - Correct predictions and **Accuracy (Original Test Set)** for original test proteins only.
+- **Binary Classification Metrics (with negative controls)**: TP, FP, TN, FN, Precision, Recall, Specificity, F1-Score, and **Accuracy (incl. Negative Controls)**.
 - **Misclassification Analysis**:
     - Total misclassifications for original test proteins.
     - Counts of same-level (family/superfamily) vs. different-level errors.
     - Details for each misclassified protein: Accession, Predicted Class, Confidence, Error Type.
 
-### 3. Confidence Threshold Analysis File (e.g., `confidence_threshold_analysis.txt`)
+### 3. Classification Statistics File (e.g., `classification_stats_subfamily.txt` or `classification_stats_family.txt`)
 This file consolidates:
-- **Confidence Threshold Table**:
-    - Shows how many test proteins (original + negatives) are retained at various confidence thresholds (0.0 to 0.9).
-    - Reports the percentage of the total test set retained.
-    - Reports family-level accuracy and subfamily-level accuracy (for `neural_network_subfamily.py`) or just family-level accuracy (for `neural_network_family.py`) calculated *only* on the retained proteins at each threshold.
-    - Includes detailed column definitions.
-- **Overall Classification Statistics**:
-    - Total test proteins (original).
-    - Total correct predictions (original).
-    - Overall accuracy (original).
+- **Confidence Threshold Analysis**:
+    - Shows how many **original test proteins** (excluding negative controls) are retained at various confidence thresholds (0.0 to 0.9).
+    - Reports the percentage of the **total original test proteins** retained.
+    - Reports classification accuracy calculated *only* on the **original test proteins** that were retained above each threshold.
+    - For subfamily-level analysis: Reports both family-level and subfamily-level accuracy.
+    - For family-level analysis: Reports family-level accuracy.
+    - Includes detailed column definitions clarifying that negative controls are excluded from these calculations.
+- **Overall Classification Statistics (Original Test Set)**:
+    - Total test proteins (original set only).
+    - Total correct predictions (original set only).
+    - **Overall Accuracy (Original Test Set)**: Conventional accuracy on original test proteins.
 - **Overall Binary Classification Metrics with Negative Controls**:
     - Aggregated TP, FP, TN, FN over all classes.
-    - Overall Precision, Recall, Specificity, F1-Score, Accuracy for the binary setup.
-- **Overall Misclassification Statistics**:
-    - Total misclassifications.
+    - Overall Precision, Recall, Specificity, F1-Score for the binary setup.
+    - **Overall Accuracy (incl. Negative Controls)**: Binary classification accuracy including negative controls.
+- **Overall Misclassification Statistics (Original Test Set)**:
+    - Total misclassifications on original test proteins.
     - Percentage of same-level (family/superfamily) vs. different-level errors.
 
 ### 4. CSV Output Files
 - **Detailed Classification Results (e.g., `detailed_classification_results.csv`)**:
-    - Protein Accession, True Class, Predicted Class, Confidence, Original Index for every sample in the validation set.
+    - Protein Accession, True Class, Predicted Class, Confidence, Original Index for every sample in the validation set (includes both original test proteins and negative controls).
 - **Binary Classification Metrics (e.g., `binary_classification_metrics.csv`)**:
-    - Per-class TP, FP, TN, FN, Precision, Recall, Specificity, F1-Score, Test Samples, Negative Controls.
+    - Per-class TP, FP, TN, FN, Precision, Recall, Specificity, F1-Score, **Accuracy_Original_Test_Set**, **Accuracy_incl_Negative_Controls**, Test Samples, Negative Controls.
+
+### 5. ROC Curve Analysis
+- **Generated by**: `raw_plot_roc_curve.py`
+- **Purpose**: Analyzes the relationship between prediction confidence and classification correctness.
+- **Methodology**: Creates binary labels (1 = correct prediction, 0 = incorrect prediction) and uses confidence scores as the prediction scores for ROC analysis.
+- **Output**: ROC curves with AUC scores, saved as PNG files in the respective results directories.
+- **Coverage**: Automatically processes both subfamily and family results if available.
 
 ## Key Strengths of the Implementation
 
@@ -293,11 +328,17 @@ This file consolidates:
 - Early stopping and best model saving.
 - Learning rate scheduling.
 
-### 4. Comprehensive and Segregated Reporting
-- Detailed per-class reports.
-- Separate, focused confidence analysis with aggregated statistics.
+### 4. Comprehensive and Transparent Reporting
+- **Clear Accuracy Definitions**: Distinguishes between conventional accuracy (original test set) and binary classification accuracy (including negative controls).
+- **Segregated Analysis**: Confidence threshold analysis focuses on original test proteins to provide meaningful interpretability.
+- Detailed per-class reports with both original test set and binary classification perspectives.
 - Multiple CSV outputs for easy data export and further analysis.
+- **ROC Curve Analysis**: Additional utility for evaluating confidence calibration.
 - Robust logging for traceability.
+
+### 5. Automated Utility Scripts
+- **ROC Analysis**: Automatic detection and processing of all available results.
+- **Batch Processing**: Single execution can generate comprehensive analysis for multiple classification levels.
 
 ## Potential Areas for Improvement
 
@@ -313,8 +354,8 @@ This file consolidates:
 
 ### 3. Evaluation Metrics
 - Implement macro/micro averaging for metrics like F1-score across all classes.
-- Add ROC/AUC curves, especially for the binary per-class evaluations.
 - Employ cross-validation for more robust performance estimation.
+- Add precision-recall curves in addition to ROC curves.
 
 ## Dependencies
 - PyTorch
@@ -324,4 +365,4 @@ This file consolidates:
 - Matplotlib/Seaborn
 - Tabulate
 
-This suite of scripts provides a flexible and thorough framework for protein classification, adaptable for both subfamily and family-level tasks with detailed performance insights. 
+This suite of scripts provides a flexible and thorough framework for protein classification, adaptable for both subfamily and family-level tasks with detailed performance insights and transparent accuracy reporting. 

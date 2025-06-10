@@ -1,0 +1,30 @@
+=== Confidence Threshold Analysis ===
+Threshold      Retained  % Retained    Accuracy
+-----------  ----------  ------------  ----------
+>0.0                937  100.0%        96.91%
+>0.1                925  98.7%         98.16%
+>0.3                889  94.9%         99.89%
+>0.5                852  90.9%         100.00%
+>0.7                717  76.5%         100.00%
+>0.9                522  55.7%         100.00%
+
+=== Overall Classification Statistics (Original Test Set) ===
+Metric               Value
+-------------------  -------
+Total Test Proteins  937
+Total Correct        908
+Overall Accuracy     96.91%
+
+=== Binary Classification Metrics with Negative Controls ===
+Metric       Value
+---------  -------
+Precision   1
+Recall      0.9614
+F1 Score    0.9803
+
+=== Misclassification Statistics (Original Test Set) ===
+Error Type                  Count  Percentage
+------------------------  -------  ------------
+Total Misclassifications       29  100%
+Same-family Errors              0  0.00%
+Different-family Errors        29  100.00%
