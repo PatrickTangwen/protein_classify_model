@@ -1,22 +1,22 @@
 import argparse
 import os
-import sys
 import numpy as np
+import sys
 
 # Add refactored_scripts to the Python path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'refactored_scripts'))
+# sys.path.append(os.path.join(os.path.dirname(__file__), 'refactored_scripts'))
 
-from refactored_scripts.config import *
-from refactored_scripts.data_loader import load_protein_data, load_superfamily_map
-from refactored_scripts.feature_engineering import build_features
-from refactored_scripts.data_splitting import custom_split_dataset_with_negatives
-from refactored_scripts.models import MODELS
-from refactored_scripts.training import train_and_evaluate_model
-from refactored_scripts.evaluation import get_predictions, evaluate_model_detailed, save_reports, generate_roc_curve
-from refactored_scripts.plot import generate_benchmark_plot
+import config
+from data_loader import load_protein_data, load_superfamily_map
+from feature_engineering import build_features
+from data_splitting import custom_split_dataset_with_negatives
+from models import MODELS
+from training import train_and_evaluate_model
+from evaluation import get_predictions, evaluate_model_detailed, save_reports, generate_roc_curve
+from plot import generate_benchmark_plot
 
 def main():
-    parser = argparse.ArgumentParser(description="Run AutoML benchmarks for protein classification.")
+    parser = argparse.ArgumentParser(description="Run benchmarks for protein classification.")
     parser.add_argument('--level', type=str, required=True, choices=['subfamily', 'family'],
                         help="The classification level to run.")
     parser.add_argument('--model', type=str, default='all',
@@ -30,14 +30,14 @@ def main():
     
     # --- 1. Load Data ---
     print("\n=== Step 1: Loading Data ===")
-    df = load_protein_data(PROTEIN_DATA_PATH, level=args.level)
-    superfamily_map = load_superfamily_map(SUPERFAMILY_MAP_PATH)
+    df = load_protein_data(config.PROTEIN_DATA_PATH, level=args.level)
+    superfamily_map = load_superfamily_map(config.SUPERFAMILY_MAP_PATH)
     print(f"Data loaded for {args.level}-level classification.")
     print(f"Dataset shape: {df.shape}")
 
     # --- 2. Feature Engineering ---
     print("\n=== Step 2: Building Features ===")
-    X, y, label_encoder, domain_vocab, feature_stats = build_features(df, level=args.level, max_domains=MAX_DOMAINS)
+    X, y, label_encoder, domain_vocab, feature_stats = build_features(df, level=args.level, max_domains=config.MAX_DOMAINS)
     print(f"Feature matrix shape: {X.shape}")
     print(f"Number of classes: {len(label_encoder.classes_)}")
 
@@ -69,7 +69,7 @@ def main():
         print("="*50)
         
         # Create model-specific output directory
-        model_output_dir = os.path.join(RESULTS_DIR, args.level, model_name)
+        model_output_dir = os.path.join(config.RESULTS_DIR, args.level, model_name)
         os.makedirs(model_output_dir, exist_ok=True)
         print(f"Output directory: {model_output_dir}")
         
@@ -127,13 +127,14 @@ def main():
         print("\n" + "="*50)
         print("Step 5: Generating Performance Benchmark")
         print("="*50)
+        print(f"Generating performance benchmark plot for {args.level} level...")
         benchmark_plot_path = generate_benchmark_plot(args.level)
         print(f"Benchmark plot saved: {benchmark_plot_path}")
 
     print("\n" + "="*80)
-    print("AutoML Pipeline Completed Successfully!")
+    print("Benchmark Pipeline Completed Successfully!")
     print("="*80)
-    print(f"Results saved to: {os.path.join(RESULTS_DIR, args.level)}")
+    print(f"Results saved to: {os.path.join(config.RESULTS_DIR, args.level)}")
     print("Files generated for each model:")
     print("  - classification_report.txt")
     print("  - classification_stats.txt") 
