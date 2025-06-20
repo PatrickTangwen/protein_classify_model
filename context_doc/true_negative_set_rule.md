@@ -1,49 +1,4 @@
-
 ### **Adding a True Negative Set to Each Subfamily Test Set**
-
-**Goal:**
-For each subfamily’s test set, add a *true negative* set. The size of the negative set will match the size of the test set, except when the test set contains fewer than 5 proteins—in which case, the negative set will contain 5 proteins.
-
-#### **Rules for Constructing the True Negative Set:**
-
-1. **Total Test Set**:
-   The final test set for each subfamily will include the original test set plus its negative control set.
-
-2. **Selecting Negatives:**
-
-   * If a subfamily is **not assigned to any superfamily**, select negatives from other families that **are assigned to superfamilies**.
-   * The selected negative proteins must not belong to the same subfamily as the current test set.
-   * Negatives can be sampled from any family within another superfamily, as long as those proteins are not members of the same subfamily being tested.
-
-3. **Minimum Negative Set Size:**
-
-   * If the test set for a subfamily contains fewer than 5 proteins, the negative control set will contain 5 proteins.
-   * Otherwise, the negative set will be the same size as the test set.
-
-#### **Example:**
-
-If a subfamily has 10 members, and using your splitting strategy, 8 go into the training set and 2 into the test set:
-
-* The negative control set will have 5 proteins (since the test set is less than 5).
-* These 5 negatives will be chosen from other superfamilies (excluding any from the same subfamily).
-* The total test set for this family will then be 7 proteins: 2 original test set + 5 negatives.
-
-#### **Reference:**
-
-Definitions of subfamily and family can be found in `@input_req.md`.
-
-
-
-
-
-
-
-
-
-
-Actually Used:
-
-### How to Set the Size of the Negative Control Set
 
 **Goal:**
 For each subfamily’s test set, add a *true negative* set. The size of the negative set will match the size of the test set, except when the test set contains fewer than 5 proteins—in which case, the negative set will contain 5 proteins.
@@ -79,4 +34,21 @@ Suppose a subfamily has 10 members. According to the splitting strategy, 8 membe
 * For the negative control set, since the test set has fewer than 5 proteins, select 5 negative proteins from other superfamilies (excluding the same subfamily or families without a superfamily assignment).
 * The total test set size for this family will therefore be 2 (positive) + 5 (negative) = 7 proteins.
 
-Do not remove any previous report files, process, or foramts. You should keep them
+
+### General Breakdown
+
+For each subfamily/family, the evaluation creates a **separate binary classification problem**:
+
+- **Positive samples**: Test proteins that actually belong to this specific subfamily/family
+- **Negative samples**: Carefully selected negative control proteins from other superfamilies
+
+### The Binary Classification Per Class
+
+For each subfamily/family, the question becomes: *"Can the model correctly distinguish proteins that belong to this specific subfamily/family from proteins that don't belong to it?"*
+
+### TP/TN/FP/FN Breakdown
+
+- **TP (True Positive)**: Model correctly predicts a protein belongs to the target subfamily/family
+- **FN (False Negative)**: Model incorrectly predicts a test protein as belonging to some OTHER subfamily/family (should have been the target)
+- **TN (True Negative)**: Model correctly predicts a negative control protein as belonging to some OTHER subfamily/family (correctly rejects the target)
+- **FP (False Positive)**: Model incorrectly predicts a negative control protein as belonging to the target subfamily/family

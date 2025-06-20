@@ -13,7 +13,7 @@ from data_splitting import custom_split_dataset_with_negatives
 from models import MODELS
 from training import train_and_evaluate_model
 from evaluation import get_predictions, evaluate_model_detailed, save_reports, generate_roc_curve
-from plot import generate_benchmark_plot
+from generate_benchmark_plot import generate_benchmark_plots
 
 def main():
     parser = argparse.ArgumentParser(description="Run benchmarks for protein classification.")
@@ -116,11 +116,15 @@ def main():
         generate_roc_curve(results_df, model_output_dir, args.level)
         
         # Print summary
-        total_test = sum(m['test_count'] for m in report.values())
-        total_correct = sum(m['correct'] for m in report.values())
-        overall_accuracy = (total_correct / total_test * 100) if total_test > 0 else 0
+        total_tp = sum(m['TP'] for m in report.values())
+        total_fp = sum(m['FP'] for m in report.values())
+        total_tn = sum(m['TN'] for m in report.values())
+        total_fn = sum(m['FN'] for m in report.values())
+        
+        overall_accuracy_binary = (total_tp + total_tn) / (total_tp + total_tn + total_fp + total_fn) * 100 if (total_tp + total_tn + total_fp + total_fn) > 0 else 0
+        
         print(f"Model {model_name} completed!")
-        print(f"Overall accuracy: {overall_accuracy:.2f}%")
+        print(f"One-vs-All Accuracy (incl. Negative Controls): {overall_accuracy_binary:.2f}%")
 
     # --- 5. Benchmarking ---
     if len(models_to_run) > 1:
@@ -128,8 +132,7 @@ def main():
         print("Step 5: Generating Performance Benchmark")
         print("="*50)
         print(f"Generating performance benchmark plot for {args.level} level...")
-        benchmark_plot_path = generate_benchmark_plot(args.level)
-        print(f"Benchmark plot saved: {benchmark_plot_path}")
+        generate_benchmark_plots(args.level)
 
     print("\n" + "="*80)
     print("Benchmark Pipeline Completed Successfully!")
@@ -141,7 +144,8 @@ def main():
     print("  - detailed_classification_results.csv")
     print("  - binary_classification_metrics.csv")
     print("  - summary_metrics.json")
-    print("  - roc_curve.png")
+    print("  - sensitivity_specificity_curve.png")
+    print("  - roc_curve_traditional.png")
 
 if __name__ == "__main__":
     main() 

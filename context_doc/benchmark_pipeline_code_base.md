@@ -98,7 +98,7 @@ The `run_benchmark.py` script executes the following steps in sequence:
 3.  **Split Data**: Uses `data_splitting.py` to create a single, definitive train/validation split, including negative controls. This split is used for all models.
 4.  **Train & Evaluate Models**: Loops through the selected models:
     - Calls `training.py` to train the model.
-    - Calls `evaluation.py` to get predictions, perform detailed analysis, and save all standardized report files.
+    - Calls `evaluation.py` to get predictions, perform detailed one-vs-all binary classification analysis, and save all standardized report files.
 
 ## 5. Core Modules and Logic
 
@@ -145,22 +145,54 @@ This module provides a generic training interface.
     - **Early Stopping**: Halts training if validation accuracy doesn't improve for a set number of epochs.
     - **Artifacts**: Saves the best model state (`model.pth`), a log of the training process (`training_log.txt`), and a plot of loss/accuracy curves (`training_history.png`).
 
+
 ### `evaluation.py`
-This module is responsible for generating all analysis and report files in the exact format of the original scripts.
-- **`evaluate_model_detailed()`**: The main evaluation engine. It takes predictions and calculates a comprehensive set of metrics for each class.
+This module is responsible for generating all analysis and report files in the exact format of the original scripts, with enhanced one-vs-all binary classification evaluation.
+
+#### **One-vs-All Binary Classification Approach**
+The evaluation system treats the multi-class protein classification problem as multiple binary classification problems using a **one-vs-all approach**:
+
+- **For each subfamily/family**: The evaluation creates a separate binary classification problem where the target class is compared against all other classes plus negative controls.
+- **Positive samples**: Test proteins that actually belong to the specific target subfamily/family.
+- **Negative samples**: Carefully selected negative control proteins from other superfamilies, following the rules defined in `data_splitting.py`.
+
+#### **TP/TN/FP/FN Definitions in Context**
+- **TP (True Positive)**: Model correctly predicts a protein belongs to the target subfamily/family
+- **FN (False Negative)**: Model incorrectly predicts a test protein as belonging to some OTHER subfamily/family (should have been the target)
+- **TN (True Negative)**: Model correctly predicts a negative control protein as belonging to some OTHER subfamily/family (correctly rejects the target)  
+- **FP (False Positive)**: Model incorrectly predicts a negative control protein as belonging to the target subfamily/family
+
+#### **Key Functions**
+- **`evaluate_model_detailed()`**: The main evaluation engine. It takes predictions and calculates a comprehensive set of metrics for each class using the one-vs-all approach.
 - **`generate_verbose_report_text()`**: Produces the content for `classification_report.txt`, a human-readable file with a detailed per-class breakdown.
 - **`generate_classification_stats()`**: Produces the content for `classification_stats.txt`, which contains four `tabulate`-formatted sections:
-    1.  Confidence Threshold Analysis
-    2.  Overall Classification Statistics (Original Test Set)
-    3.  Overall Binary Classification Metrics (incl. Negative Controls)
-    4.  Overall Misclassification Statistics (Original Test Set)
+    1. **Confidence Threshold Analysis**: Uses the one-vs-all binary classification accuracy formula `(TP + TN) / (TP + TN + FP + FN)` for all confidence thresholds, including threshold-filtered data.
+    2. **Overall Classification Statistics (One-vs-All Approach)**: Aggregated statistics including negative controls.
+    3. **One-vs-All Binary Classification Metrics**: Precision, recall, specificity, F1-score, and accuracy calculated across all classes.
+    4. **Misclassification Statistics (Original Test Set)**: Analysis of error patterns within the original test proteins.
+
+#### **Enhanced Accuracy Calculations**
+- **Consistent Formula**: All accuracy calculations now use the one-vs-all binary classification formula `(TP + TN) / (TP + TN + FP + FN)`.
+- **Threshold Analysis**: For confidence threshold analysis, the system:
+  - Filters both positive and negative samples by the confidence threshold
+  - Recalculates TP/TN/FP/FN for the filtered dataset
+  - Applies the same binary classification accuracy formula
+- **Comprehensive Evaluation**: The system evaluates model performance not just on correct classification of original test proteins, but also on the ability to correctly reject negative controls.
+
 - **`save_reports()`**: Orchestrates the saving of all report files with the correct, level-dependent names (e.g., `_family` suffix). The files generated are:
-    - `classification_report.txt`
-    - `classification_stats.txt`
-    - `detailed_classification_results.csv`
-    - `binary_classification_metrics.csv`
-    - `summary_metrics.json` (used by the benchmark plotter)
-- **`generate_roc_curve()`**: Creates and saves the ROC curve plot.
+    - `classification_report.txt`: Detailed per-class analysis with one-vs-all metrics
+    - `classification_stats.txt`: Statistical analysis with enhanced one-vs-all accuracy calculations
+    - `detailed_classification_results.csv`: Per-protein prediction results
+    - `binary_classification_metrics.csv`: Per-class binary classification metrics
+    - `summary_metrics.json`: Overall performance metrics (used by the benchmark plotter)
+- **`generate_roc_curve()`**: Creates and saves the ROC curve plot based on prediction confidence vs. classification correctness.
+
+#### **Updated Output File Descriptions**
+- **Column Headers**: Updated to reflect "One-vs-All Accuracy" instead of generic "Accuracy" to clarify the evaluation approach.
+- **Detailed Explanations**: All output files now include comprehensive explanations of how TP/TN/FP/FN are calculated in the context of the one-vs-all approach.
+- **Context-Specific Definitions**: Clear definitions of what each metric means when negative controls are included in the evaluation.
+
+
 
 ### `plot.py`
 A standalone utility for creating customizable model comparison plots. It reads the `summary_metrics.json` files from the output directories and generates a bar chart comparing the "Overall Accuracy (Original Test Set)" for each model. It includes numerous command-line flags for customizing the plot's appearance.

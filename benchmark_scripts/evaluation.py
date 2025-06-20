@@ -283,26 +283,38 @@ def save_reports(df, report, results_df, target_test_mapping, train_indices, out
 
     # File 4: classification_stats.txt (or classification_stats_family.txt)
     stats_filename = f'classification_stats{suffix}.txt'
-    stats_content = generate_classification_stats(results_df, report, level)
+    stats_content = generate_classification_stats(results_df, report, target_test_mapping, level)
     with open(os.path.join(output_dir, stats_filename), 'w', encoding='utf-8') as f:
         f.write(stats_content)
     
     # File 5: summary_metrics.json (for benchmarking)
     total_test = sum(m['test_count'] for m in report.values())
     total_correct = sum(m['correct'] for m in report.values())
-    overall_accuracy = (total_correct / total_test * 100) if total_test > 0 else 0
+    recall_accuracy = (total_correct / total_test * 100) if total_test > 0 else 0
+    
+    # Calculate one-vs-all binary classification accuracy
+    total_tp = sum(m['TP'] for m in report.values())
+    total_fp = sum(m['FP'] for m in report.values())
+    total_tn = sum(m['TN'] for m in report.values())
+    total_fn = sum(m['FN'] for m in report.values())
+    binary_accuracy = (total_tp + total_tn) / (total_tp + total_tn + total_fp + total_fn) * 100 if (total_tp + total_tn + total_fp + total_fn) > 0 else 0
     
     summary_metrics = {
-        'overall_accuracy_original_set': overall_accuracy,
+        'overall_accuracy_original_set': recall_accuracy,
+        'one_vs_all_accuracy': binary_accuracy,
         'total_test_samples': total_test,
-        'total_correct_predictions': total_correct
+        'total_correct_predictions': total_correct,
+        'total_tp': total_tp,
+        'total_fp': total_fp,
+        'total_tn': total_tn,
+        'total_fn': total_fn
     }
     
     with open(os.path.join(output_dir, 'summary_metrics.json'), 'w') as f:
         json.dump(summary_metrics, f, indent=2)
 
-def generate_classification_stats(results_df, report, level):
-    """Generate the classification_stats file content to match original format exactly."""
+def generate_classification_stats(results_df, report, target_test_mapping, level):
+    """Generate the classification_stats file content using one-vs-all binary classification accuracy for all thresholds."""
     content = ""
     
     # === Confidence Threshold Analysis ===
@@ -312,23 +324,70 @@ def generate_classification_stats(results_df, report, level):
     total_original = len(original_test_df)
     confidence_data = []
     
+    # Calculate overall binary classification metrics for reference
+    total_tp = sum(m['TP'] for m in report.values())
+    total_fp = sum(m['FP'] for m in report.values())
+    total_tn = sum(m['TN'] for m in report.values())
+    total_fn = sum(m['FN'] for m in report.values())
+    
     thresholds = [0.0, 0.1, 0.3, 0.5, 0.7, 0.9]
     for threshold in thresholds:
         if threshold == 0.0:
-            retained_df = original_test_df
+            # For full test set
+            original_test_retained = original_test_df
             threshold_label = "0.0 (Full Test Set)"
+            accuracy = (total_tp + total_tn) / (total_tp + total_tn + total_fp + total_fn) * 100 if (total_tp + total_tn + total_fp + total_fn) > 0 else 0
         else:
-            retained_df = original_test_df[original_test_df['Confidence'] >= threshold]
+            # Filter original test proteins by confidence threshold
+            original_test_retained = original_test_df[original_test_df['Confidence'] >= threshold]
             threshold_label = f"{threshold:.1f}"
+            
+            # Filter ALL samples (including negative controls) by confidence threshold
+            all_samples_retained = results_df[results_df['Confidence'] >= threshold]
+            
+            if len(all_samples_retained) > 0:
+                # Calculate one-vs-all binary classification metrics for threshold-filtered data
+                threshold_tp = threshold_tn = threshold_fp = threshold_fn = 0
+                
+                # Get the indices of samples above threshold
+                threshold_indices = set(all_samples_retained['Index'])
+                
+                # For each class, calculate TP/TN/FP/FN for samples above threshold
+                for class_name, mapping in target_test_mapping.items():
+                    # Count positive samples above threshold
+                    positive_above_threshold = [idx for idx in mapping['positive'] if idx in threshold_indices]
+                    negative_above_threshold = [idx for idx in mapping['negative'] if idx in threshold_indices]
+                    
+                    # For positive samples above threshold
+                    for idx in positive_above_threshold:
+                        # Get the prediction for this sample
+                        sample_row = all_samples_retained[all_samples_retained['Index'] == idx]
+                        if not sample_row.empty:
+                            pred_label = sample_row.iloc[0]['Predicted_Label']
+                            if pred_label == class_name:
+                                threshold_tp += 1
+                            else:
+                                threshold_fn += 1
+                    
+                    # For negative samples above threshold  
+                    for idx in negative_above_threshold:
+                        # Get the prediction for this sample
+                        sample_row = all_samples_retained[all_samples_retained['Index'] == idx]
+                        if not sample_row.empty:
+                            pred_label = sample_row.iloc[0]['Predicted_Label']
+                            if pred_label != class_name:
+                                threshold_tn += 1
+                            else:
+                                threshold_fp += 1
+                
+                # Calculate one-vs-all binary classification accuracy
+                total_threshold_samples = threshold_tp + threshold_tn + threshold_fp + threshold_fn
+                accuracy = (threshold_tp + threshold_tn) / total_threshold_samples * 100 if total_threshold_samples > 0 else 0
+            else:
+                accuracy = 0.0
         
-        samples_retained = len(retained_df)
+        samples_retained = len(original_test_retained)
         percent_retained = (samples_retained / total_original * 100) if total_original > 0 else 0
-        
-        if samples_retained > 0:
-            correct_predictions = (retained_df['True_Label'] == retained_df['Predicted_Label']).sum()
-            accuracy = (correct_predictions / samples_retained) * 100
-        else:
-            accuracy = 0.0
         
         confidence_data.append([
             threshold_label,
@@ -342,49 +401,49 @@ def generate_classification_stats(results_df, report, level):
         "Confidence Threshold",
         f"Original Test Proteins Above Threshold", 
         "% of Original Test Set Retained",
-        f"{level_name} Accuracy (Original Test Set, %)"
+        f"One-vs-All Accuracy (%)"
     ]
     
     content += tabulate(confidence_data, headers=headers, tablefmt="grid")
     content += "\n\n"
     
     # Column definitions
-    content += """
+    content += f"""
 Column Definitions:
 * Confidence Threshold: The threshold value applied. '0.0' indicates the evaluation on the complete test set without filtering by confidence.
 * Original Test Proteins Above Threshold: The absolute number of *original test proteins* (excluding negative controls) whose model predictions had a confidence score >= the specified threshold.
 * % of Original Test Set Retained: The percentage of the *total original test proteins* that were retained (calculated as 'Original Test Proteins Above Threshold' / Total Original Test Proteins * 100).
-* {} Accuracy (Original Test Set, %): The accuracy of {}-level classification calculated *only* on the *original test proteins* that were retained above the specified threshold.
-""".format(level_name, level_name)
+* One-vs-All Accuracy (%): For each {level_name.lower()}, treats the classification as a binary problem (target {level_name.lower()} vs. all others including negative controls). Accuracy is calculated as (TP + TN) / (TP + TN + FP + FN) where:
+  - TP: Correctly predicted as target {level_name.lower()}
+  - FN: Incorrectly predicted as different {level_name.lower()} (should have been target)
+  - TN: Correctly predicted as different {level_name.lower()} (negative control correctly rejected)
+  - FP: Incorrectly predicted as target {level_name.lower()} (negative control incorrectly accepted)
+"""
     
     content += "\n\n"
     
-    # === Overall Classification Statistics (Original Test Set) ===
-    total_test = sum(m['test_count'] for m in report.values())
-    total_correct = sum(m['correct'] for m in report.values())
-    overall_accuracy = (total_correct / total_test * 100) if total_test > 0 else 0
+    # === Overall Classification Statistics (One-vs-All Approach) ===
+    # Use one-vs-all binary classification accuracy formula: (TP + TN) / (TP + TN + FP + FN)
+    overall_accuracy_binary = (total_tp + total_tn) / (total_tp + total_tn + total_fp + total_fn) * 100 if (total_tp + total_tn + total_fp + total_fn) > 0 else 0
     
     classification_stats_data = [
-        ["Total Test Proteins (Original Set)", total_test],
-        ["Total Correct Predictions (Original Set)", total_correct],
-        ["Overall Accuracy (Original Test Set)", f"{overall_accuracy:.2f}%"]
+        ["Total Test Proteins (Original Set)", sum(m['test_count'] for m in report.values())],
+        ["Total Negative Controls", sum(m['negative_count'] for m in report.values())],
+        ["Total Test Samples (incl. Negative Controls)", total_tp + total_tn + total_fp + total_fn],
+        ["Total Correct Predictions (Original Set)", sum(m['correct'] for m in report.values())],
+        [f"One-vs-All Accuracy (incl. Negative Controls)", f"{overall_accuracy_binary:.2f}%"]
     ]
     
-    content += "=== Overall Classification Statistics (Original Test Set) ===\n"
+    content += f"=== Overall Classification Statistics (One-vs-All Approach) ===\n"
     content += tabulate(classification_stats_data, headers=["Metric", "Value"], tablefmt="grid")
     content += "\n\n"
     
-    # === Binary Classification Metrics with Negative Controls ===
-    total_tp = sum(m['TP'] for m in report.values())
-    total_fp = sum(m['FP'] for m in report.values())
-    total_tn = sum(m['TN'] for m in report.values())
-    total_fn = sum(m['FN'] for m in report.values())
-    
+    # === One-vs-All Binary Classification Metrics ===
     overall_precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0
     overall_recall = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0
     overall_specificity = total_tn / (total_tn + total_fp) if (total_tn + total_fp) > 0 else 0
     overall_f1 = 2 * overall_precision * overall_recall / (overall_precision + overall_recall) if (overall_precision + overall_recall) > 0 else 0
-    overall_accuracy_binary = (total_tp + total_tn) / (total_tp + total_tn + total_fp + total_fn) if (total_tp + total_tn + total_fp + total_fn) > 0 else 0
+    overall_accuracy_binary_decimal = (total_tp + total_tn) / (total_tp + total_tn + total_fp + total_fn) if (total_tp + total_tn + total_fp + total_fn) > 0 else 0
     
     binary_stats_data = [
         ["True Positives (TP)", total_tp],
@@ -395,10 +454,15 @@ Column Definitions:
         ["Recall/Sensitivity", f"{overall_recall:.4f}"],
         ["Specificity", f"{overall_specificity:.4f}"],
         ["F1 Score", f"{overall_f1:.4f}"],
-        ["Accuracy (incl. Negative Controls)", f"{overall_accuracy_binary:.4f}"]
+        ["One-vs-All Accuracy", f"{overall_accuracy_binary_decimal:.4f}"]
     ]
     
-    content += "=== Binary Classification Metrics with Negative Controls ===\n"
+    content += f"=== One-vs-All Binary Classification Metrics ===\n"
+    content += f"""
+Note: These metrics are calculated by treating each {level_name.lower()} as a separate binary classification problem 
+(target {level_name.lower()} vs. all other {level_name.lower()}s + negative controls), then aggregating results across all {level_name.lower()}s.
+
+"""
     content += tabulate(binary_stats_data, headers=["Metric", "Value"], tablefmt="grid")
     content += "\n\n"
     
@@ -423,55 +487,135 @@ Column Definitions:
     
     return content
 
-    # total_correct = sum(m['correct'] for m in report.values())
-    # overall_accuracy = (total_correct / total_test * 100) if total_test > 0 else 0
-    # stats_content += "=== Overall Classification Statistics (Original Test Set) ===\n"
-    # stats_content += tabulate([["Total Test Proteins", total_test], ["Total Correct", total_correct], ["Overall Accuracy", f"{overall_accuracy:.2f}%"]], headers=["Metric", "Value"]) + "\n\n"
-    
-    # # Section: Overall Binary Metrics
-    # total_tp = sum(m['TP'] for m in report.values())
-    # total_fp = sum(m['FP'] for m in report.values())
-    # total_tn = sum(m['TN'] for m in report.values())
-    # total_fn = sum(m['FN'] for m in report.values())
-    # overall_prec = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0
-    # overall_rec = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0
-    # overall_f1 = 2 * (overall_prec * overall_rec) / (overall_prec + overall_rec) if (overall_prec + overall_rec) > 0 else 0
-    # stats_content += "=== Binary Classification Metrics with Negative Controls ===\n"
-    # stats_content += tabulate([["Precision", f"{overall_prec:.4f}"], ["Recall", f"{overall_rec:.4f}"], ["F1 Score", f"{overall_f1:.4f}"]], headers=["Metric", "Value"]) + "\n\n"
-
-    # # Section: Misclassification Stats
-    # total_misclass = sum(len(m['misclassified']) for m in report.values())
-    # same_level_errors = sum(m['same_level_errors'] for m in report.values())
-    # diff_level_errors = sum(m['diff_level_errors'] for m in report.values())
-    # stats_content += "=== Misclassification Statistics (Original Test Set) ===\n"
-    # if total_misclass > 0:
-    #     stats_content += tabulate([
-    #         ["Total Misclassifications", total_misclass, "100%"],
-    #         [f"Same-{level} Errors", same_level_errors, f"{(same_level_errors/total_misclass*100):.2f}%"],
-    #         [f"Different-{level} Errors", diff_level_errors, f"{(diff_level_errors/total_misclass*100):.2f}%"]
-    #     ], headers=["Error Type", "Count", "Percentage"])
-    # else:
-    #     stats_content += "No misclassifications found."
-        
-    # with open(os.path.join(output_dir, 'classification_stats.txt'), 'w') as f:
-    #     f.write(stats_content)
-
-    # # File 5: summary_metrics.json (for benchmarking)
-    # with open(os.path.join(output_dir, 'summary_metrics.json'), 'w') as f:
-    #     json.dump({'overall_accuracy_original_set': overall_accuracy}, f, indent=4)
-        
-    # print("Reports saved successfully.")
-
 def generate_roc_curve(results_df, output_dir, level):
+    """
+    Generates a sensitivity vs specificity plot against probability thresholds,
+    matching the style shown in the reference image.
+    """
     if 'Confidence' not in results_df.columns:
-        print("Warning: 'Confidence' column not found. Cannot generate ROC curve.")
+        print("Warning: 'Confidence' column not found. Cannot generate sensitivity/specificity curve.")
         return
 
+    # Prepare the data for sensitivity/specificity calculation
+    # For this plot, we need to determine what constitutes a "positive" prediction
+    # We'll use whether the prediction was correct as the binary outcome
     y_true_binary = (results_df['True_Label'] == results_df['Predicted_Label']).astype(int)
     y_scores = results_df['Confidence']
 
     if len(y_true_binary.unique()) < 2:
-        print("Warning: Only one class present. Cannot generate ROC curve.")
+        print("Warning: Only one class present. Cannot generate sensitivity/specificity curve.")
+        return
+
+    # Calculate sensitivity and specificity at different thresholds
+    thresholds = np.linspace(0, 1, 101)  # 0.00 to 1.00 in steps of 0.01
+    sensitivity_values = []
+    specificity_values = []
+    
+    for threshold in thresholds:
+        # Predictions above threshold are considered "positive" (confident)
+        y_pred_binary = (y_scores >= threshold).astype(int)
+        
+        # Calculate confusion matrix components
+        tp = np.sum((y_true_binary == 1) & (y_pred_binary == 1))
+        tn = np.sum((y_true_binary == 0) & (y_pred_binary == 0))
+        fp = np.sum((y_true_binary == 0) & (y_pred_binary == 1))
+        fn = np.sum((y_true_binary == 1) & (y_pred_binary == 0))
+        
+        # Calculate sensitivity (recall) and specificity
+        sensitivity = tp / (tp + fn) if (tp + fn) > 0 else 0
+        specificity = tn / (tn + fp) if (tn + fp) > 0 else 0
+        
+        sensitivity_values.append(sensitivity)
+        specificity_values.append(specificity)
+    
+    # Convert to numpy arrays
+    sensitivity_values = np.array(sensitivity_values)
+    specificity_values = np.array(specificity_values)
+    
+    # Find optimal threshold (closest to top-left corner, or where sensitivity + specificity is maximized)
+    optimal_idx = np.argmax(sensitivity_values + specificity_values)
+    optimal_threshold = thresholds[optimal_idx]
+    optimal_sensitivity = sensitivity_values[optimal_idx]
+    optimal_specificity = specificity_values[optimal_idx]
+    
+    # Calculate overall accuracy at optimal threshold
+    y_pred_optimal = (y_scores >= optimal_threshold).astype(int)
+    optimal_accuracy = np.mean(y_true_binary == y_pred_optimal)
+    
+    # Create the plot matching the reference style
+    plt.figure(figsize=(10, 8))
+    
+    # Plot sensitivity line (blue with circles)
+    plt.plot(thresholds, sensitivity_values, 'o-', color='blue', linewidth=2, 
+             markersize=4, label='Sensitivity', markerfacecolor='blue')
+    
+    # Plot specificity line (red/maroon with circles)
+    plt.plot(thresholds, specificity_values, 'o-', color='darkred', linewidth=2, 
+             markersize=4, label='Specificity', markerfacecolor='darkred')
+    
+    # Add vertical line at optimal threshold
+    plt.axvline(x=optimal_threshold, color='gray', linestyle='--', alpha=0.7, 
+                label=f'Optimal Threshold = {optimal_threshold:.2f}')
+    
+    # Styling to match the reference image
+    plt.xlabel('Probability cutoff', fontsize=12, fontweight='bold')
+    plt.ylabel('Sensitivity/Specificity', fontsize=12, fontweight='bold')
+    plt.title(f'Sensitivity vs Specificity Analysis ({level.capitalize()}-Level Classification)', 
+              fontsize=14, fontweight='bold', pad=20)
+    
+    # Set axis limits and ticks to clearly show 0.0 points
+    plt.xlim(-0.02, 1.02)  # Slightly expand to show 0.0 clearly
+    plt.ylim(-0.02, 1.02)  # Slightly expand to show 0.0 clearly
+    
+    # Set ticks to explicitly include 0.0
+    x_ticks = np.arange(0.0, 1.1, 0.25)
+    y_ticks = np.arange(0.0, 1.1, 0.25)
+    plt.xticks(x_ticks)
+    plt.yticks(y_ticks)
+    
+    # Add grid that includes the 0.0 lines
+    plt.grid(True, alpha=0.3, which='major')
+    
+    # Add explicit lines at x=0 and y=0 to emphasize the origin
+    plt.axhline(y=0, color='black', linewidth=0.8, alpha=0.3)
+    plt.axvline(x=0, color='black', linewidth=0.8, alpha=0.3)
+    
+    # Add legend
+    plt.legend(loc='center right', fontsize=11)
+    
+    # Add performance metrics text at the bottom
+    metrics_text = f"Sensitivity {optimal_sensitivity*100:.1f}% Specificity {optimal_specificity*100:.1f}%\n"
+    metrics_text += f"Correctly Classified {optimal_accuracy*100:.0f}%"
+    
+    plt.figtext(0.5, 0.02, metrics_text, ha='center', fontsize=12, fontweight='bold')
+    
+    # Adjust layout to make room for the text
+    plt.tight_layout()
+    plt.subplots_adjust(bottom=0.12)
+    
+    # Save the plot
+    plot_path = os.path.join(output_dir, 'sensitivity_specificity_curve.png')
+    plt.savefig(plot_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    print(f"Sensitivity/Specificity curve saved to {plot_path}")
+    print(f"Optimal threshold: {optimal_threshold:.3f}")
+    print(f"At optimal threshold - Sensitivity: {optimal_sensitivity*100:.1f}%, Specificity: {optimal_specificity*100:.1f}%")
+    print(f"Overall accuracy: {optimal_accuracy*100:.1f}%")
+    
+    # Also generate the traditional ROC curve for comparison
+    generate_traditional_roc_curve(results_df, output_dir, level)
+
+def generate_traditional_roc_curve(results_df, output_dir, level):
+    """
+    Generates a traditional ROC curve (TPR vs FPR) for comparison.
+    """
+    from sklearn.metrics import roc_curve, auc
+    
+    y_true_binary = (results_df['True_Label'] == results_df['Predicted_Label']).astype(int)
+    y_scores = results_df['Confidence']
+
+    if len(y_true_binary.unique()) < 2:
         return
 
     fpr, tpr, _ = roc_curve(y_true_binary, y_scores)
@@ -479,14 +623,29 @@ def generate_roc_curve(results_df, output_dir, level):
 
     plt.figure(figsize=(10, 8))
     plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (AUC = {roc_auc:.3f})')
-    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-    plt.xlabel('False Positive Rate (1 - Specificity)')
-    plt.ylabel('True Positive Rate (Sensitivity)')
-    plt.title(f'ROC: Model Confidence vs. Classification Correctness ({level.capitalize()})')
-    plt.legend(loc="lower right")
-    plt.grid(True)
+    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='Random')
     
-    plot_path = os.path.join(output_dir, 'roc_curve.png')
-    plt.savefig(plot_path, dpi=300)
+    # Set axis limits and ticks to clearly show 0.0 points
+    plt.xlim(-0.02, 1.02)
+    plt.ylim(-0.02, 1.05)
+    
+    # Set ticks to explicitly include 0.0
+    x_ticks = np.arange(0.0, 1.1, 0.2)
+    y_ticks = np.arange(0.0, 1.1, 0.2)
+    plt.xticks(x_ticks)
+    plt.yticks(y_ticks)
+    
+    plt.xlabel('False Positive Rate (1 - Specificity)', fontsize=12)
+    plt.ylabel('True Positive Rate (Sensitivity)', fontsize=12)
+    plt.title(f'ROC Curve: Model Confidence vs. Classification Correctness ({level.capitalize()})', fontsize=14)
+    plt.legend(loc="lower right", fontsize=11)
+    
+    # Add grid that includes the 0.0 lines
+    plt.grid(True, alpha=0.3, which='major')
+    plt.axhline(y=0, color='black', linewidth=0.8, alpha=0.3)
+    plt.axvline(x=0, color='black', linewidth=0.8, alpha=0.3)
+    
+    plot_path = os.path.join(output_dir, 'roc_curve_traditional.png')
+    plt.savefig(plot_path, dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"ROC curve saved to {plot_path}") 
+    print(f"Traditional ROC curve saved to {plot_path}") 
