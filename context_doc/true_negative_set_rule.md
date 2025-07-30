@@ -1,12 +1,12 @@
 ### **Adding a True Negative Set to Each Subfamily Test Set**
 
 **Goal:**
-For each subfamily’s test set, add a *true negative* set. The size of the negative set will match the size of the test set, except when the test set contains fewer than 5 proteins—in which case, the negative set will contain 5 proteins.
+For each subfamily’s or family’s test set, add a *true negative* set. The size of the negative set will match the size of the test set, except when the test set contains fewer than 5 proteins—in which case, the negative set will contain 5 proteins.
 
 **Selection Criteria:**
 
-* For each subfamily, select negative control proteins from *other* superfamilies.
-* Ensure that none of the negative proteins belong to the same subfamily as the target family.
+* For each subfamily or family, select negative control proteins from *other* superfamilies.
+* Ensure that none of the negative proteins belong to the same subfamily or family as the target family.
 
 **Negative Control Set Size:**
 
@@ -15,21 +15,21 @@ For each subfamily’s test set, add a *true negative* set. The size of the nega
 
 **Test Set Composition:**
 
-* For each subfamily, the final test set = original test set (positives) + negative control set (negatives).
+* For each subfamily or family, the final test set = original test set (positives) + negative control set (negatives).
 
 **Special Case:**
 
-* If a subfamily does **not** have a superfamily assignment, the negative control proteins should be selected **only** from families that are assigned to a superfamily.
+* If a subfamily or family does **not** have a superfamily assignment, the negative control proteins should be selected **only** from families that are assigned to a superfamily.
 
 **New Evaluation Report Section**
 
-* At the subfamily level, calculate TP, FN, TN, and FP.
+* At the subfamily/family level, calculate TP, FN, TN, and FP.
 * Metrics are summed across families and then averaged to obtain the overall performance.
 
 ---
 
 **Example:**
-Suppose a subfamily has 10 members. According to the splitting strategy, 8 members are used for training and 2 for testing (test set).
+Suppose a subfamily/family has 10 members. According to the splitting strategy, 8 members are used for training and 2 for testing (test set).
 
 * For the negative control set, since the test set has fewer than 5 proteins, select 5 negative proteins from other superfamilies (excluding the same subfamily or families without a superfamily assignment).
 * The total test set size for this family will therefore be 2 (positive) + 5 (negative) = 7 proteins.

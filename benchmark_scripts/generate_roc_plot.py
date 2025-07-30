@@ -80,8 +80,10 @@ def generate_sensitivity_specificity_plot(results_file, output_dir, model_name, 
         sensitivity_values = np.array(sensitivity_values)
         specificity_values = np.array(specificity_values)
         
-        # Find optimal threshold
-        optimal_idx = np.argmax(sensitivity_values + specificity_values)
+        # Find intersection point where sensitivity ≈ specificity
+        # Calculate absolute differences between sensitivity and specificity
+        diff = np.abs(sensitivity_values - specificity_values)
+        optimal_idx = np.argmin(diff)
         optimal_threshold = thresholds[optimal_idx]
         optimal_sensitivity = sensitivity_values[optimal_idx]
         optimal_specificity = specificity_values[optimal_idx]
@@ -104,6 +106,11 @@ def generate_sensitivity_specificity_plot(results_file, output_dir, model_name, 
         # Add vertical line at optimal threshold
         plt.axvline(x=optimal_threshold, color='gray', linestyle='--', alpha=0.7, 
                     label=f'Optimal Threshold = {optimal_threshold:.2f}')
+        
+        # Mark the intersection point
+        plt.plot(optimal_threshold, optimal_sensitivity, marker='o', markersize=10, 
+                 color='green', markerfacecolor='green', markeredgecolor='black', 
+                 markeredgewidth=2, label=f'Optimal Point')
         
         # Styling
         plt.xlabel('Probability cutoff', fontsize=12, fontweight='bold')
