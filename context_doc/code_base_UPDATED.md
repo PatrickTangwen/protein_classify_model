@@ -15,9 +15,8 @@ The core objectives of this refactored pipeline are:
 
 The pipeline is primarily controlled by two scripts: `run_benchmark.py` for executing the full workflow and `plot.py` for visualizing the results.
 
-### Running the Full Pipeline (`run_benchmark.py`)
-
-This is the main orchestrator script.
+### Running the Full Pipeline (`run_benchmark.py`) 
+This is the original data splitting strategy. In which the true negative set is generated for each subfamily or family by selecting negative control proteins from *other* superfamilies.
 
 **Usage:**
 ```bash
@@ -29,6 +28,15 @@ python run_benchmark.py --level subfamily --model all
 
 # Example: Run only the Random Forest model for family-level classification
 python run_benchmark.py --level family --model random_forest
+```
+
+### Running the Full Pipeline with New Data Splitting (`run_benchmark_new.py`) 
+
+This script is the same as `run_benchmark.py`, but uses the new data splitting strategy.The new data splitting strategy is defined in `data_splitting_new.py`. In which the true negative set is generated for each subfamily or family by selecting negative control proteins from *same* superfamilies.
+
+**Usage:**
+```bash
+python run_benchmark_new.py --level [family|subfamily] --model [all|random_forest|svm|neural_network]
 ```
 
 ### Generating Benchmark Plots Separately (`plot.py`)

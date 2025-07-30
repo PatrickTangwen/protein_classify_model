@@ -122,7 +122,8 @@ def evaluate_model_detailed(
                 else: report_metrics[class_name]['FP'] += 1
     
     final_report = {}
-    for class_name in class_counts.index:
+    # Iterate only over classes that are in the test set
+    for class_name in sorted(target_test_mapping.keys()):
         metrics = report_metrics[class_name]
         tp, tn, fp, fn = metrics['TP'], metrics['TN'], metrics['FP'], metrics['FN']
         precision = tp / (tp + fp) if (tp + fp) > 0 else 0
@@ -321,7 +322,7 @@ def generate_classification_stats(results_df, report, target_test_mapping, level
     content += "=== Confidence Threshold Analysis ===\n\n"
     
     original_test_df = results_df[~results_df['is_negative_control']]
-    total_original = len(original_test_df)
+    total_original = sum(len(mapping['positive']) for mapping in target_test_mapping.values())
     confidence_data = []
     
     # Calculate overall binary classification metrics for reference
@@ -427,8 +428,8 @@ Column Definitions:
     overall_accuracy_binary = (total_tp + total_tn) / (total_tp + total_tn + total_fp + total_fn) * 100 if (total_tp + total_tn + total_fp + total_fn) > 0 else 0
     
     classification_stats_data = [
-        ["Total Test Proteins (Original Set)", sum(m['test_count'] for m in report.values())],
-        ["Total Negative Controls", sum(m['negative_count'] for m in report.values())],
+        ["Total Test Proteins (Original Set)", total_original],
+        ["Total Negative Controls", sum(len(mapping['negative']) for mapping in target_test_mapping.values())],
         ["Total Test Samples (incl. Negative Controls)", total_tp + total_tn + total_fp + total_fn],
         ["Total Correct Predictions (Original Set)", sum(m['correct'] for m in report.values())],
         [f"One-vs-All Accuracy (incl. Negative Controls)", f"{overall_accuracy_binary:.2f}%"]
