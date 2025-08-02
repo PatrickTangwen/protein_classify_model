@@ -6,14 +6,14 @@ import sys
 # Add refactored_scripts to the Python path
 # sys.path.append(os.path.join(os.path.dirname(__file__), 'refactored_scripts'))
 
-import config
+import config_same_sup as config
 from data_loader import load_protein_data, load_superfamily_map
 from feature_engineering import build_features
-from data_splitting_new import custom_split_dataset_with_negatives
+from data_splitting_same_sup import custom_split_dataset_with_negatives
 from models import MODELS
 from training import train_and_evaluate_model
-from evaluation_new import get_predictions, evaluate_model_detailed, save_reports, generate_roc_curve
-from generate_benchmark_plot import generate_benchmark_plots
+from evaluation_same_sup import get_predictions, evaluate_model_detailed, save_reports, generate_roc_curve
+from generate_benchmark_plot_same_sup import generate_benchmark_plots
 
 def main():
     parser = argparse.ArgumentParser(description="Run benchmarks for protein classification.")

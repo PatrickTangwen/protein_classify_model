@@ -1,16 +1,15 @@
 # Protein Classification Pipeline
 
-A comprehensive AutoML pipeline for protein classification using multiple machine learning models with rigorous evaluation methodology.
+A comprehensive AutoML pipeline for protein classification using multiple machine learning models with custom evaluation methodology.
 
 ## Overview
 
-This pipeline provides an automated system for training and benchmarking multiple machine learning models on protein classification tasks. It supports both **subfamily-level** and **family-level** classification with a sophisticated evaluation system that includes negative controls and one-vs-all binary classification analysis.
+This pipeline provides an automated system for training and benchmarking multiple machine learning models on protein classification tasks. It supports both **subfamily-level** and **family-level** classification with a custom evaluation methodology that includes negative controls and one-vs-all binary classification analysis.
 
 ### Key Features
 
-- **Multiple Models**: Supports Neural Networks, Random Forest, SVM, Logistic Regression, Extra Trees, KNN, Naive Bayes, and XGBoost
+- **Multiple Models**: Supports Neural Networks, Random Forest, Logistic Regression, SVM, Extra Trees, KNN, Naive Bayes, and XGBoost
 - **Evaluation**: One-vs-all binary classification approach with negative controls from other superfamilies
-- **Automated Benchmarking**: Compare all models on identical data splits
 
 ## Quick Start
 
@@ -32,27 +31,46 @@ Ensure you have the following files in the `data_source/` directory:
 
 ### Basic Usage
 
-#### Run All Models for Subfamily Classification
+This benchmarking pipeline supports two data splitting strategies:
+
+1. **Original Strategy (`run_benchmark.py`)**
+   * **Negative control proteins are selected from *other* superfamilies.**
+2. **Same-Superfamily Strategy (`run_benchmark_same_sup.py`)**
+   * **Negative control proteins are selected from the *same* superfamily.**
 
 ```bash
-python benchmark_scripts/run_benchmark.py --level subfamily --model all
+# General format
+python run_benchmark.py --level [family|subfamily] --model [all|random_forest|svm|neural_network]
+
+# Example: Run all models for family-level classification with different-superfamily strategy
+python run_benchmark.py --level family --model all
+
+# Example: Run all models for family-level classification with same-superfamily strategy
+python run_benchmark_same_sup.py --level family --model all
+
+# Example: Run all models for subfamily-level classification with different-superfamily 
+python run_benchmark.py --level subfamily --model all
+
+# Example: Run only the Random Forest model for family-level classification with different-superfamily strategy
+python run_benchmark.py --level family --model random_forest
+
 ```
 
-#### Run All Models for Family Classification
+
+## Advanced Usage
+
+### Generate Benchmark Plots
+
+To regenerate the benchmark plots for each model without re-running the entire pipeline:
 
 ```bash
-python benchmark_scripts/run_benchmark.py --level family --model all
+# Generate plots for all models at subfamily level with different-superfamily strategy
+python benchmark_scripts/generate_benchmark_plot.py --level subfamily
+
+# Generate plots for all models at family level with same-superfamily strategy
+python benchmark_scripts/generate_benchmark_plot_same_sup.py --level family
 ```
 
-#### Run a Specific Model
-
-```bash
-# Run only Random Forest for subfamily classification
-python benchmark_scripts/run_benchmark.py --level subfamily --model random_forest
-
-# Run only Neural Network for family classification
-python benchmark_scripts/run_benchmark.py --level family --model neural_network
-```
 
 #### Available Models
 
@@ -67,9 +85,10 @@ python benchmark_scripts/run_benchmark.py --level family --model neural_network
 
 ## Output Structure
 
-Results are saved in the `benchmark_results/` directory:
+Results are saved in the `benchmark_results/` or `benchmark_results_same_sup/` directory:
 
 ```
+Example of the output structure:
 benchmark_results/
 ├── family/                          # Family-level classification results
 │   ├── neural_network/
@@ -130,36 +149,7 @@ The pipeline uses a specialized splitting strategy based on class size:
 For each test class, negative controls are selected:
 - **Source**: Other superfamilies (never same subfamily/family)
 - **Size**: `max(test_set_size, 5)` proteins
-- **Special case**: Classes without superfamily assignment use only proteins with superfamily assignments as negatives
-
-## Advanced Usage
-
-### Generate Benchmark Comparison Plots
-
-If you've already run the models and want to regenerate the main comparison bar plots:
-
-```bash
-python benchmark_scripts/generate_benchmark_plot.py --level subfamily
-python benchmark_scripts/generate_benchmark_plot.py --level family
-```
-
-### Custom Output Directory
-
-```bash
-python benchmark_scripts/generate_benchmark_plot.py --level subfamily --output /path/to/custom/output
-```
-
-### Generate Sensitivity/Specificity Curves
-
-To regenerate the sensitivity vs. specificity plots for each model without re-running the entire pipeline:
-
-```bash
-# Generate plots for all models at subfamily level
-python benchmark_scripts/generate_roc_plot.py --level subfamily
-
-# Generate plots for specific models at family level
-python benchmark_scripts/generate_roc_plot.py --level family --models neural_network svm
-```
+- **Special case**: families without superfamily assignment will be excluded from the analysis
 
 
 ## Configuration
@@ -231,6 +221,3 @@ To add a new model:
 2. Specify model type ('sklearn' or 'pytorch')
 3. The pipeline will automatically handle training and evaluation
 
-## Citation
-
-If you use this pipeline in your research, please cite the original protein classification methodology and this implementation.

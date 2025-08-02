@@ -7,6 +7,7 @@ import seaborn as sns
 
 import config
 
+
 def generate_benchmark_plots(level, output_dir=None):
     """
     Generates a vertical bar chart comparing the performance of all trained models.

@@ -1,10 +1,10 @@
 {
-  "overall_accuracy_original_set": 86.61800486618006,
-  "one_vs_all_accuracy": 94.02460456942003,
-  "total_test_samples": 411,
-  "total_correct_predictions": 356,
-  "total_tp": 356,
-  "total_fp": 13,
-  "total_tn": 714,
-  "total_fn": 55
+  "overall_accuracy_original_set": 83.29621380846325,
+  "one_vs_all_accuracy": 95.6369982547993,
+  "total_test_samples": 1347,
+  "total_correct_predictions": 1122,
+  "total_tp": 1122,
+  "total_fp": 0,
+  "total_tn": 3810,
+  "total_fn": 225
 }

@@ -30,13 +30,13 @@ python run_benchmark.py --level subfamily --model all
 python run_benchmark.py --level family --model random_forest
 ```
 
-### Running the Full Pipeline with New Data Splitting (`run_benchmark_new.py`) 
+### Running the Full Pipeline with New Data Splitting (`run_benchmark_same_sup.py`) 
 
-This script is the same as `run_benchmark.py`, but uses the new data splitting strategy.The new data splitting strategy is defined in `data_splitting_new.py`. In which the true negative set is generated for each subfamily or family by selecting negative control proteins from *same* superfamilies.
+This script is the same as `run_benchmark.py`, but uses the new data splitting strategy.The new data splitting strategy is defined in `data_splitting_same_sup.py`. In which the true negative set is generated for each subfamily or family by selecting negative control proteins from *same* superfamilies.
 
 **Usage:**
 ```bash
-python run_benchmark_new.py --level [family|subfamily] --model [all|random_forest|svm|neural_network]
+python run_benchmark_same_sup.py --level [family|subfamily] --model [all|random_forest|svm|neural_network]
 ```
 
 ### Generating Benchmark Plots Separately (`plot.py`)

@@ -3,7 +3,7 @@
 +------------------------+------------------------------------------+-----------------------------------+---------------------------+
 | Confidence Threshold   |   Original Test Proteins Above Threshold |   % of Original Test Set Retained |   One-vs-All Accuracy (%) |
 +========================+==========================================+===================================+===========================+
-| 0.0 (Full Test Set)    |                                      484 |                               100 |                     88.23 |
+| 0.0 (Full Test Set)    |                                     1561 |                               100 |                     91.66 |
 +------------------------+------------------------------------------+-----------------------------------+---------------------------+
 | 0.1                    |                                        0 |                                 0 |                      0    |
 +------------------------+------------------------------------------+-----------------------------------+---------------------------+
@@ -32,15 +32,15 @@ Column Definitions:
 +-----------------------------------------------+---------+
 | Metric                                        | Value   |
 +===============================================+=========+
-| Total Test Proteins (Original Set)            | 484     |
+| Total Test Proteins (Original Set)            | 1561    |
 +-----------------------------------------------+---------+
-| Total Negative Controls                       | 1258    |
+| Total Negative Controls                       | 5635    |
 +-----------------------------------------------+---------+
-| Total Test Samples (incl. Negative Controls)  | 1742    |
+| Total Test Samples (incl. Negative Controls)  | 7196    |
 +-----------------------------------------------+---------+
-| Total Correct Predictions (Original Set)      | 286     |
+| Total Correct Predictions (Original Set)      | 963     |
 +-----------------------------------------------+---------+
-| One-vs-All Accuracy (incl. Negative Controls) | 88.23%  |
+| One-vs-All Accuracy (incl. Negative Controls) | 91.66%  |
 +-----------------------------------------------+---------+
 
 === One-vs-All Binary Classification Metrics ===
@@ -51,32 +51,32 @@ Note: These metrics are calculated by treating each subfamily as a separate bina
 +----------------------+-----------+
 | Metric               |     Value |
 +======================+===========+
-| True Positives (TP)  |  286      |
+| True Positives (TP)  |  963      |
 +----------------------+-----------+
-| False Positives (FP) |    7      |
+| False Positives (FP) |    2      |
 +----------------------+-----------+
-| True Negatives (TN)  | 1251      |
+| True Negatives (TN)  | 5633      |
 +----------------------+-----------+
-| False Negatives (FN) |  198      |
+| False Negatives (FN) |  598      |
 +----------------------+-----------+
-| Precision            |    0.9761 |
+| Precision            |    0.9979 |
 +----------------------+-----------+
-| Recall/Sensitivity   |    0.5909 |
+| Recall/Sensitivity   |    0.6169 |
 +----------------------+-----------+
-| Specificity          |    0.9944 |
+| Specificity          |    0.9996 |
 +----------------------+-----------+
-| F1 Score             |    0.7362 |
+| F1 Score             |    0.7625 |
 +----------------------+-----------+
-| One-vs-All Accuracy  |    0.8823 |
+| One-vs-All Accuracy  |    0.9166 |
 +----------------------+-----------+
 
 === Misclassification Statistics (Original Test Set) ===
 +--------------------------+---------+--------------+
 | Error Type               |   Count | Percentage   |
 +==========================+=========+==============+
-| Total Misclassifications |     198 | 100%         |
+| Total Misclassifications |     598 | 100%         |
 +--------------------------+---------+--------------+
-| Same Family Errors       |      87 | 43.94%       |
+| Same Family Errors       |     213 | 35.62%       |
 +--------------------------+---------+--------------+
-| Different Family Errors  |     111 | 56.06%       |
+| Different Family Errors  |     385 | 64.38%       |
 +--------------------------+---------+--------------+
