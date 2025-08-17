@@ -11,6 +11,8 @@ SUPERFAMILY_MAP_PATH = os.path.join(DATA_SOURCE_DIR, 'fam2supefamily.csv')
 
 # --- Model & Feature Configuration ---
 MAX_DOMAINS = 50
+MAX_SEPARATORS = 20
+EVALUE_THRESHOLD = 1e-300
 
 # --- Training Configuration ---
 # (Could be expanded for PyTorch specific settings)

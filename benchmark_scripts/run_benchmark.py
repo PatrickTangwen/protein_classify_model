@@ -37,7 +37,7 @@ def main():
 
     # --- 2. Feature Engineering ---
     print("\n=== Step 2: Building Features ===")
-    X, y, label_encoder, domain_vocab, feature_stats = build_features(df, level=args.level, max_domains=config.MAX_DOMAINS)
+    X, y, label_encoder, domain_vocab, feature_stats = build_features(df, level=args.level, max_domains=config.MAX_DOMAINS, max_separators=config.MAX_SEPARATORS, evalue_threshold=config.EVALUE_THRESHOLD)
     print(f"Feature matrix shape: {X.shape}")
     print(f"Number of classes: {len(label_encoder.classes_)}")
 
