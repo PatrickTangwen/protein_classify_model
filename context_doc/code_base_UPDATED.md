@@ -115,8 +115,8 @@ The `run_benchmark.py` script executes the following steps in sequence:
 - **`load_superfamily_map()`**: Reads `fam2supefamily.csv` and returns a clean dictionary mapping family IDs to superfamily labels.
 
 ### `feature_engineering.py`
-- **`build_features()`**: This function is now fully decoupled from any specific ML framework. It generates a comprehensive feature vector for each protein, including:
-    - **Domain Features**: Presence (one-hot), normalized positions, log-transformed scores, sequential order, and normalized count.
+- **`build_features()`**: This function generates a feature vector for each protein, including:
+    - **Domain Features**: Presence (one-hot), normalized positions, log-transformed scores, sequential order, and domain count.
     - **Separator Features**: Normalized positions and lengths, padded to a fixed size.
 - It returns a tuple containing the scaled feature matrix (`X`), encoded labels (`y`), the `LabelEncoder` instance, the domain vocabulary, and the scaling statistics (mean/std).
 
@@ -214,3 +214,8 @@ A standalone utility for creating customizable model comparison plots. It reads 
 - Seaborn
 - Tabulate
 - Joblib 
+
+
+
+
+

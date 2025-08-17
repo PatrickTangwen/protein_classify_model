@@ -3,7 +3,7 @@
 +------------------------+------------------------------------------+-----------------------------------+---------------------------+
 | Confidence Threshold   |   Original Test Proteins Above Threshold |   % of Original Test Set Retained |   One-vs-All Accuracy (%) |
 +========================+==========================================+===================================+===========================+
-| 0.0 (Full Test Set)    |                                      411 |                               100 |                     90.51 |
+| 0.0 (Full Test Set)    |                                      411 |                               100 |                     94.73 |
 +------------------------+------------------------------------------+-----------------------------------+---------------------------+
 | 0.1                    |                                        0 |                                 0 |                      0    |
 +------------------------+------------------------------------------+-----------------------------------+---------------------------+
@@ -38,9 +38,9 @@ Column Definitions:
 +-----------------------------------------------+---------+
 | Total Test Samples (incl. Negative Controls)  | 1138    |
 +-----------------------------------------------+---------+
-| Total Correct Predictions (Original Set)      | 310     |
+| Total Correct Predictions (Original Set)      | 361     |
 +-----------------------------------------------+---------+
-| One-vs-All Accuracy (incl. Negative Controls) | 90.51%  |
+| One-vs-All Accuracy (incl. Negative Controls) | 94.73%  |
 +-----------------------------------------------+---------+
 
 === One-vs-All Binary Classification Metrics ===
@@ -51,32 +51,32 @@ Note: These metrics are calculated by treating each family as a separate binary 
 +----------------------+----------+
 | Metric               |    Value |
 +======================+==========+
-| True Positives (TP)  | 310      |
+| True Positives (TP)  | 361      |
 +----------------------+----------+
-| False Positives (FP) |   7      |
+| False Positives (FP) |  10      |
 +----------------------+----------+
-| True Negatives (TN)  | 720      |
+| True Negatives (TN)  | 717      |
 +----------------------+----------+
-| False Negatives (FN) | 101      |
+| False Negatives (FN) |  50      |
 +----------------------+----------+
-| Precision            |   0.9779 |
+| Precision            |   0.973  |
 +----------------------+----------+
-| Recall/Sensitivity   |   0.7543 |
+| Recall/Sensitivity   |   0.8783 |
 +----------------------+----------+
-| Specificity          |   0.9904 |
+| Specificity          |   0.9862 |
 +----------------------+----------+
-| F1 Score             |   0.8516 |
+| F1 Score             |   0.9233 |
 +----------------------+----------+
-| One-vs-All Accuracy  |   0.9051 |
+| One-vs-All Accuracy  |   0.9473 |
 +----------------------+----------+
 
 === Misclassification Statistics (Original Test Set) ===
 +------------------------------+---------+--------------+
 | Error Type                   |   Count | Percentage   |
 +==============================+=========+==============+
-| Total Misclassifications     |     101 | 100%         |
+| Total Misclassifications     |      50 | 100%         |
 +------------------------------+---------+--------------+
-| Same Superfamily Errors      |      13 | 12.87%       |
+| Same Superfamily Errors      |      16 | 32.00%       |
 +------------------------------+---------+--------------+
-| Different Superfamily Errors |      88 | 87.13%       |
+| Different Superfamily Errors |      34 | 68.00%       |
 +------------------------------+---------+--------------+

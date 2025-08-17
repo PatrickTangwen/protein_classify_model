@@ -18,11 +18,11 @@ Testing Set Statistics:
       - Accession: XP_022087427 | Subfamily: 1.A.105.1 | Family: 1.A.105
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: XP_015918646 | Subfamily: 1.C.63.1 | Family: 1.C.63
-      2. Accession: RDI86773 | Subfamily: 1.C.104.3 | Family: 1.C.104
-      3. Accession: XP_008081830 | Subfamily: 1.C.104.2 | Family: 1.C.104
-      4. Accession: Q8LPS2 | Subfamily: 9.A.43.1 | Family: 9.A.43
-      5. Accession: KQJ85610 | Subfamily: 9.A.43.1 | Family: 9.A.43
+      1. Accession: CCE37669 | Subfamily: 8.A.35.1 | Family: 8.A.35
+      2. Accession: XP_015973699 | Subfamily: 9.A.43.1 | Family: 9.A.43
+      3. Accession: KQJ85610 | Subfamily: 9.A.43.1 | Family: 9.A.43
+      4. Accession: XP_008081830 | Subfamily: 1.C.104.2 | Family: 1.C.104
+      5. Accession: XP_007925356 | Subfamily: 1.C.104.3 | Family: 1.C.104
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -276,11 +276,11 @@ Testing Set Statistics:
       - Accession: J0DPD5 | Subfamily: 1.A.36.2 | Family: 1.A.36
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: M7B5M6 | Subfamily: 9.B.130.2 | Family: 9.B.130
-      2. Accession: TGO16390 | Subfamily: 1.A.81.4 | Family: 1.A.81
-      3. Accession: U6J488 | Subfamily: 9.B.130.2 | Family: 9.B.130
-      4. Accession: O55100 | Subfamily: 9.B.130.2 | Family: 9.B.130
-      5. Accession: Q8N4S9 | Subfamily: 9.B.41.2 | Family: 9.B.41
+      1. Accession: U6J488 | Subfamily: 9.B.130.2 | Family: 9.B.130
+      2. Accession: Q8N4S9 | Subfamily: 9.B.41.2 | Family: 9.B.41
+      3. Accession: M7B5M6 | Subfamily: 9.B.130.2 | Family: 9.B.130
+      4. Accession: CAF0733683 | Subfamily: 1.A.82.1 | Family: 1.A.82
+      5. Accession: O55100 | Subfamily: 9.B.130.2 | Family: 9.B.130
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -422,11 +422,11 @@ Testing Set Statistics:
       - Accession: TGO16390 | Subfamily: 1.A.81.4 | Family: 1.A.81
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: O55100 | Subfamily: 9.B.130.2 | Family: 9.B.130
-      2. Accession: CAF0733683 | Subfamily: 1.A.82.1 | Family: 1.A.82
-      3. Accession: Q7Z7J7 | Subfamily: 1.A.82.1 | Family: 1.A.82
-      4. Accession: J0DPD5 | Subfamily: 1.A.36.2 | Family: 1.A.36
-      5. Accession: U6J488 | Subfamily: 9.B.130.2 | Family: 9.B.130
+      1. Accession: U6J488 | Subfamily: 9.B.130.2 | Family: 9.B.130
+      2. Accession: Q7Z7J7 | Subfamily: 1.A.82.1 | Family: 1.A.82
+      3. Accession: J0DPD5 | Subfamily: 1.A.36.2 | Family: 1.A.36
+      4. Accession: M7B5M6 | Subfamily: 9.B.130.2 | Family: 9.B.130
+      5. Accession: Q8N4S9 | Subfamily: 9.B.41.2 | Family: 9.B.41
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -464,10 +464,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: Q8N4S9 | Subfamily: 9.B.41.2 | Family: 9.B.41
-      2. Accession: J0DPD5 | Subfamily: 1.A.36.2 | Family: 1.A.36
-      3. Accession: O55100 | Subfamily: 9.B.130.2 | Family: 9.B.130
+      2. Accession: M7B5M6 | Subfamily: 9.B.130.2 | Family: 9.B.130
+      3. Accession: J0DPD5 | Subfamily: 1.A.36.2 | Family: 1.A.36
       4. Accession: Q8I132 | Subfamily: 1.A.36.2 | Family: 1.A.36
-      5. Accession: TGO16390 | Subfamily: 1.A.81.4 | Family: 1.A.81
+      5. Accession: H9H2J6 | Subfamily: 9.B.41.2 | Family: 9.B.41
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -607,11 +607,11 @@ Testing Set Statistics:
       - Accession: H8JS16 | Subfamily: 1.B.10.3 | Family: 1.B.10
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_101656401 | Subfamily: 1.B.92.2 | Family: 1.B.92
-      2. Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
-      3. Accession: F8GDI1 | Subfamily: 1.B.81.1 | Family: 1.B.81
-      4. Accession: Q1DFS2 | Subfamily: 1.B.61.1 | Family: 1.B.61
-      5. Accession: D3SLU1 | Subfamily: 1.B.5.2 | Family: 1.B.5
+      1. Accession: WP_054039809 | Subfamily: 1.B.81.2 | Family: 1.B.81
+      2. Accession: B0RRH7 | Subfamily: 1.B.18.3 | Family: 1.B.18
+      3. Accession: Q2K0Q0 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      4. Accession: D5CMQ7 | Subfamily: 1.B.5.2 | Family: 1.B.5
+      5. Accession: A4WXA3 | Subfamily: 1.B.7.1 | Family: 1.B.7
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -654,11 +654,11 @@ Testing Set Statistics:
       - Accession: J4K5X9 | Subfamily: 1.B.13.3 | Family: 1.B.13
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: A4WXA3 | Subfamily: 1.B.7.1 | Family: 1.B.7
-      2. Accession: P45564 | Subfamily: 1.B.10.3 | Family: 1.B.10
-      3. Accession: TET05321 | Subfamily: 1.B.95.5 | Family: 1.B.95
-      4. Accession: WP_132308094 | Subfamily: 1.B.92.1 | Family: 1.B.92
-      5. Accession: WP_068467660 | Subfamily: 1.B.95.4 | Family: 1.B.95
+      1. Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
+      2. Accession: Q2K0Q0 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      3. Accession: M4U9K6 | Subfamily: 1.B.35.3 | Family: 1.B.35
+      4. Accession: WP_146917420 | Subfamily: 1.B.95.5 | Family: 1.B.95
+      5. Accession: A6DTR9 | Subfamily: 1.B.62.1 | Family: 1.B.62
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -692,11 +692,11 @@ Testing Set Statistics:
       - Accession: A1T0X2 | Subfamily: 1.B.15.1 | Family: 1.B.15
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P0A932 | Subfamily: 1.B.18.3 | Family: 1.B.18
-      2. Accession: Q1CVQ0 | Subfamily: 1.B.18.3 | Family: 1.B.18
-      3. Accession: F6D908 | Subfamily: 1.B.68.1 | Family: 1.B.68
-      4. Accession: WP_068467660 | Subfamily: 1.B.95.4 | Family: 1.B.95
-      5. Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
+      1. Accession: Q6MQH3 | Subfamily: 1.B.60.1 | Family: 1.B.60
+      2. Accession: Q9L7A9 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      3. Accession: Q5HB83 | Subfamily: 1.B.7.1 | Family: 1.B.7
+      4. Accession: B8K3G3 | Subfamily: 1.B.21.3 | Family: 1.B.21
+      5. Accession: Q1CVQ0 | Subfamily: 1.B.18.3 | Family: 1.B.18
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -744,11 +744,11 @@ Testing Set Statistics:
       - Accession: Q7UGJ0 | Subfamily: 1.B.16.2 | Family: 1.B.16
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q2K0Q0 | Subfamily: 1.B.70.1 | Family: 1.B.70
-      2. Accession: Q1DFS2 | Subfamily: 1.B.61.1 | Family: 1.B.61
-      3. Accession: D0X4R0 | Subfamily: 1.B.21.3 | Family: 1.B.21
-      4. Accession: F8GDI1 | Subfamily: 1.B.81.1 | Family: 1.B.81
-      5. Accession: A4WXA3 | Subfamily: 1.B.7.1 | Family: 1.B.7
+      1. Accession: C9QGR6 | Subfamily: 1.B.35.4 | Family: 1.B.35
+      2. Accession: Q9L7A9 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      3. Accession: C9U574 | Subfamily: 1.B.13.3 | Family: 1.B.13
+      4. Accession: B0VUV8 | Subfamily: 1.B.39.3 | Family: 1.B.39
+      5. Accession: B8FMP7 | Subfamily: 9.B.170.1 | Family: 9.B.170
   - Correct predictions: 3
   - Accuracy (Original Test Set): 75.00%
 
@@ -769,9 +769,9 @@ Misclassification Analysis:
   - Different Superfamily errors: 0
 
 Misclassified Proteins Details:
-  - Protein: Q7UGJ0
+  - Protein: O66915
     Predicted as: 1.B.5
-    Confidence: 0.5027
+    Confidence: 0.9196
     Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -803,11 +803,11 @@ Testing Set Statistics:
       - Accession: Q1CVQ0 | Subfamily: 1.B.18.3 | Family: 1.B.18
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: E8M3M3 | Subfamily: 1.B.21.3 | Family: 1.B.21
-      2. Accession: Q6GZ99 | Subfamily: 1.B.49.1 | Family: 1.B.49
-      3. Accession: D5CMQ7 | Subfamily: 1.B.5.2 | Family: 1.B.5
-      4. Accession: KER09053 | Subfamily: 1.B.81.2 | Family: 1.B.81
-      5. Accession: Q1DFS2 | Subfamily: 1.B.61.1 | Family: 1.B.61
+      1. Accession: W0A8H9 | Subfamily: 1.B.81.1 | Family: 1.B.81
+      2. Accession: C9QGR6 | Subfamily: 1.B.35.4 | Family: 1.B.35
+      3. Accession: Q44665 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      4. Accession: WP_054039809 | Subfamily: 1.B.81.2 | Family: 1.B.81
+      5. Accession: J4K5X9 | Subfamily: 1.B.13.3 | Family: 1.B.13
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -845,11 +845,11 @@ Testing Set Statistics:
       - Accession: H8FL42 | Subfamily: 1.B.19.1 | Family: 1.B.19
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: J4K5X9 | Subfamily: 1.B.13.3 | Family: 1.B.13
-      2. Accession: A4WXA3 | Subfamily: 1.B.7.1 | Family: 1.B.7
-      3. Accession: Q2K0Q0 | Subfamily: 1.B.70.1 | Family: 1.B.70
-      4. Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
-      5. Accession: TET05321 | Subfamily: 1.B.95.5 | Family: 1.B.95
+      1. Accession: C9U574 | Subfamily: 1.B.13.3 | Family: 1.B.13
+      2. Accession: D0X4R0 | Subfamily: 1.B.21.3 | Family: 1.B.21
+      3. Accession: O66915 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      4. Accession: D8PHW0 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      5. Accession: A4WXA3 | Subfamily: 1.B.7.1 | Family: 1.B.7
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -890,11 +890,11 @@ Testing Set Statistics:
       - Accession: B8K3G3 | Subfamily: 1.B.21.3 | Family: 1.B.21
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: D8PHW0 | Subfamily: 1.B.16.2 | Family: 1.B.16
-      2. Accession: P45564 | Subfamily: 1.B.10.3 | Family: 1.B.10
-      3. Accession: Q07KZ2 | Subfamily: 1.B.62.1 | Family: 1.B.62
-      4. Accession: Q1DFS2 | Subfamily: 1.B.61.1 | Family: 1.B.61
-      5. Accession: F6D908 | Subfamily: 1.B.68.1 | Family: 1.B.68
+      1. Accession: D0LXF9 | Subfamily: 1.B.60.1 | Family: 1.B.60
+      2. Accession: B9D0I1 | Subfamily: 1.B.31.1 | Family: 1.B.31
+      3. Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
+      4. Accession: Q01UI3 | Subfamily: 1.B.13.3 | Family: 1.B.13
+      5. Accession: A5GAN4 | Subfamily: 1.B.39.2 | Family: 1.B.39
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -962,11 +962,11 @@ Testing Set Statistics:
       - Accession: H2IWN4 | Subfamily: 1.B.26.2 | Family: 1.B.26
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: F6D908 | Subfamily: 1.B.68.1 | Family: 1.B.68
-      2. Accession: C6W3T8 | Subfamily: 1.B.73.2 | Family: 1.B.73
-      3. Accession: WP_101656401 | Subfamily: 1.B.92.2 | Family: 1.B.92
-      4. Accession: Q8G8H4 | Subfamily: 1.B.49.1 | Family: 1.B.49
-      5. Accession: A5GAN4 | Subfamily: 1.B.39.2 | Family: 1.B.39
+      1. Accession: WP_105313043 | Subfamily: 1.B.95.5 | Family: 1.B.95
+      2. Accession: A4WXA3 | Subfamily: 1.B.7.1 | Family: 1.B.7
+      3. Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
+      4. Accession: C1F9P1 | Subfamily: 1.B.19.1 | Family: 1.B.19
+      5. Accession: WP_054039809 | Subfamily: 1.B.81.2 | Family: 1.B.81
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -1004,29 +1004,33 @@ Testing Set Statistics:
       1. Accession: W9WL67 | Subfamily: 1.B.69.2 | Family: 1.B.69
       2. Accession: E9BDN5 | Subfamily: 1.B.69.2 | Family: 1.B.69
       3. Accession: Q6GQ39 | Subfamily: 1.B.69.2 | Family: 1.B.69
-  - Correct predictions: 1
-  - Accuracy (Original Test Set): 50.00%
+  - Correct predictions: 0
+  - Accuracy (Original Test Set): 0.00%
 
 Binary Classification Metrics (with negative controls):
-  - True Positives (TP): 1
-  - False Positives (FP): 1
-  - True Negatives (TN): 2
-  - False Negatives (FN): 1
-  - Precision: 0.5000
-  - Recall/Sensitivity: 0.5000
-  - Specificity: 0.6667
-  - F1 Score: 0.5000
-  - Accuracy (incl. Negative Controls): 60.0000
+  - True Positives (TP): 0
+  - False Positives (FP): 3
+  - True Negatives (TN): 0
+  - False Negatives (FN): 2
+  - Precision: 0.0000
+  - Recall/Sensitivity: 0.0000
+  - Specificity: 0.0000
+  - F1 Score: 0.0000
+  - Accuracy (incl. Negative Controls): 0.0000
 
 Misclassification Analysis:
-  - Total misclassifications: 1
-  - Same Superfamily errors: 1
+  - Total misclassifications: 2
+  - Same Superfamily errors: 2
   - Different Superfamily errors: 0
 
 Misclassified Proteins Details:
+  - Protein: K4D2B1
+    Predicted as: 1.B.69
+    Confidence: 0.8102
+    Error Type: same_superfamily
   - Protein: M2X828
     Predicted as: 1.B.69
-    Confidence: 0.7521
+    Confidence: 0.6115
     Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -1050,11 +1054,11 @@ Testing Set Statistics:
       - Accession: B9KFF7 | Subfamily: 1.B.31.1 | Family: 1.B.31
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q9L7A9 | Subfamily: 1.B.70.1 | Family: 1.B.70
-      2. Accession: F8GDI1 | Subfamily: 1.B.81.1 | Family: 1.B.81
-      3. Accession: Q8G8H4 | Subfamily: 1.B.49.1 | Family: 1.B.49
-      4. Accession: E4T302 | Subfamily: 1.B.73.2 | Family: 1.B.73
-      5. Accession: D8PHW0 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      1. Accession: I3ZGF0 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      2. Accession: B0RRH7 | Subfamily: 1.B.18.3 | Family: 1.B.18
+      3. Accession: G6XK71 | Subfamily: 1.B.5.1 | Family: 1.B.5
+      4. Accession: Q72DY0 | Subfamily: 1.B.61.1 | Family: 1.B.61
+      5. Accession: KER09053 | Subfamily: 1.B.81.2 | Family: 1.B.81
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -1146,11 +1150,11 @@ Testing Set Statistics:
       - Accession: C9QGR6 | Subfamily: 1.B.35.4 | Family: 1.B.35
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: B8FMP7 | Subfamily: 9.B.170.1 | Family: 9.B.170
-      2. Accession: P45564 | Subfamily: 1.B.10.3 | Family: 1.B.10
-      3. Accession: I3ZGF0 | Subfamily: 1.B.16.2 | Family: 1.B.16
-      4. Accession: F8GDI1 | Subfamily: 1.B.81.1 | Family: 1.B.81
-      5. Accession: W0A8H9 | Subfamily: 1.B.81.1 | Family: 1.B.81
+      1. Accession: F5SXN1 | Subfamily: 1.B.5.1 | Family: 1.B.5
+      2. Accession: Q01UI3 | Subfamily: 1.B.13.3 | Family: 1.B.13
+      3. Accession: Q6MQH3 | Subfamily: 1.B.60.1 | Family: 1.B.60
+      4. Accession: Q2K0Q0 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      5. Accession: Q72TA0 | Subfamily: 9.B.50.1 | Family: 9.B.50
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -1191,11 +1195,11 @@ Testing Set Statistics:
       - Accession: B0VUV8 | Subfamily: 1.B.39.3 | Family: 1.B.39
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: F6D908 | Subfamily: 1.B.68.1 | Family: 1.B.68
-      2. Accession: O66915 | Subfamily: 1.B.16.2 | Family: 1.B.16
-      3. Accession: G6XK71 | Subfamily: 1.B.5.1 | Family: 1.B.5
-      4. Accession: H8JS16 | Subfamily: 1.B.10.3 | Family: 1.B.10
-      5. Accession: B0RRH7 | Subfamily: 1.B.18.3 | Family: 1.B.18
+      1. Accession: C9U574 | Subfamily: 1.B.13.3 | Family: 1.B.13
+      2. Accession: A5G7L3 | Subfamily: 1.B.78.1 | Family: 1.B.78
+      3. Accession: H8FL42 | Subfamily: 1.B.19.1 | Family: 1.B.19
+      4. Accession: Q2K0Q0 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      5. Accession: Q1DFS2 | Subfamily: 1.B.61.1 | Family: 1.B.61
   - Correct predictions: 2
   - Accuracy (Original Test Set): 66.67%
 
@@ -1212,14 +1216,14 @@ Binary Classification Metrics (with negative controls):
 
 Misclassification Analysis:
   - Total misclassifications: 1
-  - Same Superfamily errors: 0
-  - Different Superfamily errors: 1
+  - Same Superfamily errors: 1
+  - Different Superfamily errors: 0
 
 Misclassified Proteins Details:
   - Protein: A5GAN4
-    Predicted as: 9.A.57
-    Confidence: 0.0805
-    Error Type: different_superfamily
+    Predicted as: 1.B.60
+    Confidence: 0.0761
+    Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
 Family: 1.B.49
@@ -1244,11 +1248,11 @@ Testing Set Statistics:
       - Accession: Q8G8H4 | Subfamily: 1.B.49.1 | Family: 1.B.49
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: B0VUV8 | Subfamily: 1.B.39.3 | Family: 1.B.39
-      2. Accession: D0X4R0 | Subfamily: 1.B.21.3 | Family: 1.B.21
-      3. Accession: B9D0I1 | Subfamily: 1.B.31.1 | Family: 1.B.31
-      4. Accession: Q9L7A9 | Subfamily: 1.B.70.1 | Family: 1.B.70
-      5. Accession: Q72TA0 | Subfamily: 9.B.50.1 | Family: 9.B.50
+      1. Accession: C9QGR6 | Subfamily: 1.B.35.4 | Family: 1.B.35
+      2. Accession: WP_146917420 | Subfamily: 1.B.95.5 | Family: 1.B.95
+      3. Accession: Q6MQH3 | Subfamily: 1.B.60.1 | Family: 1.B.60
+      4. Accession: P45564 | Subfamily: 1.B.10.3 | Family: 1.B.10
+      5. Accession: WP_105313043 | Subfamily: 1.B.95.5 | Family: 1.B.95
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -1294,11 +1298,11 @@ Testing Set Statistics:
       - Accession: D3SLU1 | Subfamily: 1.B.5.2 | Family: 1.B.5
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_105313043 | Subfamily: 1.B.95.5 | Family: 1.B.95
-      2. Accession: I3ZGF0 | Subfamily: 1.B.16.2 | Family: 1.B.16
-      3. Accession: Q9L7A9 | Subfamily: 1.B.70.1 | Family: 1.B.70
-      4. Accession: D0LXF9 | Subfamily: 1.B.60.1 | Family: 1.B.60
-      5. Accession: B9D0I1 | Subfamily: 1.B.31.1 | Family: 1.B.31
+      1. Accession: Q7UGJ0 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      2. Accession: A5GAN4 | Subfamily: 1.B.39.2 | Family: 1.B.39
+      3. Accession: WP_105313043 | Subfamily: 1.B.95.5 | Family: 1.B.95
+      4. Accession: Q72TA0 | Subfamily: 9.B.50.1 | Family: 9.B.50
+      5. Accession: Q07KZ2 | Subfamily: 1.B.62.1 | Family: 1.B.62
   - Correct predictions: 2
   - Accuracy (Original Test Set): 50.00%
 
@@ -1319,13 +1323,13 @@ Misclassification Analysis:
   - Different Superfamily errors: 0
 
 Misclassified Proteins Details:
-  - Protein: F5SXN1
+  - Protein: D5CMQ7
     Predicted as: 1.B.16
-    Confidence: 0.5146
+    Confidence: 0.6920
     Error Type: same_superfamily
   - Protein: D3SLU1
     Predicted as: 1.B.16
-    Confidence: 0.5036
+    Confidence: 0.5987
     Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -1352,11 +1356,11 @@ Testing Set Statistics:
       - Accession: Q6MQH3 | Subfamily: 1.B.60.1 | Family: 1.B.60
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q72TA0 | Subfamily: 9.B.50.1 | Family: 9.B.50
-      2. Accession: M4U9K6 | Subfamily: 1.B.35.3 | Family: 1.B.35
-      3. Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
-      4. Accession: Q7UGJ0 | Subfamily: 1.B.16.2 | Family: 1.B.16
-      5. Accession: WP_101656401 | Subfamily: 1.B.92.2 | Family: 1.B.92
+      1. Accession: A1T0X2 | Subfamily: 1.B.15.1 | Family: 1.B.15
+      2. Accession: WP_146917420 | Subfamily: 1.B.95.5 | Family: 1.B.95
+      3. Accession: WP_054039809 | Subfamily: 1.B.81.2 | Family: 1.B.81
+      4. Accession: KER09053 | Subfamily: 1.B.81.2 | Family: 1.B.81
+      5. Accession: Q1Z3D7 | Subfamily: 1.B.35.4 | Family: 1.B.35
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -1392,11 +1396,11 @@ Testing Set Statistics:
       - Accession: Q72DY0 | Subfamily: 1.B.61.1 | Family: 1.B.61
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: H8FL42 | Subfamily: 1.B.19.1 | Family: 1.B.19
-      2. Accession: D8PHW0 | Subfamily: 1.B.16.2 | Family: 1.B.16
-      3. Accession: C9QGR6 | Subfamily: 1.B.35.4 | Family: 1.B.35
-      4. Accession: F7NHB4 | Subfamily: 9.B.50.2 | Family: 9.B.50
-      5. Accession: A6DTR9 | Subfamily: 1.B.62.1 | Family: 1.B.62
+      1. Accession: WP_101656401 | Subfamily: 1.B.92.2 | Family: 1.B.92
+      2. Accession: Q7UGJ0 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      3. Accession: Q1Z3D7 | Subfamily: 1.B.35.4 | Family: 1.B.35
+      4. Accession: D0X4R0 | Subfamily: 1.B.21.3 | Family: 1.B.21
+      5. Accession: H2IWN4 | Subfamily: 1.B.26.2 | Family: 1.B.26
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -1434,11 +1438,11 @@ Testing Set Statistics:
       - Accession: A6DTR9 | Subfamily: 1.B.62.1 | Family: 1.B.62
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: D3SLU1 | Subfamily: 1.B.5.2 | Family: 1.B.5
-      2. Accession: Q6MQH3 | Subfamily: 1.B.60.1 | Family: 1.B.60
-      3. Accession: B9M7K9 | Subfamily: 1.B.39.2 | Family: 1.B.39
-      4. Accession: M4U9K6 | Subfamily: 1.B.35.3 | Family: 1.B.35
-      5. Accession: WP_105313043 | Subfamily: 1.B.95.5 | Family: 1.B.95
+      1. Accession: A4WXA3 | Subfamily: 1.B.7.1 | Family: 1.B.7
+      2. Accession: WP_101656401 | Subfamily: 1.B.92.2 | Family: 1.B.92
+      3. Accession: D8PHW0 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      4. Accession: B9D0I1 | Subfamily: 1.B.31.1 | Family: 1.B.31
+      5. Accession: H8JS16 | Subfamily: 1.B.10.3 | Family: 1.B.10
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -1471,10 +1475,10 @@ Testing Set Statistics:
       - Accession: F6D908 | Subfamily: 1.B.68.1 | Family: 1.B.68
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: F5SXN1 | Subfamily: 1.B.5.1 | Family: 1.B.5
-      2. Accession: WP_068467660 | Subfamily: 1.B.95.4 | Family: 1.B.95
-      3. Accession: B9KFF7 | Subfamily: 1.B.31.1 | Family: 1.B.31
-      4. Accession: A5GAN4 | Subfamily: 1.B.39.2 | Family: 1.B.39
+      1. Accession: C1F9P1 | Subfamily: 1.B.19.1 | Family: 1.B.19
+      2. Accession: WP_105313043 | Subfamily: 1.B.95.5 | Family: 1.B.95
+      3. Accession: F5SXN1 | Subfamily: 1.B.5.1 | Family: 1.B.5
+      4. Accession: D8PHW0 | Subfamily: 1.B.16.2 | Family: 1.B.16
       5. Accession: D0LXF9 | Subfamily: 1.B.60.1 | Family: 1.B.60
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
@@ -1519,29 +1523,37 @@ Testing Set Statistics:
     Negative Controls:
       1. Accession: K4D2B1 | Subfamily: 1.B.30.4 | Family: 1.B.30
       2. Accession: M2X828 | Subfamily: 1.B.30.5 | Family: 1.B.30
-  - Correct predictions: 2
-  - Accuracy (Original Test Set): 66.67%
+  - Correct predictions: 0
+  - Accuracy (Original Test Set): 0.00%
 
 Binary Classification Metrics (with negative controls):
-  - True Positives (TP): 2
-  - False Positives (FP): 1
-  - True Negatives (TN): 1
-  - False Negatives (FN): 1
-  - Precision: 0.6667
-  - Recall/Sensitivity: 0.6667
-  - Specificity: 0.5000
-  - F1 Score: 0.6667
-  - Accuracy (incl. Negative Controls): 60.0000
+  - True Positives (TP): 0
+  - False Positives (FP): 2
+  - True Negatives (TN): 0
+  - False Negatives (FN): 3
+  - Precision: 0.0000
+  - Recall/Sensitivity: 0.0000
+  - Specificity: 0.0000
+  - F1 Score: 0.0000
+  - Accuracy (incl. Negative Controls): 0.0000
 
 Misclassification Analysis:
-  - Total misclassifications: 1
-  - Same Superfamily errors: 1
+  - Total misclassifications: 3
+  - Same Superfamily errors: 3
   - Different Superfamily errors: 0
 
 Misclassified Proteins Details:
+  - Protein: W9WL67
+    Predicted as: 1.B.30
+    Confidence: 0.7740
+    Error Type: same_superfamily
+  - Protein: E9BDN5
+    Predicted as: 1.B.30
+    Confidence: 0.5668
+    Error Type: same_superfamily
   - Protein: Q6GQ39
     Predicted as: 1.B.30
-    Confidence: 0.8561
+    Confidence: 0.6266
     Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -1566,11 +1578,11 @@ Testing Set Statistics:
       - Accession: Q5HB83 | Subfamily: 1.B.7.1 | Family: 1.B.7
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: G6XK71 | Subfamily: 1.B.5.1 | Family: 1.B.5
-      2. Accession: Q72DY0 | Subfamily: 1.B.61.1 | Family: 1.B.61
-      3. Accession: D5CMQ7 | Subfamily: 1.B.5.2 | Family: 1.B.5
-      4. Accession: Q8G8H4 | Subfamily: 1.B.49.1 | Family: 1.B.49
-      5. Accession: WP_101656401 | Subfamily: 1.B.92.2 | Family: 1.B.92
+      1. Accession: P45564 | Subfamily: 1.B.10.3 | Family: 1.B.10
+      2. Accession: A5GAN4 | Subfamily: 1.B.39.2 | Family: 1.B.39
+      3. Accession: WP_132308094 | Subfamily: 1.B.92.1 | Family: 1.B.92
+      4. Accession: Q2K0Q0 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      5. Accession: H8FL42 | Subfamily: 1.B.19.1 | Family: 1.B.19
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -1614,11 +1626,11 @@ Testing Set Statistics:
       - Accession: Q44665 | Subfamily: 1.B.70.1 | Family: 1.B.70
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: F5SXN1 | Subfamily: 1.B.5.1 | Family: 1.B.5
-      2. Accession: D5CMQ7 | Subfamily: 1.B.5.2 | Family: 1.B.5
-      3. Accession: WP_101656401 | Subfamily: 1.B.92.2 | Family: 1.B.92
-      4. Accession: O66915 | Subfamily: 1.B.16.2 | Family: 1.B.16
-      5. Accession: F6D908 | Subfamily: 1.B.68.1 | Family: 1.B.68
+      1. Accession: D0LXF9 | Subfamily: 1.B.60.1 | Family: 1.B.60
+      2. Accession: WP_105313043 | Subfamily: 1.B.95.5 | Family: 1.B.95
+      3. Accession: C9QGR6 | Subfamily: 1.B.35.4 | Family: 1.B.35
+      4. Accession: WP_054039809 | Subfamily: 1.B.81.2 | Family: 1.B.81
+      5. Accession: B9M7K9 | Subfamily: 1.B.39.2 | Family: 1.B.39
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -1654,11 +1666,11 @@ Testing Set Statistics:
       - Accession: E4T302 | Subfamily: 1.B.73.2 | Family: 1.B.73
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q01UI3 | Subfamily: 1.B.13.3 | Family: 1.B.13
-      2. Accession: Q2K0Q0 | Subfamily: 1.B.70.1 | Family: 1.B.70
-      3. Accession: F7NHB4 | Subfamily: 9.B.50.2 | Family: 9.B.50
-      4. Accession: Q72TA0 | Subfamily: 9.B.50.1 | Family: 9.B.50
-      5. Accession: B8FMP7 | Subfamily: 9.B.170.1 | Family: 9.B.170
+      1. Accession: Q7UGJ0 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      2. Accession: M4U9K6 | Subfamily: 1.B.35.3 | Family: 1.B.35
+      3. Accession: H2IWN4 | Subfamily: 1.B.26.2 | Family: 1.B.26
+      4. Accession: Q44665 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      5. Accession: A6DTR9 | Subfamily: 1.B.62.1 | Family: 1.B.62
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -1692,11 +1704,11 @@ Testing Set Statistics:
       - Accession: A5G7L3 | Subfamily: 1.B.78.1 | Family: 1.B.78
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: A6DTR9 | Subfamily: 1.B.62.1 | Family: 1.B.62
-      2. Accession: Q1Z3D7 | Subfamily: 1.B.35.4 | Family: 1.B.35
-      3. Accession: H8FL42 | Subfamily: 1.B.19.1 | Family: 1.B.19
-      4. Accession: B0VUV8 | Subfamily: 1.B.39.3 | Family: 1.B.39
-      5. Accession: Q6MQH3 | Subfamily: 1.B.60.1 | Family: 1.B.60
+      1. Accession: B9M7K9 | Subfamily: 1.B.39.2 | Family: 1.B.39
+      2. Accession: B8FMP7 | Subfamily: 9.B.170.1 | Family: 9.B.170
+      3. Accession: B9KFF7 | Subfamily: 1.B.31.1 | Family: 1.B.31
+      4. Accession: Q9L7A9 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      5. Accession: J4K5X9 | Subfamily: 1.B.13.3 | Family: 1.B.13
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -1743,11 +1755,11 @@ Testing Set Statistics:
       - Accession: WP_054039809 | Subfamily: 1.B.81.2 | Family: 1.B.81
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_146917420 | Subfamily: 1.B.95.5 | Family: 1.B.95
-      2. Accession: Q1DFS2 | Subfamily: 1.B.61.1 | Family: 1.B.61
-      3. Accession: Q6LL41 | Subfamily: 1.B.35.4 | Family: 1.B.35
-      4. Accession: H8FL42 | Subfamily: 1.B.19.1 | Family: 1.B.19
-      5. Accession: D3SLU1 | Subfamily: 1.B.5.2 | Family: 1.B.5
+      1. Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
+      2. Accession: G6XK71 | Subfamily: 1.B.5.1 | Family: 1.B.5
+      3. Accession: Q6GZ99 | Subfamily: 1.B.49.1 | Family: 1.B.49
+      4. Accession: H2IWN4 | Subfamily: 1.B.26.2 | Family: 1.B.26
+      5. Accession: O66915 | Subfamily: 1.B.16.2 | Family: 1.B.16
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -1785,11 +1797,11 @@ Testing Set Statistics:
       - Accession: WP_101656401 | Subfamily: 1.B.92.2 | Family: 1.B.92
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: H2IWN4 | Subfamily: 1.B.26.2 | Family: 1.B.26
-      2. Accession: Q1DFS2 | Subfamily: 1.B.61.1 | Family: 1.B.61
-      3. Accession: Q44665 | Subfamily: 1.B.70.1 | Family: 1.B.70
-      4. Accession: A5G7L3 | Subfamily: 1.B.78.1 | Family: 1.B.78
-      5. Accession: Q2K0Q0 | Subfamily: 1.B.70.1 | Family: 1.B.70
+      1. Accession: Q72TA0 | Subfamily: 9.B.50.1 | Family: 9.B.50
+      2. Accession: H2IWN4 | Subfamily: 1.B.26.2 | Family: 1.B.26
+      3. Accession: P45564 | Subfamily: 1.B.10.3 | Family: 1.B.10
+      4. Accession: Q1CVQ0 | Subfamily: 1.B.18.3 | Family: 1.B.18
+      5. Accession: D3SLU1 | Subfamily: 1.B.5.2 | Family: 1.B.5
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -1836,11 +1848,11 @@ Testing Set Statistics:
       - Accession: WP_105313043 | Subfamily: 1.B.95.5 | Family: 1.B.95
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P45564 | Subfamily: 1.B.10.3 | Family: 1.B.10
-      2. Accession: Q5HB83 | Subfamily: 1.B.7.1 | Family: 1.B.7
-      3. Accession: J4K5X9 | Subfamily: 1.B.13.3 | Family: 1.B.13
-      4. Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
-      5. Accession: A5GAN4 | Subfamily: 1.B.39.2 | Family: 1.B.39
+      1. Accession: KER09053 | Subfamily: 1.B.81.2 | Family: 1.B.81
+      2. Accession: G6XK71 | Subfamily: 1.B.5.1 | Family: 1.B.5
+      3. Accession: B9KFF7 | Subfamily: 1.B.31.1 | Family: 1.B.31
+      4. Accession: D8PHW0 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      5. Accession: P0A932 | Subfamily: 1.B.18.3 | Family: 1.B.18
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -1872,10 +1884,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: P84962 | Subfamily: 1.C.24.1 | Family: 1.C.24
-      2. Accession: Q9L6W3 | Subfamily: 1.C.65.2 | Family: 1.C.65
-      3. Accession: WP_080375718 | Subfamily: 1.C.24.1 | Family: 1.C.24
-      4. Accession: Q6TGQ7 | Subfamily: 1.C.24.1 | Family: 1.C.24
-      5. Accession: A7GJP5 | Subfamily: 1.C.31.2 | Family: 1.C.31
+      2. Accession: WP_080375718 | Subfamily: 1.C.24.1 | Family: 1.C.24
+      3. Accession: P83002 | Subfamily: 1.C.24.1 | Family: 1.C.24
+      4. Accession: Q9L6W3 | Subfamily: 1.C.65.2 | Family: 1.C.65
+      5. Accession: Q6TGQ7 | Subfamily: 1.C.24.1 | Family: 1.C.24
   - Correct predictions: 0
   - Accuracy (Original Test Set): 0.00%
 
@@ -1898,7 +1910,7 @@ Misclassification Analysis:
 Misclassified Proteins Details:
   - Protein: C6SS71
     Predicted as: 1.C.26
-    Confidence: 0.9688
+    Confidence: 0.6193
     Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -1929,11 +1941,11 @@ Testing Set Statistics:
       - Accession: XP_007925356 | Subfamily: 1.C.104.3 | Family: 1.C.104
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: XP_015973699 | Subfamily: 9.A.43.1 | Family: 9.A.43
+      1. Accession: Q8LPS2 | Subfamily: 9.A.43.1 | Family: 9.A.43
       2. Accession: XP_022087427 | Subfamily: 1.A.105.1 | Family: 1.A.105
-      3. Accession: Q8LPS2 | Subfamily: 9.A.43.1 | Family: 9.A.43
-      4. Accession: XP_015918646 | Subfamily: 1.C.63.1 | Family: 1.C.63
-      5. Accession: KQJ85610 | Subfamily: 9.A.43.1 | Family: 9.A.43
+      3. Accession: XP_015918646 | Subfamily: 1.C.63.1 | Family: 1.C.63
+      4. Accession: KQJ85610 | Subfamily: 9.A.43.1 | Family: 9.A.43
+      5. Accession: CCE37669 | Subfamily: 8.A.35.1 | Family: 8.A.35
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -2109,11 +2121,11 @@ Testing Set Statistics:
       - Accession: J9HUA3 | Subfamily: 1.C.13.1 | Family: 1.C.13
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q8QGR0 | Subfamily: 1.C.74.1 | Family: 1.C.74
-      2. Accession: Q09098 | Subfamily: 8.A.31.1 | Family: 8.A.31
-      3. Accession: D1J6Q5 | Subfamily: 1.C.14.1 | Family: 1.C.14
-      4. Accession: AED89561 | Subfamily: 8.B.23.2 | Family: 8.B.23
-      5. Accession: P81782 | Subfamily: 8.B.23.2 | Family: 8.B.23
+      1. Accession: WP_047703972 | Subfamily: 1.C.14.1 | Family: 1.C.14
+      2. Accession: P81782 | Subfamily: 8.B.23.2 | Family: 8.B.23
+      3. Accession: A7IZR5 | Subfamily: 1.C.78.1 | Family: 1.C.78
+      4. Accession: Q8QGR0 | Subfamily: 1.C.74.1 | Family: 1.C.74
+      5. Accession: Q45728 | Subfamily: 1.C.5.3 | Family: 1.C.5
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -2186,11 +2198,11 @@ Testing Set Statistics:
       - Accession: D1J6Q5 | Subfamily: 1.C.14.1 | Family: 1.C.14
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q09098 | Subfamily: 8.A.31.1 | Family: 8.A.31
-      2. Accession: Q8QGR0 | Subfamily: 1.C.74.1 | Family: 1.C.74
-      3. Accession: R7ZEE7 | Subfamily: 1.C.5.2 | Family: 1.C.5
+      1. Accession: P01382 | Subfamily: 1.C.74.1 | Family: 1.C.74
+      2. Accession: B7PSG2 | Subfamily: 1.C.13.1 | Family: 1.C.13
+      3. Accession: A7IZR5 | Subfamily: 1.C.78.1 | Family: 1.C.78
       4. Accession: P81782 | Subfamily: 8.B.23.2 | Family: 8.B.23
-      5. Accession: P01382 | Subfamily: 1.C.74.1 | Family: 1.C.74
+      5. Accession: R7ZEE7 | Subfamily: 1.C.5.2 | Family: 1.C.5
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -2260,11 +2272,11 @@ Testing Set Statistics:
       - Accession: Q6EZF9 | Subfamily: 1.C.19.1 | Family: 1.C.19
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P60266 | Subfamily: 8.B.1.2 | Family: 8.B.1
+      1. Accession: TKW02011 | Subfamily: 8.B.1.3 | Family: 8.B.1
       2. Accession: F6LCB3 | Subfamily: 1.C.47.3 | Family: 1.C.47
-      3. Accession: P0C194 | Subfamily: 8.B.8.1 | Family: 8.B.8
-      4. Accession: TKW02011 | Subfamily: 8.B.1.3 | Family: 8.B.1
-      5. Accession: P0C8R1 | Subfamily: 8.B.8.1 | Family: 8.B.8
+      3. Accession: H2CYQ1 | Subfamily: 1.C.47.3 | Family: 1.C.47
+      4. Accession: P0C194 | Subfamily: 8.B.8.1 | Family: 8.B.8
+      5. Accession: Q9NJC6 | Subfamily: 1.C.47.3 | Family: 1.C.47
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -2344,11 +2356,11 @@ Testing Set Statistics:
       - Accession: WP_098856434 | Subfamily: 1.C.26.1 | Family: 1.C.26
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P83002 | Subfamily: 1.C.24.1 | Family: 1.C.24
-      2. Accession: Q9L6W3 | Subfamily: 1.C.65.2 | Family: 1.C.65
-      3. Accession: C6SS71 | Subfamily: 1.C.102.1 | Family: 1.C.102
+      1. Accession: WP_080375718 | Subfamily: 1.C.24.1 | Family: 1.C.24
+      2. Accession: C6SS71 | Subfamily: 1.C.102.1 | Family: 1.C.102
+      3. Accession: Q6TGQ7 | Subfamily: 1.C.24.1 | Family: 1.C.24
       4. Accession: A7GJP5 | Subfamily: 1.C.31.2 | Family: 1.C.31
-      5. Accession: WP_080375718 | Subfamily: 1.C.24.1 | Family: 1.C.24
+      5. Accession: P83002 | Subfamily: 1.C.24.1 | Family: 1.C.24
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -2381,11 +2393,11 @@ Testing Set Statistics:
       - Accession: A7GJP5 | Subfamily: 1.C.31.2 | Family: 1.C.31
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P83002 | Subfamily: 1.C.24.1 | Family: 1.C.24
-      2. Accession: Q6TGQ7 | Subfamily: 1.C.24.1 | Family: 1.C.24
-      3. Accession: P84962 | Subfamily: 1.C.24.1 | Family: 1.C.24
-      4. Accession: Q9L6W3 | Subfamily: 1.C.65.2 | Family: 1.C.65
-      5. Accession: WP_098856434 | Subfamily: 1.C.26.1 | Family: 1.C.26
+      1. Accession: P84962 | Subfamily: 1.C.24.1 | Family: 1.C.24
+      2. Accession: WP_098856434 | Subfamily: 1.C.26.1 | Family: 1.C.26
+      3. Accession: Q6TGQ7 | Subfamily: 1.C.24.1 | Family: 1.C.24
+      4. Accession: C6SS71 | Subfamily: 1.C.102.1 | Family: 1.C.102
+      5. Accession: P83002 | Subfamily: 1.C.24.1 | Family: 1.C.24
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -2431,11 +2443,11 @@ Testing Set Statistics:
       - Accession: Q07A30 | Subfamily: 1.C.47.4 | Family: 1.C.47
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: TKW02011 | Subfamily: 8.B.1.3 | Family: 8.B.1
-      2. Accession: P60266 | Subfamily: 8.B.1.2 | Family: 8.B.1
+      1. Accession: P45667 | Subfamily: 8.B.1.2 | Family: 8.B.1
+      2. Accession: P0C8R1 | Subfamily: 8.B.8.1 | Family: 8.B.8
       3. Accession: P82270 | Subfamily: 1.C.19.1 | Family: 1.C.19
-      4. Accession: Q6EZF9 | Subfamily: 1.C.19.1 | Family: 1.C.19
-      5. Accession: P0C8R1 | Subfamily: 8.B.8.1 | Family: 8.B.8
+      4. Accession: AME17663 | Subfamily: 8.B.1.4 | Family: 8.B.1
+      5. Accession: B8XH25 | Subfamily: 8.B.7.1 | Family: 8.B.7
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -2471,24 +2483,24 @@ Testing Set Statistics:
       - Accession: Q45728 | Subfamily: 1.C.5.3 | Family: 1.C.5
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: A7IZR5 | Subfamily: 1.C.78.1 | Family: 1.C.78
-      2. Accession: P01382 | Subfamily: 1.C.74.1 | Family: 1.C.74
-      3. Accession: Q09098 | Subfamily: 8.A.31.1 | Family: 8.A.31
-      4. Accession: D1J6Q5 | Subfamily: 1.C.14.1 | Family: 1.C.14
-      5. Accession: J9HUA3 | Subfamily: 1.C.13.1 | Family: 1.C.13
+      1. Accession: Q8QGR0 | Subfamily: 1.C.74.1 | Family: 1.C.74
+      2. Accession: WP_047703972 | Subfamily: 1.C.14.1 | Family: 1.C.14
+      3. Accession: A7IZR5 | Subfamily: 1.C.78.1 | Family: 1.C.78
+      4. Accession: J9HUA3 | Subfamily: 1.C.13.1 | Family: 1.C.13
+      5. Accession: AED89561 | Subfamily: 8.B.23.2 | Family: 8.B.23
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
 Binary Classification Metrics (with negative controls):
   - True Positives (TP): 2
-  - False Positives (FP): 0
-  - True Negatives (TN): 5
+  - False Positives (FP): 1
+  - True Negatives (TN): 4
   - False Negatives (FN): 0
-  - Precision: 1.0000
+  - Precision: 0.6667
   - Recall/Sensitivity: 1.0000
-  - Specificity: 1.0000
-  - F1 Score: 1.0000
-  - Accuracy (incl. Negative Controls): 100.0000
+  - Specificity: 0.8000
+  - F1 Score: 0.8000
+  - Accuracy (incl. Negative Controls): 85.7143
 ----------------------------------------------------------------------------------------------------
 
 Family: 1.C.50
@@ -2576,11 +2588,11 @@ Testing Set Statistics:
       - Accession: F2JTE2 | Subfamily: 1.C.56.1 | Family: 1.C.56
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: B1Z6U1 | Subfamily: 1.C.75.1 | Family: 1.C.75
+      1. Accession: A1YKW7 | Subfamily: 1.C.11.1 | Family: 1.C.11
       2. Accession: AKC96038 | Subfamily: 1.C.75.1 | Family: 1.C.75
-      3. Accession: AEH33294 | Subfamily: 1.C.11.1 | Family: 1.C.11
-      4. Accession: WP_062552397 | Subfamily: 1.C.70.1 | Family: 1.C.70
-      5. Accession: A1YKW7 | Subfamily: 1.C.11.1 | Family: 1.C.11
+      3. Accession: B1Z6U1 | Subfamily: 1.C.75.1 | Family: 1.C.75
+      4. Accession: AEH33294 | Subfamily: 1.C.11.1 | Family: 1.C.11
+      5. Accession: WP_062552397 | Subfamily: 1.C.70.1 | Family: 1.C.70
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -2648,10 +2660,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: XP_022087427 | Subfamily: 1.A.105.1 | Family: 1.A.105
-      2. Accession: KQJ85610 | Subfamily: 9.A.43.1 | Family: 9.A.43
-      3. Accession: CCE37669 | Subfamily: 8.A.35.1 | Family: 8.A.35
-      4. Accession: XP_007925356 | Subfamily: 1.C.104.3 | Family: 1.C.104
-      5. Accession: XP_008081830 | Subfamily: 1.C.104.2 | Family: 1.C.104
+      2. Accession: XP_007925356 | Subfamily: 1.C.104.3 | Family: 1.C.104
+      3. Accession: XP_015973699 | Subfamily: 9.A.43.1 | Family: 9.A.43
+      4. Accession: CCE37669 | Subfamily: 8.A.35.1 | Family: 8.A.35
+      5. Accession: KQJ85610 | Subfamily: 9.A.43.1 | Family: 9.A.43
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -2685,11 +2697,11 @@ Testing Set Statistics:
       - Accession: Q9L6W3 | Subfamily: 1.C.65.2 | Family: 1.C.65
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_098856434 | Subfamily: 1.C.26.1 | Family: 1.C.26
-      2. Accession: A7GJP5 | Subfamily: 1.C.31.2 | Family: 1.C.31
-      3. Accession: P83002 | Subfamily: 1.C.24.1 | Family: 1.C.24
-      4. Accession: P84962 | Subfamily: 1.C.24.1 | Family: 1.C.24
-      5. Accession: C6SS71 | Subfamily: 1.C.102.1 | Family: 1.C.102
+      1. Accession: A7GJP5 | Subfamily: 1.C.31.2 | Family: 1.C.31
+      2. Accession: WP_080375718 | Subfamily: 1.C.24.1 | Family: 1.C.24
+      3. Accession: P84962 | Subfamily: 1.C.24.1 | Family: 1.C.24
+      4. Accession: Q6TGQ7 | Subfamily: 1.C.24.1 | Family: 1.C.24
+      5. Accession: P83002 | Subfamily: 1.C.24.1 | Family: 1.C.24
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -2723,11 +2735,11 @@ Testing Set Statistics:
       - Accession: WP_062552397 | Subfamily: 1.C.70.1 | Family: 1.C.70
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: A1YKW7 | Subfamily: 1.C.11.1 | Family: 1.C.11
+      1. Accession: F2JTE2 | Subfamily: 1.C.56.1 | Family: 1.C.56
       2. Accession: B1Z6U1 | Subfamily: 1.C.75.1 | Family: 1.C.75
-      3. Accession: F2JTE2 | Subfamily: 1.C.56.1 | Family: 1.C.56
-      4. Accession: AKC96038 | Subfamily: 1.C.75.1 | Family: 1.C.75
-      5. Accession: AEH33294 | Subfamily: 1.C.11.1 | Family: 1.C.11
+      3. Accession: AEH33294 | Subfamily: 1.C.11.1 | Family: 1.C.11
+      4. Accession: A1YKW7 | Subfamily: 1.C.11.1 | Family: 1.C.11
+      5. Accession: AKC96038 | Subfamily: 1.C.75.1 | Family: 1.C.75
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -2764,10 +2776,10 @@ Testing Set Statistics:
       - Accession: Q8QGR0 | Subfamily: 1.C.74.1 | Family: 1.C.74
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: A7IZR5 | Subfamily: 1.C.78.1 | Family: 1.C.78
-      2. Accession: D1J6Q5 | Subfamily: 1.C.14.1 | Family: 1.C.14
-      3. Accession: Q45728 | Subfamily: 1.C.5.3 | Family: 1.C.5
-      4. Accession: B7PSG2 | Subfamily: 1.C.13.1 | Family: 1.C.13
+      1. Accession: AED89561 | Subfamily: 8.B.23.2 | Family: 8.B.23
+      2. Accession: J9HUA3 | Subfamily: 1.C.13.1 | Family: 1.C.13
+      3. Accession: A7IZR5 | Subfamily: 1.C.78.1 | Family: 1.C.78
+      4. Accession: Q09098 | Subfamily: 8.A.31.1 | Family: 8.A.31
       5. Accession: P81782 | Subfamily: 8.B.23.2 | Family: 8.B.23
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
@@ -2841,24 +2853,35 @@ Testing Set Statistics:
       - Accession: A7IZR5 | Subfamily: 1.C.78.1 | Family: 1.C.78
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: R7ZEE7 | Subfamily: 1.C.5.2 | Family: 1.C.5
-      2. Accession: D1J6Q5 | Subfamily: 1.C.14.1 | Family: 1.C.14
+      1. Accession: Q45728 | Subfamily: 1.C.5.3 | Family: 1.C.5
+      2. Accession: R7ZEE7 | Subfamily: 1.C.5.2 | Family: 1.C.5
       3. Accession: J9HUA3 | Subfamily: 1.C.13.1 | Family: 1.C.13
-      4. Accession: P81782 | Subfamily: 8.B.23.2 | Family: 8.B.23
-      5. Accession: P01382 | Subfamily: 1.C.74.1 | Family: 1.C.74
-  - Correct predictions: 1
-  - Accuracy (Original Test Set): 100.00%
+      4. Accession: P01382 | Subfamily: 1.C.74.1 | Family: 1.C.74
+      5. Accession: D1J6Q5 | Subfamily: 1.C.14.1 | Family: 1.C.14
+  - Correct predictions: 0
+  - Accuracy (Original Test Set): 0.00%
 
 Binary Classification Metrics (with negative controls):
-  - True Positives (TP): 1
+  - True Positives (TP): 0
   - False Positives (FP): 0
   - True Negatives (TN): 5
-  - False Negatives (FN): 0
-  - Precision: 1.0000
-  - Recall/Sensitivity: 1.0000
+  - False Negatives (FN): 1
+  - Precision: 0.0000
+  - Recall/Sensitivity: 0.0000
   - Specificity: 1.0000
-  - F1 Score: 1.0000
-  - Accuracy (incl. Negative Controls): 100.0000
+  - F1 Score: 0.0000
+  - Accuracy (incl. Negative Controls): 83.3333
+
+Misclassification Analysis:
+  - Total misclassifications: 1
+  - Same Superfamily errors: 1
+  - Different Superfamily errors: 0
+
+Misclassified Proteins Details:
+  - Protein: A7IZR5
+    Predicted as: 1.C.5
+    Confidence: 0.6959
+    Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
 Family: 1.C.83
@@ -2989,10 +3012,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: C1D8E7 | Subfamily: 1.E.6.3 | Family: 1.E.6
-      2. Accession: WP_087770102 | Subfamily: 1.E.25.2 | Family: 1.E.25
+      2. Accession: H1RRJ5 | Subfamily: 1.E.6.3 | Family: 1.E.6
       3. Accession: WP_055414402 | Subfamily: 1.E.7.2 | Family: 1.E.7
-      4. Accession: H1RRJ5 | Subfamily: 1.E.6.3 | Family: 1.E.6
-      5. Accession: ALA46464 | Subfamily: 1.E.25.2 | Family: 1.E.25
+      4. Accession: WP_097540830 | Subfamily: 1.E.7.2 | Family: 1.E.7
+      5. Accession: WP_087770102 | Subfamily: 1.E.25.2 | Family: 1.E.25
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -3172,11 +3195,11 @@ Testing Set Statistics:
       - Accession: ALA46464 | Subfamily: 1.E.25.2 | Family: 1.E.25
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: TKY80222 | Subfamily: 1.E.1.1 | Family: 1.E.1
-      2. Accession: ECY3018204 | Subfamily: 1.E.1.1 | Family: 1.E.1
-      3. Accession: WP_184711133 | Subfamily: 1.E.7.2 | Family: 1.E.7
-      4. Accession: A9C1R0 | Subfamily: 1.E.6.3 | Family: 1.E.6
-      5. Accession: WP_055414402 | Subfamily: 1.E.7.2 | Family: 1.E.7
+      1. Accession: WP_184711133 | Subfamily: 1.E.7.2 | Family: 1.E.7
+      2. Accession: WP_097540830 | Subfamily: 1.E.7.2 | Family: 1.E.7
+      3. Accession: W7Wfe7 | Subfamily: 1.E.50.1 | Family: 1.E.50
+      4. Accession: C1D8E7 | Subfamily: 1.E.6.3 | Family: 1.E.6
+      5. Accession: A9C1R0 | Subfamily: 1.E.6.3 | Family: 1.E.6
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -3287,11 +3310,11 @@ Testing Set Statistics:
       - Accession: W7Wfe7 | Subfamily: 1.E.50.1 | Family: 1.E.50
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: ECY3018204 | Subfamily: 1.E.1.1 | Family: 1.E.1
-      2. Accession: RYC38893 | Subfamily: 1.E.25.2 | Family: 1.E.25
+      1. Accession: H1RRJ5 | Subfamily: 1.E.6.3 | Family: 1.E.6
+      2. Accession: ECY3018204 | Subfamily: 1.E.1.1 | Family: 1.E.1
       3. Accession: WP_184711133 | Subfamily: 1.E.7.2 | Family: 1.E.7
-      4. Accession: WP_055414402 | Subfamily: 1.E.7.2 | Family: 1.E.7
-      5. Accession: H1RRJ5 | Subfamily: 1.E.6.3 | Family: 1.E.6
+      4. Accession: ALA46464 | Subfamily: 1.E.25.2 | Family: 1.E.25
+      5. Accession: TKY80222 | Subfamily: 1.E.1.1 | Family: 1.E.1
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -3338,11 +3361,11 @@ Testing Set Statistics:
       - Accession: WLJ89320 | Subfamily: 1.E.6.3 | Family: 1.E.6
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: TKY80222 | Subfamily: 1.E.1.1 | Family: 1.E.1
-      2. Accession: ALA46464 | Subfamily: 1.E.25.2 | Family: 1.E.25
-      3. Accession: WP_097540830 | Subfamily: 1.E.7.2 | Family: 1.E.7
-      4. Accession: WP_184711133 | Subfamily: 1.E.7.2 | Family: 1.E.7
-      5. Accession: W7Wfe7 | Subfamily: 1.E.50.1 | Family: 1.E.50
+      1. Accession: WP_055414402 | Subfamily: 1.E.7.2 | Family: 1.E.7
+      2. Accession: WP_184711133 | Subfamily: 1.E.7.2 | Family: 1.E.7
+      3. Accession: W7Wfe7 | Subfamily: 1.E.50.1 | Family: 1.E.50
+      4. Accession: TKY80222 | Subfamily: 1.E.1.1 | Family: 1.E.1
+      5. Accession: RYC38893 | Subfamily: 1.E.25.2 | Family: 1.E.25
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -3382,11 +3405,11 @@ Testing Set Statistics:
       - Accession: WP_055414402 | Subfamily: 1.E.7.2 | Family: 1.E.7
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: RYC38893 | Subfamily: 1.E.25.2 | Family: 1.E.25
+      1. Accession: TKY80222 | Subfamily: 1.E.1.1 | Family: 1.E.1
       2. Accession: WLJ89320 | Subfamily: 1.E.6.3 | Family: 1.E.6
-      3. Accession: ECY3018204 | Subfamily: 1.E.1.1 | Family: 1.E.1
-      4. Accession: WP_087770102 | Subfamily: 1.E.25.2 | Family: 1.E.25
-      5. Accession: H1RRJ5 | Subfamily: 1.E.6.3 | Family: 1.E.6
+      3. Accession: C1D8E7 | Subfamily: 1.E.6.3 | Family: 1.E.6
+      4. Accession: A9C1R0 | Subfamily: 1.E.6.3 | Family: 1.E.6
+      5. Accession: W7Wfe7 | Subfamily: 1.E.50.1 | Family: 1.E.50
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -3660,8 +3683,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: AAD39019
-    Predicted as: 1.B.81
-    Confidence: 0.1303
+    Predicted as: 9.A.16
+    Confidence: 0.0569
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -3718,11 +3741,11 @@ Testing Set Statistics:
       - Accession: WP_073187488 | Subfamily: 1.W.1.1 | Family: 1.W.1
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: MBO00979 | Subfamily: 1.W.10.3 | Family: 1.W.10
-      2. Accession: RLG54911 | Subfamily: 1.W.3.2 | Family: 1.W.3
-      3. Accession: MAG24778 | Subfamily: 1.W.5.1 | Family: 1.W.5
-      4. Accession: WP_155320278 | Subfamily: 1.W.3.2 | Family: 1.W.3
-      5. Accession: TXH14527 | Subfamily: 1.W.8.1 | Family: 1.W.8
+      1. Accession: AXH46464 | Subfamily: 1.W.9.3 | Family: 1.W.9
+      2. Accession: MBO00979 | Subfamily: 1.W.10.3 | Family: 1.W.10
+      3. Accession: AUR96941 | Subfamily: 1.W.10.3 | Family: 1.W.10
+      4. Accession: RLG54911 | Subfamily: 1.W.3.2 | Family: 1.W.3
+      5. Accession: WP_155320278 | Subfamily: 1.W.3.2 | Family: 1.W.3
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -3762,11 +3785,11 @@ Testing Set Statistics:
       - Accession: AXP07702 | Subfamily: 1.W.10.3 | Family: 1.W.10
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: TXH14527 | Subfamily: 1.W.8.1 | Family: 1.W.8
-      2. Accession: RLG01344 | Subfamily: 1.W.8.1 | Family: 1.W.8
-      3. Accession: HBY62778 | Subfamily: 1.W.9.2 | Family: 1.W.9
-      4. Accession: WP_155320278 | Subfamily: 1.W.3.2 | Family: 1.W.3
-      5. Accession: MAG24778 | Subfamily: 1.W.5.1 | Family: 1.W.5
+      1. Accession: WP_155320278 | Subfamily: 1.W.3.2 | Family: 1.W.3
+      2. Accession: TXH14527 | Subfamily: 1.W.8.1 | Family: 1.W.8
+      3. Accession: RLE91336 | Subfamily: 1.W.3.2 | Family: 1.W.3
+      4. Accession: AXH46464 | Subfamily: 1.W.9.3 | Family: 1.W.9
+      5. Accession: WP_077072253 | Subfamily: 1.W.5.1 | Family: 1.W.5
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -3810,11 +3833,11 @@ Testing Set Statistics:
       - Accession: WP_155320278 | Subfamily: 1.W.3.2 | Family: 1.W.3
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: AXP07702 | Subfamily: 1.W.10.3 | Family: 1.W.10
-      2. Accession: RLG01344 | Subfamily: 1.W.8.1 | Family: 1.W.8
-      3. Accession: TXH14527 | Subfamily: 1.W.8.1 | Family: 1.W.8
+      1. Accession: RLD10056 | Subfamily: 1.W.9.2 | Family: 1.W.9
+      2. Accession: HBY62778 | Subfamily: 1.W.9.2 | Family: 1.W.9
+      3. Accession: WP_039622912 | Subfamily: 1.W.1.1 | Family: 1.W.1
       4. Accession: AUR96941 | Subfamily: 1.W.10.3 | Family: 1.W.10
-      5. Accession: WP_039622912 | Subfamily: 1.W.1.1 | Family: 1.W.1
+      5. Accession: TXH14527 | Subfamily: 1.W.8.1 | Family: 1.W.8
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -3852,11 +3875,11 @@ Testing Set Statistics:
       - Accession: WP_077072253 | Subfamily: 1.W.5.1 | Family: 1.W.5
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: RLG54911 | Subfamily: 1.W.3.2 | Family: 1.W.3
-      2. Accession: RLD10056 | Subfamily: 1.W.9.2 | Family: 1.W.9
-      3. Accession: HAM56808 | Subfamily: 1.W.9.4 | Family: 1.W.9
-      4. Accession: WP_039622912 | Subfamily: 1.W.1.1 | Family: 1.W.1
-      5. Accession: AXP07702 | Subfamily: 1.W.10.3 | Family: 1.W.10
+      1. Accession: TXH14527 | Subfamily: 1.W.8.1 | Family: 1.W.8
+      2. Accession: AXH46464 | Subfamily: 1.W.9.3 | Family: 1.W.9
+      3. Accession: WP_155320278 | Subfamily: 1.W.3.2 | Family: 1.W.3
+      4. Accession: WP_073187488 | Subfamily: 1.W.1.1 | Family: 1.W.1
+      5. Accession: MBO00979 | Subfamily: 1.W.10.3 | Family: 1.W.10
   - Correct predictions: 1
   - Accuracy (Original Test Set): 50.00%
 
@@ -3878,8 +3901,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: WP_077072253
-    Predicted as: 8.A.1
-    Confidence: 0.1157
+    Predicted as: 9.B.457
+    Confidence: 0.0929
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -3905,11 +3928,11 @@ Testing Set Statistics:
       - Accession: TXH14527 | Subfamily: 1.W.8.1 | Family: 1.W.8
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_155320278 | Subfamily: 1.W.3.2 | Family: 1.W.3
+      1. Accession: HAM56808 | Subfamily: 1.W.9.4 | Family: 1.W.9
       2. Accession: RLD10056 | Subfamily: 1.W.9.2 | Family: 1.W.9
-      3. Accession: AXP07702 | Subfamily: 1.W.10.3 | Family: 1.W.10
-      4. Accession: RLE91336 | Subfamily: 1.W.3.2 | Family: 1.W.3
-      5. Accession: RLG54911 | Subfamily: 1.W.3.2 | Family: 1.W.3
+      3. Accession: RLE91336 | Subfamily: 1.W.3.2 | Family: 1.W.3
+      4. Accession: RLG54911 | Subfamily: 1.W.3.2 | Family: 1.W.3
+      5. Accession: AUR96941 | Subfamily: 1.W.10.3 | Family: 1.W.10
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -3958,11 +3981,11 @@ Testing Set Statistics:
       - Accession: HAM56808 | Subfamily: 1.W.9.4 | Family: 1.W.9
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_077072253 | Subfamily: 1.W.5.1 | Family: 1.W.5
-      2. Accession: WP_039622912 | Subfamily: 1.W.1.1 | Family: 1.W.1
+      1. Accession: TXH14527 | Subfamily: 1.W.8.1 | Family: 1.W.8
+      2. Accession: AXP07702 | Subfamily: 1.W.10.3 | Family: 1.W.10
       3. Accession: WP_155320278 | Subfamily: 1.W.3.2 | Family: 1.W.3
-      4. Accession: RLE91336 | Subfamily: 1.W.3.2 | Family: 1.W.3
-      5. Accession: RLG54911 | Subfamily: 1.W.3.2 | Family: 1.W.3
+      4. Accession: RLG01344 | Subfamily: 1.W.8.1 | Family: 1.W.8
+      5. Accession: WP_077072253 | Subfamily: 1.W.5.1 | Family: 1.W.5
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -4039,10 +4062,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
-      2. Accession: Q9XIQ7 | Subfamily: 2.A.71.2 | Family: 2.A.71
-      3. Accession: O45166 | Subfamily: 2.A.48.1 | Family: 2.A.48
-      4. Accession: WP_046728225 | Subfamily: 4.H.1.2 | Family: 4.H.1
-      5. Accession: KHN35905 | Subfamily: 5.B.2.3 | Family: 5.B.2
+      2. Accession: EQK99033 | Subfamily: 5.B.2.3 | Family: 5.B.2
+      3. Accession: D2VY17 | Subfamily: 2.A.125.1 | Family: 2.A.125
+      4. Accession: WP_083289127 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      5. Accession: A8BIM9 | Subfamily: 2.A.48.1 | Family: 2.A.48
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -4073,11 +4096,11 @@ Testing Set Statistics:
       - Accession: C6B3K0 | Subfamily: 2.A.101.1 | Family: 2.A.101
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q9UBH6 | Subfamily: 2.A.94.1 | Family: 2.A.94
-      2. Accession: D7AXM6 | Subfamily: 2.A.11.2 | Family: 2.A.11
-      3. Accession: Q0PAK3 | Subfamily: 2.A.13.1 | Family: 2.A.13
+      1. Accession: WP_020086767 | Subfamily: 2.A.62.1 | Family: 2.A.62
+      2. Accession: Q183S2 | Subfamily: 2.A.68.1 | Family: 2.A.68
+      3. Accession: Q38YQ0 | Subfamily: 2.A.118.1 | Family: 2.A.118
       4. Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
-      5. Accession: U2LY02 | Subfamily: 2.A.11.2 | Family: 2.A.11
+      5. Accession: Q8RFA1 | Subfamily: 2.A.8.1 | Family: 2.A.8
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -4138,8 +4161,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: WP_076734059
-    Predicted as: 9.B.90
-    Confidence: 0.1352
+    Predicted as: 8.A.68
+    Confidence: 0.1776
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -4161,11 +4184,11 @@ Testing Set Statistics:
       - Accession: KKP64473 | Subfamily: 2.A.104.3 | Family: 2.A.104
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: C7PI41 | Subfamily: 2.A.52.2 | Family: 2.A.52
-      2. Accession: WP_111865303 | Subfamily: 2.A.129.2 | Family: 2.A.129
-      3. Accession: OIO63212 | Subfamily: 2.A.119.3 | Family: 2.A.119
-      4. Accession: A0Y0J1 | Subfamily: 9.B.191.2 | Family: 9.B.191
-      5. Accession: WP_086951747 | Subfamily: 2.A.129.2 | Family: 2.A.129
+      1. Accession: Q7NN80 | Subfamily: 2.A.52.2 | Family: 2.A.52
+      2. Accession: C7PI41 | Subfamily: 2.A.52.2 | Family: 2.A.52
+      3. Accession: WP_062660767 | Subfamily: 2.A.119.3 | Family: 2.A.119
+      4. Accession: MBE0344742 | Subfamily: 9.B.191.2 | Family: 9.B.191
+      5. Accession: WP_055898914 | Subfamily: 3.E.3.1 | Family: 3.E.3
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -4201,11 +4224,11 @@ Testing Set Statistics:
       - Accession: L8Q2C2 | Subfamily: 2.A.107.3 | Family: 2.A.107
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: B8I848 | Subfamily: 2.A.116.3 | Family: 2.A.116
-      2. Accession: Q3IPU1 | Subfamily: 2.A.77.1 | Family: 2.A.77
-      3. Accession: J7LI01 | Subfamily: 2.A.116.3 | Family: 2.A.116
-      4. Accession: B5U2Z3 | Subfamily: 2.A.75.1 | Family: 2.A.75
-      5. Accession: A3U6A7 | Subfamily: 2.A.76.3 | Family: 2.A.76
+      1. Accession: Q8GMZ9 | Subfamily: 2.A.76.2 | Family: 2.A.76
+      2. Accession: B7HXY3 | Subfamily: 2.A.116.3 | Family: 2.A.116
+      3. Accession: B5U2Z3 | Subfamily: 2.A.75.1 | Family: 2.A.75
+      4. Accession: P25743 | Subfamily: 2.A.95.1 | Family: 2.A.95
+      5. Accession: Q6TNA0 | Subfamily: 2.A.76.2 | Family: 2.A.76
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -4243,11 +4266,11 @@ Testing Set Statistics:
       - Accession: D7AXM6 | Subfamily: 2.A.11.2 | Family: 2.A.11
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
-      2. Accession: C6B3K0 | Subfamily: 2.A.101.1 | Family: 2.A.101
-      3. Accession: Q9UBH6 | Subfamily: 2.A.94.1 | Family: 2.A.94
-      4. Accession: Q8EI43 | Subfamily: 2.A.35.2 | Family: 2.A.35
-      5. Accession: Q8RFA1 | Subfamily: 2.A.8.1 | Family: 2.A.8
+      1. Accession: Q9I2S5 | Subfamily: 2.A.34.1 | Family: 2.A.34
+      2. Accession: Q57251 | Subfamily: 2.A.14.2 | Family: 2.A.14
+      3. Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
+      4. Accession: H7C6B2 | Subfamily: 2.A.8.1 | Family: 2.A.8
+      5. Accession: Q0PAK3 | Subfamily: 2.A.13.1 | Family: 2.A.13
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -4281,11 +4304,11 @@ Testing Set Statistics:
       - Accession: Q821X2 | Subfamily: 2.A.111.2 | Family: 2.A.111
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
-      2. Accession: U2LY02 | Subfamily: 2.A.11.2 | Family: 2.A.11
-      3. Accession: Q0PAK3 | Subfamily: 2.A.13.1 | Family: 2.A.13
-      4. Accession: AOY58527 | Subfamily: 2.A.14.2 | Family: 2.A.14
-      5. Accession: Q38YQ0 | Subfamily: 2.A.118.1 | Family: 2.A.118
+      1. Accession: Q57251 | Subfamily: 2.A.14.2 | Family: 2.A.14
+      2. Accession: C6B3K0 | Subfamily: 2.A.101.1 | Family: 2.A.101
+      3. Accession: C0QDE6 | Subfamily: 2.A.61.2 | Family: 2.A.61
+      4. Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
+      5. Accession: Q8EI43 | Subfamily: 2.A.35.2 | Family: 2.A.35
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -4327,11 +4350,11 @@ Testing Set Statistics:
       - Accession: B8I848 | Subfamily: 2.A.116.3 | Family: 2.A.116
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: B8HLY6 | Subfamily: 2.A.95.1 | Family: 2.A.95
+      1. Accession: V9RYY0 | Subfamily: 2.A.76.2 | Family: 2.A.76
       2. Accession: A3U6A7 | Subfamily: 2.A.76.3 | Family: 2.A.76
-      3. Accession: L8Q2C2 | Subfamily: 2.A.107.3 | Family: 2.A.107
-      4. Accession: V9RYY0 | Subfamily: 2.A.76.2 | Family: 2.A.76
-      5. Accession: B5U2Z3 | Subfamily: 2.A.75.1 | Family: 2.A.75
+      3. Accession: E4RIT5 | Subfamily: 2.A.107.2 | Family: 2.A.107
+      4. Accession: RZN41577 | Subfamily: 2.A.131.1 | Family: 2.A.131
+      5. Accession: P25743 | Subfamily: 2.A.95.1 | Family: 2.A.95
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -4368,11 +4391,11 @@ Testing Set Statistics:
       - Accession: P39263 | Subfamily: 2.A.118.1 | Family: 2.A.118
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: G2HQN2 | Subfamily: 2.A.61.2 | Family: 2.A.61
-      2. Accession: Q0PHV8 | Subfamily: 2.A.35.2 | Family: 2.A.35
-      3. Accession: C6B3K0 | Subfamily: 2.A.101.1 | Family: 2.A.101
-      4. Accession: U2LY02 | Subfamily: 2.A.11.2 | Family: 2.A.11
-      5. Accession: C0QDE6 | Subfamily: 2.A.61.2 | Family: 2.A.61
+      1. Accession: Q57251 | Subfamily: 2.A.14.2 | Family: 2.A.14
+      2. Accession: Q81E21 | Subfamily: 2.A.8.1 | Family: 2.A.8
+      3. Accession: Q0PHV8 | Subfamily: 2.A.35.2 | Family: 2.A.35
+      4. Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
+      5. Accession: Q838P8 | Subfamily: 2.A.35.2 | Family: 2.A.35
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -4420,11 +4443,11 @@ Testing Set Statistics:
       - Accession: OIO63212 | Subfamily: 2.A.119.3 | Family: 2.A.119
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: KOO28456 | Subfamily: 3.E.3.1 | Family: 3.E.3
-      2. Accession: P48583 | Subfamily: 9.B.191.1 | Family: 9.B.191
-      3. Accession: WP_055898914 | Subfamily: 3.E.3.1 | Family: 3.E.3
-      4. Accession: WP_111865303 | Subfamily: 2.A.129.2 | Family: 2.A.129
-      5. Accession: KKP64473 | Subfamily: 2.A.104.3 | Family: 2.A.104
+      1. Accession: MBE0344742 | Subfamily: 9.B.191.2 | Family: 9.B.191
+      2. Accession: OLS23552 | Subfamily: 2.A.129.2 | Family: 2.A.129
+      3. Accession: Q7NN80 | Subfamily: 2.A.52.2 | Family: 2.A.52
+      4. Accession: KKP64473 | Subfamily: 2.A.104.3 | Family: 2.A.104
+      5. Accession: C1D347 | Subfamily: 2.A.52.2 | Family: 2.A.52
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -4467,11 +4490,11 @@ Testing Set Statistics:
       - Accession: ARG45194 | Subfamily: 2.A.120.1 | Family: 2.A.120
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P0AD99 | Subfamily: 2.A.26.1 | Family: 2.A.26
-      2. Accession: P76103 | Subfamily: 2.A.46.1 | Family: 2.A.46
-      3. Accession: O49423 | Subfamily: 2.A.72.3 | Family: 2.A.72
-      4. Accession: Q88I34 | Subfamily: 2.A.46.1 | Family: 2.A.46
-      5. Accession: 7TAK_A | Subfamily: 2.A.46.1 | Family: 2.A.46
+      1. Accession: O49423 | Subfamily: 2.A.72.3 | Family: 2.A.72
+      2. Accession: B7L6S9 | Subfamily: 2.A.15.2 | Family: 2.A.15
+      3. Accession: Q19A13 | Subfamily: 2.A.72.3 | Family: 2.A.72
+      4. Accession: P37660 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      5. Accession: P31553 | Subfamily: 2.A.15.2 | Family: 2.A.15
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -4505,11 +4528,11 @@ Testing Set Statistics:
       - Accession: D2VY17 | Subfamily: 2.A.125.1 | Family: 2.A.125
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: KHN35905 | Subfamily: 5.B.2.3 | Family: 5.B.2
-      2. Accession: OAJ10018 | Subfamily: 9.B.57.1 | Family: 9.B.57
-      3. Accession: WP_083289127 | Subfamily: 4.H.1.2 | Family: 4.H.1
-      4. Accession: WP_046728225 | Subfamily: 4.H.1.2 | Family: 4.H.1
-      5. Accession: WP_121250785 | Subfamily: 9.B.111.1 | Family: 9.B.111
+      1. Accession: XP_012758493 | Subfamily: 2.A.100.2 | Family: 2.A.100
+      2. Accession: KHN35905 | Subfamily: 5.B.2.3 | Family: 5.B.2
+      3. Accession: O45166 | Subfamily: 2.A.48.1 | Family: 2.A.48
+      4. Accession: OAJ10018 | Subfamily: 9.B.57.1 | Family: 9.B.57
+      5. Accession: WP_083289127 | Subfamily: 4.H.1.2 | Family: 4.H.1
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -4553,11 +4576,11 @@ Testing Set Statistics:
       - Accession: WP_086951747 | Subfamily: 2.A.129.2 | Family: 2.A.129
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: KOO28456 | Subfamily: 3.E.3.1 | Family: 3.E.3
-      2. Accession: P48583 | Subfamily: 9.B.191.1 | Family: 9.B.191
-      3. Accession: C7PI41 | Subfamily: 2.A.52.2 | Family: 2.A.52
+      1. Accession: C7PI41 | Subfamily: 2.A.52.2 | Family: 2.A.52
+      2. Accession: MBE0344742 | Subfamily: 9.B.191.2 | Family: 9.B.191
+      3. Accession: Q7NN80 | Subfamily: 2.A.52.2 | Family: 2.A.52
       4. Accession: KKP64473 | Subfamily: 2.A.104.3 | Family: 2.A.104
-      5. Accession: WP_057569963 | Subfamily: 2.A.119.3 | Family: 2.A.119
+      5. Accession: WP_062660767 | Subfamily: 2.A.119.3 | Family: 2.A.119
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -4593,11 +4616,11 @@ Testing Set Statistics:
       - Accession: K0P0B6 | Subfamily: 2.A.13.2 | Family: 2.A.13
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_020086767 | Subfamily: 2.A.62.1 | Family: 2.A.62
-      2. Accession: P39263 | Subfamily: 2.A.118.1 | Family: 2.A.118
-      3. Accession: Q57251 | Subfamily: 2.A.14.2 | Family: 2.A.14
-      4. Accession: H7C6B2 | Subfamily: 2.A.8.1 | Family: 2.A.8
-      5. Accession: C6B3K0 | Subfamily: 2.A.101.1 | Family: 2.A.101
+      1. Accession: U2LY02 | Subfamily: 2.A.11.2 | Family: 2.A.11
+      2. Accession: Q81E21 | Subfamily: 2.A.8.1 | Family: 2.A.8
+      3. Accession: Q838P8 | Subfamily: 2.A.35.2 | Family: 2.A.35
+      4. Accession: Q183S2 | Subfamily: 2.A.68.1 | Family: 2.A.68
+      5. Accession: Q9I2S5 | Subfamily: 2.A.34.1 | Family: 2.A.34
   - Correct predictions: 1
   - Accuracy (Original Test Set): 50.00%
 
@@ -4619,8 +4642,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: Q0PAK3
-    Predicted as: 1.C.47
-    Confidence: 0.0397
+    Predicted as: 9.B.124
+    Confidence: 0.1081
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -4644,11 +4667,11 @@ Testing Set Statistics:
       - Accession: RZN41577 | Subfamily: 2.A.131.1 | Family: 2.A.131
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: B7HXY3 | Subfamily: 2.A.116.3 | Family: 2.A.116
-      2. Accession: L8Q2C2 | Subfamily: 2.A.107.3 | Family: 2.A.107
-      3. Accession: V9RYY0 | Subfamily: 2.A.76.2 | Family: 2.A.76
-      4. Accession: Q6TNA0 | Subfamily: 2.A.76.2 | Family: 2.A.76
-      5. Accession: Q8GMZ9 | Subfamily: 2.A.76.2 | Family: 2.A.76
+      1. Accession: P25743 | Subfamily: 2.A.95.1 | Family: 2.A.95
+      2. Accession: E4RIT5 | Subfamily: 2.A.107.2 | Family: 2.A.107
+      3. Accession: Q3IPU1 | Subfamily: 2.A.77.1 | Family: 2.A.77
+      4. Accession: Q8GMZ9 | Subfamily: 2.A.76.2 | Family: 2.A.76
+      5. Accession: Q6TNA0 | Subfamily: 2.A.76.2 | Family: 2.A.76
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -4683,11 +4706,11 @@ Testing Set Statistics:
       - Accession: AOY58527 | Subfamily: 2.A.14.2 | Family: 2.A.14
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q8EI43 | Subfamily: 2.A.35.2 | Family: 2.A.35
-      2. Accession: C0QDE6 | Subfamily: 2.A.61.2 | Family: 2.A.61
-      3. Accession: Q9UBH6 | Subfamily: 2.A.94.1 | Family: 2.A.94
-      4. Accession: WP_020086767 | Subfamily: 2.A.62.1 | Family: 2.A.62
-      5. Accession: C6B3K0 | Subfamily: 2.A.101.1 | Family: 2.A.101
+      1. Accession: H7C6B2 | Subfamily: 2.A.8.1 | Family: 2.A.8
+      2. Accession: G2HQN2 | Subfamily: 2.A.61.2 | Family: 2.A.61
+      3. Accession: D7AXM6 | Subfamily: 2.A.11.2 | Family: 2.A.11
+      4. Accession: Q821X2 | Subfamily: 2.A.111.2 | Family: 2.A.111
+      5. Accession: U2LY02 | Subfamily: 2.A.11.2 | Family: 2.A.11
   - Correct predictions: 1
   - Accuracy (Original Test Set): 50.00%
 
@@ -4709,8 +4732,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: Q57251
-    Predicted as: 8.A.204
-    Confidence: 0.0696
+    Predicted as: 9.B.206
+    Confidence: 0.0370
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -4744,11 +4767,11 @@ Testing Set Statistics:
       - Accession: B7L6S9 | Subfamily: 2.A.15.2 | Family: 2.A.15
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: 7TAK_A | Subfamily: 2.A.46.1 | Family: 2.A.46
-      2. Accession: P0AD99 | Subfamily: 2.A.26.1 | Family: 2.A.26
-      3. Accession: Q19A13 | Subfamily: 2.A.72.3 | Family: 2.A.72
-      4. Accession: P30143 | Subfamily: 2.A.25.1 | Family: 2.A.25
-      5. Accession: P42628 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      1. Accession: P42628 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      2. Accession: P37660 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      3. Accession: F2HK99 | Subfamily: 2.A.26.1 | Family: 2.A.26
+      4. Accession: Q9M7K4 | Subfamily: 2.A.72.3 | Family: 2.A.72
+      5. Accession: O49423 | Subfamily: 2.A.72.3 | Family: 2.A.72
   - Correct predictions: 2
   - Accuracy (Original Test Set): 50.00%
 
@@ -4770,12 +4793,12 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: P31553
-    Predicted as: 9.B.456
-    Confidence: 0.0513
+    Predicted as: 1.E.6
+    Confidence: 0.0509
     Error Type: different_superfamily
   - Protein: B4EY22
-    Predicted as: 1.B.39
-    Confidence: 0.0705
+    Predicted as: 1.E.6
+    Confidence: 0.0549
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -4803,10 +4826,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: P63340 | Subfamily: 2.A.42.2 | Family: 2.A.42
-      2. Accession: A8MA30 | Subfamily: 2.A.120.1 | Family: 2.A.120
-      3. Accession: 7TAK_A | Subfamily: 2.A.46.1 | Family: 2.A.46
-      4. Accession: P37660 | Subfamily: 2.A.42.2 | Family: 2.A.42
-      5. Accession: P42628 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      2. Accession: P31553 | Subfamily: 2.A.15.2 | Family: 2.A.15
+      3. Accession: Q9M7K4 | Subfamily: 2.A.72.3 | Family: 2.A.72
+      4. Accession: F2HK99 | Subfamily: 2.A.26.1 | Family: 2.A.26
+      5. Accession: ARG45194 | Subfamily: 2.A.120.1 | Family: 2.A.120
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -4845,11 +4868,11 @@ Testing Set Statistics:
       - Accession: P0AD99 | Subfamily: 2.A.26.1 | Family: 2.A.26
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P31553 | Subfamily: 2.A.15.2 | Family: 2.A.15
-      2. Accession: Q9FE38 | Subfamily: 2.A.72.3 | Family: 2.A.72
-      3. Accession: P63340 | Subfamily: 2.A.42.2 | Family: 2.A.42
-      4. Accession: A8MA30 | Subfamily: 2.A.120.1 | Family: 2.A.120
-      5. Accession: Q9M7K4 | Subfamily: 2.A.72.3 | Family: 2.A.72
+      1. Accession: P42628 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      2. Accession: P37660 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      3. Accession: ARG45194 | Subfamily: 2.A.120.1 | Family: 2.A.120
+      4. Accession: J6H8T7 | Subfamily: 2.A.120.1 | Family: 2.A.120
+      5. Accession: O49423 | Subfamily: 2.A.72.3 | Family: 2.A.72
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -4919,10 +4942,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: Q0PAK3 | Subfamily: 2.A.13.1 | Family: 2.A.13
-      2. Accession: H7C6B2 | Subfamily: 2.A.8.1 | Family: 2.A.8
-      3. Accession: K0P0B6 | Subfamily: 2.A.13.2 | Family: 2.A.13
-      4. Accession: Q81E21 | Subfamily: 2.A.8.1 | Family: 2.A.8
-      5. Accession: C6B3K0 | Subfamily: 2.A.101.1 | Family: 2.A.101
+      2. Accession: Q838P8 | Subfamily: 2.A.35.2 | Family: 2.A.35
+      3. Accession: Q0PHV8 | Subfamily: 2.A.35.2 | Family: 2.A.35
+      4. Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
+      5. Accession: Q81E21 | Subfamily: 2.A.8.1 | Family: 2.A.8
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -4964,11 +4987,11 @@ Testing Set Statistics:
       - Accession: Q838P8 | Subfamily: 2.A.35.2 | Family: 2.A.35
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
-      2. Accession: D7AXM6 | Subfamily: 2.A.11.2 | Family: 2.A.11
-      3. Accession: Q81E21 | Subfamily: 2.A.8.1 | Family: 2.A.8
-      4. Accession: H7C6B2 | Subfamily: 2.A.8.1 | Family: 2.A.8
-      5. Accession: WP_020086767 | Subfamily: 2.A.62.1 | Family: 2.A.62
+      1. Accession: C0QDE6 | Subfamily: 2.A.61.2 | Family: 2.A.61
+      2. Accession: U2LY02 | Subfamily: 2.A.11.2 | Family: 2.A.11
+      3. Accession: WP_020086767 | Subfamily: 2.A.62.1 | Family: 2.A.62
+      4. Accession: Q0PAK3 | Subfamily: 2.A.13.1 | Family: 2.A.13
+      5. Accession: K0P0B6 | Subfamily: 2.A.13.2 | Family: 2.A.13
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -5010,11 +5033,11 @@ Testing Set Statistics:
       - Accession: P63340 | Subfamily: 2.A.42.2 | Family: 2.A.42
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: B7L6S9 | Subfamily: 2.A.15.2 | Family: 2.A.15
-      2. Accession: Q9M7K4 | Subfamily: 2.A.72.3 | Family: 2.A.72
-      3. Accession: 7TAK_A | Subfamily: 2.A.46.1 | Family: 2.A.46
-      4. Accession: A8MA30 | Subfamily: 2.A.120.1 | Family: 2.A.120
-      5. Accession: P31553 | Subfamily: 2.A.15.2 | Family: 2.A.15
+      1. Accession: F2HK99 | Subfamily: 2.A.26.1 | Family: 2.A.26
+      2. Accession: W0WFC6 | Subfamily: 2.A.25.1 | Family: 2.A.25
+      3. Accession: Q9M7K4 | Subfamily: 2.A.72.3 | Family: 2.A.72
+      4. Accession: O49423 | Subfamily: 2.A.72.3 | Family: 2.A.72
+      5. Accession: A8MA30 | Subfamily: 2.A.120.1 | Family: 2.A.120
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -5093,11 +5116,11 @@ Testing Set Statistics:
       - Accession: 7TAK_A | Subfamily: 2.A.46.1 | Family: 2.A.46
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: B4EY22 | Subfamily: 2.A.15.2 | Family: 2.A.15
-      2. Accession: O49423 | Subfamily: 2.A.72.3 | Family: 2.A.72
-      3. Accession: W0WFC6 | Subfamily: 2.A.25.1 | Family: 2.A.25
-      4. Accession: P63340 | Subfamily: 2.A.42.2 | Family: 2.A.42
-      5. Accession: A8MA30 | Subfamily: 2.A.120.1 | Family: 2.A.120
+      1. Accession: Q9FE38 | Subfamily: 2.A.72.3 | Family: 2.A.72
+      2. Accession: P42628 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      3. Accession: A8MA30 | Subfamily: 2.A.120.1 | Family: 2.A.120
+      4. Accession: P31553 | Subfamily: 2.A.15.2 | Family: 2.A.15
+      5. Accession: P30143 | Subfamily: 2.A.25.1 | Family: 2.A.25
   - Correct predictions: 2
   - Accuracy (Original Test Set): 66.67%
 
@@ -5119,8 +5142,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: Q88I34
-    Predicted as: 1.C.38
-    Confidence: 0.3017
+    Predicted as: 1.W.5
+    Confidence: 0.0487
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -5144,11 +5167,11 @@ Testing Set Statistics:
       - Accession: O45166 | Subfamily: 2.A.48.1 | Family: 2.A.48
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
-      2. Accession: OAJ10018 | Subfamily: 9.B.57.1 | Family: 9.B.57
-      3. Accession: Q6MLJ0 | Subfamily: 2.A.100.2 | Family: 2.A.100
-      4. Accession: Q7SC62 | Subfamily: 5.B.2.3 | Family: 5.B.2
-      5. Accession: WP_083289127 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      1. Accession: OAJ10018 | Subfamily: 9.B.57.1 | Family: 9.B.57
+      2. Accession: W2qlk8 | Subfamily: 2.A.71.2 | Family: 2.A.71
+      3. Accession: VDG77260 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      4. Accession: KHN35905 | Subfamily: 5.B.2.3 | Family: 5.B.2
+      5. Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -5192,11 +5215,11 @@ Testing Set Statistics:
       - Accession: Q7NN80 | Subfamily: 2.A.52.2 | Family: 2.A.52
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_111865303 | Subfamily: 2.A.129.2 | Family: 2.A.129
-      2. Accession: KKP64473 | Subfamily: 2.A.104.3 | Family: 2.A.104
-      3. Accession: WP_062660767 | Subfamily: 2.A.119.3 | Family: 2.A.119
-      4. Accession: MBE0344742 | Subfamily: 9.B.191.2 | Family: 9.B.191
-      5. Accession: KOO28456 | Subfamily: 3.E.3.1 | Family: 3.E.3
+      1. Accession: KKP64473 | Subfamily: 2.A.104.3 | Family: 2.A.104
+      2. Accession: OIO63212 | Subfamily: 2.A.119.3 | Family: 2.A.119
+      3. Accession: P48583 | Subfamily: 9.B.191.1 | Family: 9.B.191
+      4. Accession: A0Y0J1 | Subfamily: 9.B.191.2 | Family: 9.B.191
+      5. Accession: WP_055898914 | Subfamily: 3.E.3.1 | Family: 3.E.3
   - Correct predictions: 1
   - Accuracy (Original Test Set): 33.33%
 
@@ -5218,12 +5241,12 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: C7PI41
-    Predicted as: 1.B.35
-    Confidence: 0.1189
+    Predicted as: 9.B.124
+    Confidence: 0.2407
     Error Type: different_superfamily
   - Protein: Q7NN80
-    Predicted as: 8.A.22
-    Confidence: 0.0461
+    Predicted as: 9.B.124
+    Confidence: 0.1883
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -5248,11 +5271,11 @@ Testing Set Statistics:
       - Accession: C0QDE6 | Subfamily: 2.A.61.2 | Family: 2.A.61
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q838P8 | Subfamily: 2.A.35.2 | Family: 2.A.35
-      2. Accession: D7AXM6 | Subfamily: 2.A.11.2 | Family: 2.A.11
-      3. Accession: Q38YQ0 | Subfamily: 2.A.118.1 | Family: 2.A.118
-      4. Accession: Q9UBH6 | Subfamily: 2.A.94.1 | Family: 2.A.94
-      5. Accession: Q8RFA1 | Subfamily: 2.A.8.1 | Family: 2.A.8
+      1. Accession: Q8EI43 | Subfamily: 2.A.35.2 | Family: 2.A.35
+      2. Accession: A5F120 | Subfamily: 2.A.62.1 | Family: 2.A.62
+      3. Accession: WP_020086767 | Subfamily: 2.A.62.1 | Family: 2.A.62
+      4. Accession: C6B3K0 | Subfamily: 2.A.101.1 | Family: 2.A.101
+      5. Accession: Q9UBH6 | Subfamily: 2.A.94.1 | Family: 2.A.94
   - Correct predictions: 1
   - Accuracy (Original Test Set): 50.00%
 
@@ -5274,8 +5297,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: G2HQN2
-    Predicted as: 8.A.102
-    Confidence: 0.0369
+    Predicted as: 9.B.206
+    Confidence: 0.0620
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -5300,10 +5323,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: H7C6B2 | Subfamily: 2.A.8.1 | Family: 2.A.8
-      2. Accession: Q838P8 | Subfamily: 2.A.35.2 | Family: 2.A.35
-      3. Accession: Q821X2 | Subfamily: 2.A.111.2 | Family: 2.A.111
-      4. Accession: U2LY02 | Subfamily: 2.A.11.2 | Family: 2.A.11
-      5. Accession: Q183S2 | Subfamily: 2.A.68.1 | Family: 2.A.68
+      2. Accession: C0QDE6 | Subfamily: 2.A.61.2 | Family: 2.A.61
+      3. Accession: Q57251 | Subfamily: 2.A.14.2 | Family: 2.A.14
+      4. Accession: AOY58527 | Subfamily: 2.A.14.2 | Family: 2.A.14
+      5. Accession: G2HQN2 | Subfamily: 2.A.61.2 | Family: 2.A.61
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -5337,11 +5360,11 @@ Testing Set Statistics:
       - Accession: Q183S2 | Subfamily: 2.A.68.1 | Family: 2.A.68
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q9I2S5 | Subfamily: 2.A.34.1 | Family: 2.A.34
-      2. Accession: Q9UBH6 | Subfamily: 2.A.94.1 | Family: 2.A.94
-      3. Accession: Q8RFA1 | Subfamily: 2.A.8.1 | Family: 2.A.8
-      4. Accession: Q821X2 | Subfamily: 2.A.111.2 | Family: 2.A.111
-      5. Accession: H7C6B2 | Subfamily: 2.A.8.1 | Family: 2.A.8
+      1. Accession: D7AXM6 | Subfamily: 2.A.11.2 | Family: 2.A.11
+      2. Accession: C0QDE6 | Subfamily: 2.A.61.2 | Family: 2.A.61
+      3. Accession: P39263 | Subfamily: 2.A.118.1 | Family: 2.A.118
+      4. Accession: Q838P8 | Subfamily: 2.A.35.2 | Family: 2.A.35
+      5. Accession: U2LY02 | Subfamily: 2.A.11.2 | Family: 2.A.11
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -5383,11 +5406,11 @@ Testing Set Statistics:
       - Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: OAJ10018 | Subfamily: 9.B.57.1 | Family: 9.B.57
+      1. Accession: WP_046728225 | Subfamily: 4.H.1.2 | Family: 4.H.1
       2. Accession: EQK99033 | Subfamily: 5.B.2.3 | Family: 5.B.2
-      3. Accession: Q7SC62 | Subfamily: 5.B.2.3 | Family: 5.B.2
-      4. Accession: D2VY17 | Subfamily: 2.A.125.1 | Family: 2.A.125
-      5. Accession: A8BIM9 | Subfamily: 2.A.48.1 | Family: 2.A.48
+      3. Accession: G9NAJ2 | Subfamily: 5.B.2.3 | Family: 5.B.2
+      4. Accession: WP_083289127 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      5. Accession: Q7SC62 | Subfamily: 5.B.2.3 | Family: 5.B.2
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -5433,11 +5456,11 @@ Testing Set Statistics:
       - Accession: O49423 | Subfamily: 2.A.72.3 | Family: 2.A.72
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: ARG45194 | Subfamily: 2.A.120.1 | Family: 2.A.120
-      2. Accession: J6H8T7 | Subfamily: 2.A.120.1 | Family: 2.A.120
-      3. Accession: P0AD99 | Subfamily: 2.A.26.1 | Family: 2.A.26
-      4. Accession: W0WFC6 | Subfamily: 2.A.25.1 | Family: 2.A.25
-      5. Accession: P42628 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      1. Accession: Q88I34 | Subfamily: 2.A.46.1 | Family: 2.A.46
+      2. Accession: ARG45194 | Subfamily: 2.A.120.1 | Family: 2.A.120
+      3. Accession: A8MA30 | Subfamily: 2.A.120.1 | Family: 2.A.120
+      4. Accession: P42628 | Subfamily: 2.A.42.2 | Family: 2.A.42
+      5. Accession: B4EY22 | Subfamily: 2.A.15.2 | Family: 2.A.15
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -5470,11 +5493,11 @@ Testing Set Statistics:
       - Accession: B5U2Z3 | Subfamily: 2.A.75.1 | Family: 2.A.75
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: V9RYY0 | Subfamily: 2.A.76.2 | Family: 2.A.76
-      2. Accession: Q8GMZ9 | Subfamily: 2.A.76.2 | Family: 2.A.76
-      3. Accession: B7HXY3 | Subfamily: 2.A.116.3 | Family: 2.A.116
-      4. Accession: Q3IPU1 | Subfamily: 2.A.77.1 | Family: 2.A.77
-      5. Accession: J7LI01 | Subfamily: 2.A.116.3 | Family: 2.A.116
+      1. Accession: Q8GMZ9 | Subfamily: 2.A.76.2 | Family: 2.A.76
+      2. Accession: A3U6A7 | Subfamily: 2.A.76.3 | Family: 2.A.76
+      3. Accession: P25743 | Subfamily: 2.A.95.1 | Family: 2.A.95
+      4. Accession: L8Q2C2 | Subfamily: 2.A.107.3 | Family: 2.A.107
+      5. Accession: B8HLY6 | Subfamily: 2.A.95.1 | Family: 2.A.95
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -5520,11 +5543,11 @@ Testing Set Statistics:
       - Accession: A3U6A7 | Subfamily: 2.A.76.3 | Family: 2.A.76
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: RZN41577 | Subfamily: 2.A.131.1 | Family: 2.A.131
-      2. Accession: RKY32654 | Subfamily: 2.A.131.1 | Family: 2.A.131
-      3. Accession: B5U2Z3 | Subfamily: 2.A.75.1 | Family: 2.A.75
-      4. Accession: B8I848 | Subfamily: 2.A.116.3 | Family: 2.A.116
-      5. Accession: L8Q2C2 | Subfamily: 2.A.107.3 | Family: 2.A.107
+      1. Accession: Q3IPU1 | Subfamily: 2.A.77.1 | Family: 2.A.77
+      2. Accession: L8Q2C2 | Subfamily: 2.A.107.3 | Family: 2.A.107
+      3. Accession: E4RIT5 | Subfamily: 2.A.107.2 | Family: 2.A.107
+      4. Accession: J7LI01 | Subfamily: 2.A.116.3 | Family: 2.A.116
+      5. Accession: RKY32654 | Subfamily: 2.A.131.1 | Family: 2.A.131
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -5558,11 +5581,11 @@ Testing Set Statistics:
       - Accession: Q3IPU1 | Subfamily: 2.A.77.1 | Family: 2.A.77
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: RZN41577 | Subfamily: 2.A.131.1 | Family: 2.A.131
-      2. Accession: RKY32654 | Subfamily: 2.A.131.1 | Family: 2.A.131
-      3. Accession: Q8GMZ9 | Subfamily: 2.A.76.2 | Family: 2.A.76
-      4. Accession: B5U2Z3 | Subfamily: 2.A.75.1 | Family: 2.A.75
-      5. Accession: L8Q2C2 | Subfamily: 2.A.107.3 | Family: 2.A.107
+      1. Accession: B8HLY6 | Subfamily: 2.A.95.1 | Family: 2.A.95
+      2. Accession: Q6TNA0 | Subfamily: 2.A.76.2 | Family: 2.A.76
+      3. Accession: B5U2Z3 | Subfamily: 2.A.75.1 | Family: 2.A.75
+      4. Accession: E4RIT5 | Subfamily: 2.A.107.2 | Family: 2.A.107
+      5. Accession: B8I848 | Subfamily: 2.A.116.3 | Family: 2.A.116
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -5606,11 +5629,11 @@ Testing Set Statistics:
       - Accession: H7C6B2 | Subfamily: 2.A.8.1 | Family: 2.A.8
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q183S2 | Subfamily: 2.A.68.1 | Family: 2.A.68
+      1. Accession: P39263 | Subfamily: 2.A.118.1 | Family: 2.A.118
       2. Accession: Q57251 | Subfamily: 2.A.14.2 | Family: 2.A.14
-      3. Accession: Q0PAK3 | Subfamily: 2.A.13.1 | Family: 2.A.13
-      4. Accession: Q0PHV8 | Subfamily: 2.A.35.2 | Family: 2.A.35
-      5. Accession: K0P0B6 | Subfamily: 2.A.13.2 | Family: 2.A.13
+      3. Accession: Q9I2S5 | Subfamily: 2.A.34.1 | Family: 2.A.34
+      4. Accession: G2HQN2 | Subfamily: 2.A.61.2 | Family: 2.A.61
+      5. Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -5726,11 +5749,11 @@ Testing Set Statistics:
       - Accession: P16151 | Subfamily: 2.A.94.1 | Family: 2.A.94
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: U2LY02 | Subfamily: 2.A.11.2 | Family: 2.A.11
-      2. Accession: Q0PAK3 | Subfamily: 2.A.13.1 | Family: 2.A.13
-      3. Accession: Q183S2 | Subfamily: 2.A.68.1 | Family: 2.A.68
-      4. Accession: D7AXM6 | Subfamily: 2.A.11.2 | Family: 2.A.11
-      5. Accession: Q0PHV8 | Subfamily: 2.A.35.2 | Family: 2.A.35
+      1. Accession: Q838P8 | Subfamily: 2.A.35.2 | Family: 2.A.35
+      2. Accession: Q0PHV8 | Subfamily: 2.A.35.2 | Family: 2.A.35
+      3. Accession: D7AXM6 | Subfamily: 2.A.11.2 | Family: 2.A.11
+      4. Accession: Q0PAK3 | Subfamily: 2.A.13.1 | Family: 2.A.13
+      5. Accession: Q8RFA1 | Subfamily: 2.A.8.1 | Family: 2.A.8
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -5767,10 +5790,10 @@ Testing Set Statistics:
       - Accession: B8HLY6 | Subfamily: 2.A.95.1 | Family: 2.A.95
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: L8Q2C2 | Subfamily: 2.A.107.3 | Family: 2.A.107
-      2. Accession: Q6TNA0 | Subfamily: 2.A.76.2 | Family: 2.A.76
+      1. Accession: Q8GMZ9 | Subfamily: 2.A.76.2 | Family: 2.A.76
+      2. Accession: RZN41577 | Subfamily: 2.A.131.1 | Family: 2.A.131
       3. Accession: J7LI01 | Subfamily: 2.A.116.3 | Family: 2.A.116
-      4. Accession: Q3IPU1 | Subfamily: 2.A.77.1 | Family: 2.A.77
+      4. Accession: B5U2Z3 | Subfamily: 2.A.75.1 | Family: 2.A.75
       5. Accession: V9RYY0 | Subfamily: 2.A.76.2 | Family: 2.A.76
   - Correct predictions: 1
   - Accuracy (Original Test Set): 50.00%
@@ -5793,8 +5816,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: P25743
-    Predicted as: 8.A.103
-    Confidence: 0.0769
+    Predicted as: 8.A.108
+    Confidence: 0.0875
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -5853,11 +5876,11 @@ Testing Set Statistics:
       - Accession: WP_055898914 | Subfamily: 3.E.3.1 | Family: 3.E.3
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_111865303 | Subfamily: 2.A.129.2 | Family: 2.A.129
-      2. Accession: C7PI41 | Subfamily: 2.A.52.2 | Family: 2.A.52
-      3. Accession: MBE0344742 | Subfamily: 9.B.191.2 | Family: 9.B.191
-      4. Accession: Q7NN80 | Subfamily: 2.A.52.2 | Family: 2.A.52
-      5. Accession: KKP64473 | Subfamily: 2.A.104.3 | Family: 2.A.104
+      1. Accession: A0Y0J1 | Subfamily: 9.B.191.2 | Family: 9.B.191
+      2. Accession: MBE0344742 | Subfamily: 9.B.191.2 | Family: 9.B.191
+      3. Accession: Q7NN80 | Subfamily: 2.A.52.2 | Family: 2.A.52
+      4. Accession: WP_092498738 | Subfamily: 2.A.119.3 | Family: 2.A.119
+      5. Accession: WP_086951747 | Subfamily: 2.A.129.2 | Family: 2.A.129
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -5934,11 +5957,11 @@ Testing Set Statistics:
       - Accession: VDG77260 | Subfamily: 4.H.1.2 | Family: 4.H.1
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
-      2. Accession: G9NAJ2 | Subfamily: 5.B.2.3 | Family: 5.B.2
-      3. Accession: Q9XIQ7 | Subfamily: 2.A.71.2 | Family: 2.A.71
-      4. Accession: OAJ10018 | Subfamily: 9.B.57.1 | Family: 9.B.57
-      5. Accession: XP_012758493 | Subfamily: 2.A.100.2 | Family: 2.A.100
+      1. Accession: W2qlk8 | Subfamily: 2.A.71.2 | Family: 2.A.71
+      2. Accession: Q7SC62 | Subfamily: 5.B.2.3 | Family: 5.B.2
+      3. Accession: O45166 | Subfamily: 2.A.48.1 | Family: 2.A.48
+      4. Accession: G9NAJ2 | Subfamily: 5.B.2.3 | Family: 5.B.2
+      5. Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -5986,11 +6009,11 @@ Testing Set Statistics:
       - Accession: KHN35905 | Subfamily: 5.B.2.3 | Family: 5.B.2
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_121250785 | Subfamily: 9.B.111.1 | Family: 9.B.111
-      2. Accession: WP_046728225 | Subfamily: 4.H.1.2 | Family: 4.H.1
-      3. Accession: W2qlk8 | Subfamily: 2.A.71.2 | Family: 2.A.71
-      4. Accession: WP_083289127 | Subfamily: 4.H.1.2 | Family: 4.H.1
-      5. Accession: VDG77260 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      1. Accession: WP_046728225 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      2. Accession: VDG77260 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      3. Accession: A8BIM9 | Subfamily: 2.A.48.1 | Family: 2.A.48
+      4. Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
+      5. Accession: D2VY17 | Subfamily: 2.A.125.1 | Family: 2.A.125
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -6054,16 +6077,16 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: P53355
-    Predicted as: 1.B.81
-    Confidence: 0.0846
+    Predicted as: 9.A.16
+    Confidence: 0.0441
     Error Type: different_superfamily
   - Protein: Q9BXM7
-    Predicted as: 1.E.20
-    Confidence: 0.0980
+    Predicted as: 9.B.20
+    Confidence: 0.0868
     Error Type: different_superfamily
   - Protein: NP_001257414
-    Predicted as: 8.B.5
-    Confidence: 0.0662
+    Predicted as: 9.A.54
+    Confidence: 0.0694
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -6126,11 +6149,11 @@ Testing Set Statistics:
       - Accession: WP_008488490 | Subfamily: 8.A.150.1 | Family: 8.A.150
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: TWJ13789 | Subfamily: 9.B.297.4 | Family: 9.B.297
-      2. Accession: WP_038794236 | Subfamily: 9.B.250.1 | Family: 9.B.250
-      3. Accession: PAW60084 | Subfamily: 9.B.297.4 | Family: 9.B.297
-      4. Accession: WP_332355618 | Subfamily: 9.B.297.4 | Family: 9.B.297
-      5. Accession: WP_014405681 | Subfamily: 9.B.218.3 | Family: 9.B.218
+      1. Accession: PAW60084 | Subfamily: 9.B.297.4 | Family: 9.B.297
+      2. Accession: WP_014405681 | Subfamily: 9.B.218.3 | Family: 9.B.218
+      3. Accession: WP_332355618 | Subfamily: 9.B.297.4 | Family: 9.B.297
+      4. Accession: WP_062417086 | Subfamily: 9.B.218.3 | Family: 9.B.218
+      5. Accession: TWJ13789 | Subfamily: 9.B.297.4 | Family: 9.B.297
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -6237,7 +6260,7 @@ Misclassification Analysis:
 Misclassified Proteins Details:
   - Protein: XP_013762242
     Predicted as: 1.C.132
-    Confidence: 0.9993
+    Confidence: 0.9999
     Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -6345,8 +6368,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: XP_029997346
-    Predicted as: 1.A.119
-    Confidence: 0.1321
+    Predicted as: 9.B.206
+    Confidence: 0.0316
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -6368,10 +6391,10 @@ Testing Set Statistics:
       - Accession: XP_031756194 | Subfamily: 8.A.196.1 | Family: 8.A.196
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q14TH3 | Subfamily: 8.A.77.2 | Family: 8.A.77
-      2. Accession: Q15116 | Subfamily: 8.A.17.4 | Family: 8.A.17
+      1. Accession: XP_027863911 | Subfamily: 8.A.17.3 | Family: 8.A.17
+      2. Accession: Q14TH3 | Subfamily: 8.A.77.2 | Family: 8.A.77
       3. Accession: P01057 | Subfamily: 8.A.77.3 | Family: 8.A.77
-      4. Accession: XP_027863911 | Subfamily: 8.A.17.3 | Family: 8.A.17
+      4. Accession: NP_080609 | Subfamily: 8.A.77.2 | Family: 8.A.77
       5. Accession: AAO89003 | Subfamily: 8.A.17.3 | Family: 8.A.17
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
@@ -6405,10 +6428,10 @@ Testing Set Statistics:
       - Accession: Q09098 | Subfamily: 8.A.31.1 | Family: 8.A.31
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: D1J6Q5 | Subfamily: 1.C.14.1 | Family: 1.C.14
+      1. Accession: A7IZR5 | Subfamily: 1.C.78.1 | Family: 1.C.78
       2. Accession: R7ZEE7 | Subfamily: 1.C.5.2 | Family: 1.C.5
-      3. Accession: Q8QGR0 | Subfamily: 1.C.74.1 | Family: 1.C.74
-      4. Accession: Q45728 | Subfamily: 1.C.5.3 | Family: 1.C.5
+      3. Accession: P01382 | Subfamily: 1.C.74.1 | Family: 1.C.74
+      4. Accession: Q8QGR0 | Subfamily: 1.C.74.1 | Family: 1.C.74
       5. Accession: B7PSG2 | Subfamily: 1.C.13.1 | Family: 1.C.13
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
@@ -6443,10 +6466,10 @@ Testing Set Statistics:
       - Accession: CCE37669 | Subfamily: 8.A.35.1 | Family: 8.A.35
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: XP_022087427 | Subfamily: 1.A.105.1 | Family: 1.A.105
-      2. Accession: XP_015918646 | Subfamily: 1.C.63.1 | Family: 1.C.63
-      3. Accession: RDI86773 | Subfamily: 1.C.104.3 | Family: 1.C.104
-      4. Accession: XP_007925356 | Subfamily: 1.C.104.3 | Family: 1.C.104
+      1. Accession: KQJ85610 | Subfamily: 9.A.43.1 | Family: 9.A.43
+      2. Accession: XP_007925356 | Subfamily: 1.C.104.3 | Family: 1.C.104
+      3. Accession: XP_015918646 | Subfamily: 1.C.63.1 | Family: 1.C.63
+      4. Accession: Q8LPS2 | Subfamily: 9.A.43.1 | Family: 9.A.43
       5. Accession: XP_008081830 | Subfamily: 1.C.104.2 | Family: 1.C.104
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
@@ -6705,11 +6728,11 @@ Testing Set Statistics:
       - Accession: AME17663 | Subfamily: 8.B.1.4 | Family: 8.B.1
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P0C194 | Subfamily: 8.B.8.1 | Family: 8.B.8
-      2. Accession: Q9NJC6 | Subfamily: 1.C.47.3 | Family: 1.C.47
-      3. Accession: Q07A30 | Subfamily: 1.C.47.4 | Family: 1.C.47
-      4. Accession: Q6EZF9 | Subfamily: 1.C.19.1 | Family: 1.C.19
-      5. Accession: H2CYQ1 | Subfamily: 1.C.47.3 | Family: 1.C.47
+      1. Accession: H2CYQ1 | Subfamily: 1.C.47.3 | Family: 1.C.47
+      2. Accession: F6LCB3 | Subfamily: 1.C.47.3 | Family: 1.C.47
+      3. Accession: Q9NJC6 | Subfamily: 1.C.47.3 | Family: 1.C.47
+      4. Accession: P0C194 | Subfamily: 8.B.8.1 | Family: 8.B.8
+      5. Accession: P82270 | Subfamily: 1.C.19.1 | Family: 1.C.19
   - Correct predictions: 3
   - Accuracy (Original Test Set): 75.00%
 
@@ -6731,8 +6754,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: AME17663
-    Predicted as: 1.B.81
-    Confidence: 0.0794
+    Predicted as: 1.M.7
+    Confidence: 0.0387
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -6754,11 +6777,11 @@ Testing Set Statistics:
       - Accession: P86716 | Subfamily: 8.B.12.1 | Family: 8.B.12
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P81790 | Subfamily: 8.B.19.2 | Family: 8.B.19
-      2. Accession: B1B5I9 | Subfamily: 8.B.17.1 | Family: 8.B.17
-      3. Accession: P56852 | Subfamily: 8.B.5.3 | Family: 8.B.5
-      4. Accession: P60590 | Subfamily: 8.B.5.3 | Family: 8.B.5
-      5. Accession: M5AY63 | Subfamily: 8.B.5.3 | Family: 8.B.5
+      1. Accession: C3TS07 | Subfamily: 8.B.17.1 | Family: 8.B.17
+      2. Accession: P56852 | Subfamily: 8.B.5.3 | Family: 8.B.5
+      3. Accession: M5AY63 | Subfamily: 8.B.5.3 | Family: 8.B.5
+      4. Accession: B1P1H2 | Subfamily: 8.B.3.1 | Family: 8.B.3
+      5. Accession: P81790 | Subfamily: 8.B.19.2 | Family: 8.B.19
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -6832,11 +6855,11 @@ Testing Set Statistics:
       - Accession: B1B5I9 | Subfamily: 8.B.17.1 | Family: 8.B.17
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: C0HKG8 | Subfamily: 8.B.19.2 | Family: 8.B.19
-      2. Accession: P56852 | Subfamily: 8.B.5.3 | Family: 8.B.5
-      3. Accession: M5AY63 | Subfamily: 8.B.5.3 | Family: 8.B.5
-      4. Accession: P86716 | Subfamily: 8.B.12.1 | Family: 8.B.12
-      5. Accession: B1P1H2 | Subfamily: 8.B.3.1 | Family: 8.B.3
+      1. Accession: P60590 | Subfamily: 8.B.5.3 | Family: 8.B.5
+      2. Accession: P81790 | Subfamily: 8.B.19.2 | Family: 8.B.19
+      3. Accession: P86716 | Subfamily: 8.B.12.1 | Family: 8.B.12
+      4. Accession: Q7YT39 | Subfamily: 8.B.3.1 | Family: 8.B.3
+      5. Accession: M5AY63 | Subfamily: 8.B.5.3 | Family: 8.B.5
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -6875,11 +6898,11 @@ Testing Set Statistics:
       - Accession: P81790 | Subfamily: 8.B.19.2 | Family: 8.B.19
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P86716 | Subfamily: 8.B.12.1 | Family: 8.B.12
-      2. Accession: M5AY63 | Subfamily: 8.B.5.3 | Family: 8.B.5
-      3. Accession: B1B5I9 | Subfamily: 8.B.17.1 | Family: 8.B.17
+      1. Accession: Q7YT39 | Subfamily: 8.B.3.1 | Family: 8.B.3
+      2. Accession: P86716 | Subfamily: 8.B.12.1 | Family: 8.B.12
+      3. Accession: B1P1H2 | Subfamily: 8.B.3.1 | Family: 8.B.3
       4. Accession: C3TS07 | Subfamily: 8.B.17.1 | Family: 8.B.17
-      5. Accession: P56852 | Subfamily: 8.B.5.3 | Family: 8.B.5
+      5. Accession: P60590 | Subfamily: 8.B.5.3 | Family: 8.B.5
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -6915,38 +6938,34 @@ Testing Set Statistics:
       - Accession: P81782 | Subfamily: 8.B.23.2 | Family: 8.B.23
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: J9HUA3 | Subfamily: 1.C.13.1 | Family: 1.C.13
-      2. Accession: Q45728 | Subfamily: 1.C.5.3 | Family: 1.C.5
+      1. Accession: WP_047703972 | Subfamily: 1.C.14.1 | Family: 1.C.14
+      2. Accession: P01382 | Subfamily: 1.C.74.1 | Family: 1.C.74
       3. Accession: A7IZR5 | Subfamily: 1.C.78.1 | Family: 1.C.78
       4. Accession: R7ZEE7 | Subfamily: 1.C.5.2 | Family: 1.C.5
-      5. Accession: B7PSG2 | Subfamily: 1.C.13.1 | Family: 1.C.13
-  - Correct predictions: 0
-  - Accuracy (Original Test Set): 0.00%
+      5. Accession: Q8QGR0 | Subfamily: 1.C.74.1 | Family: 1.C.74
+  - Correct predictions: 1
+  - Accuracy (Original Test Set): 50.00%
 
 Binary Classification Metrics (with negative controls):
-  - True Positives (TP): 0
+  - True Positives (TP): 1
   - False Positives (FP): 0
   - True Negatives (TN): 5
-  - False Negatives (FN): 2
-  - Precision: 0.0000
-  - Recall/Sensitivity: 0.0000
+  - False Negatives (FN): 1
+  - Precision: 1.0000
+  - Recall/Sensitivity: 0.5000
   - Specificity: 1.0000
-  - F1 Score: 0.0000
-  - Accuracy (incl. Negative Controls): 71.4286
+  - F1 Score: 0.6667
+  - Accuracy (incl. Negative Controls): 85.7143
 
 Misclassification Analysis:
-  - Total misclassifications: 2
-  - Same Superfamily errors: 2
+  - Total misclassifications: 1
+  - Same Superfamily errors: 1
   - Different Superfamily errors: 0
 
 Misclassified Proteins Details:
-  - Protein: AED89561
-    Predicted as: 1.C.74
-    Confidence: 0.9547
-    Error Type: same_superfamily
   - Protein: P81782
     Predicted as: 1.C.74
-    Confidence: 0.9420
+    Confidence: 0.8566
     Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -6972,24 +6991,24 @@ Testing Set Statistics:
       - Accession: AXL93751 | Subfamily: 8.B.28.2 | Family: 8.B.28
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: P0C2C5 | Subfamily: 8.B.32.2 | Family: 8.B.32
-      2. Accession: P0C666 | Subfamily: 8.B.4.3 | Family: 8.B.4
-      3. Accession: Q9BP53 | Subfamily: 8.B.4.3 | Family: 8.B.4
-      4. Accession: ATF27565 | Subfamily: 8.B.4.3 | Family: 8.B.4
-      5. Accession: P0CY81 | Subfamily: 8.B.32.2 | Family: 8.B.32
+      1. Accession: P0C666 | Subfamily: 8.B.4.3 | Family: 8.B.4
+      2. Accession: P0CY81 | Subfamily: 8.B.32.2 | Family: 8.B.32
+      3. Accession: P0C2C5 | Subfamily: 8.B.32.2 | Family: 8.B.32
+      4. Accession: WEQ50348 | Subfamily: 8.B.4.3 | Family: 8.B.4
+      5. Accession: P0CAQ2 | Subfamily: 8.B.32.2 | Family: 8.B.32
   - Correct predictions: 0
   - Accuracy (Original Test Set): 0.00%
 
 Binary Classification Metrics (with negative controls):
   - True Positives (TP): 0
-  - False Positives (FP): 1
-  - True Negatives (TN): 4
+  - False Positives (FP): 0
+  - True Negatives (TN): 5
   - False Negatives (FN): 2
   - Precision: 0.0000
   - Recall/Sensitivity: 0.0000
-  - Specificity: 0.8000
+  - Specificity: 1.0000
   - F1 Score: 0.0000
-  - Accuracy (incl. Negative Controls): 57.1429
+  - Accuracy (incl. Negative Controls): 71.4286
 
 Misclassification Analysis:
   - Total misclassifications: 2
@@ -6999,11 +7018,11 @@ Misclassification Analysis:
 Misclassified Proteins Details:
   - Protein: ATF27819
     Predicted as: 8.B.4
-    Confidence: 0.6080
+    Confidence: 0.6765
     Error Type: same_superfamily
   - Protein: AXL93751
     Predicted as: 8.B.4
-    Confidence: 0.6662
+    Confidence: 0.6847
     Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -7027,39 +7046,24 @@ Testing Set Statistics:
       - Accession: Q7YT39 | Subfamily: 8.B.3.1 | Family: 8.B.3
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: C3TS07 | Subfamily: 8.B.17.1 | Family: 8.B.17
-      2. Accession: M5AY63 | Subfamily: 8.B.5.3 | Family: 8.B.5
-      3. Accession: P60590 | Subfamily: 8.B.5.3 | Family: 8.B.5
-      4. Accession: C0HKG8 | Subfamily: 8.B.19.2 | Family: 8.B.19
-      5. Accession: B1B5I9 | Subfamily: 8.B.17.1 | Family: 8.B.17
-  - Correct predictions: 0
-  - Accuracy (Original Test Set): 0.00%
+      1. Accession: P56852 | Subfamily: 8.B.5.3 | Family: 8.B.5
+      2. Accession: P86716 | Subfamily: 8.B.12.1 | Family: 8.B.12
+      3. Accession: B1B5I9 | Subfamily: 8.B.17.1 | Family: 8.B.17
+      4. Accession: M5AY63 | Subfamily: 8.B.5.3 | Family: 8.B.5
+      5. Accession: C3TS07 | Subfamily: 8.B.17.1 | Family: 8.B.17
+  - Correct predictions: 2
+  - Accuracy (Original Test Set): 100.00%
 
 Binary Classification Metrics (with negative controls):
-  - True Positives (TP): 0
-  - False Positives (FP): 0
-  - True Negatives (TN): 5
-  - False Negatives (FN): 2
-  - Precision: 0.0000
-  - Recall/Sensitivity: 0.0000
-  - Specificity: 1.0000
-  - F1 Score: 0.0000
-  - Accuracy (incl. Negative Controls): 71.4286
-
-Misclassification Analysis:
-  - Total misclassifications: 2
-  - Same Superfamily errors: 2
-  - Different Superfamily errors: 0
-
-Misclassified Proteins Details:
-  - Protein: B1P1H2
-    Predicted as: 8.B.5
-    Confidence: 0.9693
-    Error Type: same_superfamily
-  - Protein: Q7YT39
-    Predicted as: 8.B.5
-    Confidence: 0.8417
-    Error Type: same_superfamily
+  - True Positives (TP): 2
+  - False Positives (FP): 1
+  - True Negatives (TN): 4
+  - False Negatives (FN): 0
+  - Precision: 0.6667
+  - Recall/Sensitivity: 1.0000
+  - Specificity: 0.8000
+  - F1 Score: 0.8000
+  - Accuracy (incl. Negative Controls): 85.7143
 ----------------------------------------------------------------------------------------------------
 
 Family: 8.B.32
@@ -7092,11 +7096,11 @@ Testing Set Statistics:
       - Accession: P0C2C5 | Subfamily: 8.B.32.2 | Family: 8.B.32
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q9BP53 | Subfamily: 8.B.4.3 | Family: 8.B.4
-      2. Accession: ATF27565 | Subfamily: 8.B.4.3 | Family: 8.B.4
-      3. Accession: WEQ50348 | Subfamily: 8.B.4.3 | Family: 8.B.4
-      4. Accession: P0C666 | Subfamily: 8.B.4.3 | Family: 8.B.4
-      5. Accession: ATF27819 | Subfamily: 8.B.28.2 | Family: 8.B.28
+      1. Accession: AXL93751 | Subfamily: 8.B.28.2 | Family: 8.B.28
+      2. Accession: WEQ50348 | Subfamily: 8.B.4.3 | Family: 8.B.4
+      3. Accession: Q9BP53 | Subfamily: 8.B.4.3 | Family: 8.B.4
+      4. Accession: ATF27819 | Subfamily: 8.B.28.2 | Family: 8.B.28
+      5. Accession: ATF27565 | Subfamily: 8.B.4.3 | Family: 8.B.4
   - Correct predictions: 4
   - Accuracy (Original Test Set): 100.00%
 
@@ -7142,35 +7146,24 @@ Testing Set Statistics:
       - Accession: WEQ50348 | Subfamily: 8.B.4.3 | Family: 8.B.4
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: ATF27819 | Subfamily: 8.B.28.2 | Family: 8.B.28
+      1. Accession: P0CAQ2 | Subfamily: 8.B.32.2 | Family: 8.B.32
       2. Accession: P0CY81 | Subfamily: 8.B.32.2 | Family: 8.B.32
-      3. Accession: P0CAQ2 | Subfamily: 8.B.32.2 | Family: 8.B.32
-      4. Accession: P0C1X0 | Subfamily: 8.B.32.2 | Family: 8.B.32
-      5. Accession: P0C2C5 | Subfamily: 8.B.32.2 | Family: 8.B.32
-  - Correct predictions: 3
-  - Accuracy (Original Test Set): 75.00%
+      3. Accession: ATF27819 | Subfamily: 8.B.28.2 | Family: 8.B.28
+      4. Accession: P0C2C5 | Subfamily: 8.B.32.2 | Family: 8.B.32
+      5. Accession: P0C1X0 | Subfamily: 8.B.32.2 | Family: 8.B.32
+  - Correct predictions: 4
+  - Accuracy (Original Test Set): 100.00%
 
 Binary Classification Metrics (with negative controls):
-  - True Positives (TP): 3
+  - True Positives (TP): 4
   - False Positives (FP): 1
   - True Negatives (TN): 4
-  - False Negatives (FN): 1
-  - Precision: 0.7500
-  - Recall/Sensitivity: 0.7500
+  - False Negatives (FN): 0
+  - Precision: 0.8000
+  - Recall/Sensitivity: 1.0000
   - Specificity: 0.8000
-  - F1 Score: 0.7500
-  - Accuracy (incl. Negative Controls): 77.7778
-
-Misclassification Analysis:
-  - Total misclassifications: 1
-  - Same Superfamily errors: 1
-  - Different Superfamily errors: 0
-
-Misclassified Proteins Details:
-  - Protein: ATF27565
-    Predicted as: 8.B.28
-    Confidence: 0.5103
-    Error Type: same_superfamily
+  - F1 Score: 0.8889
+  - Accuracy (incl. Negative Controls): 88.8889
 ----------------------------------------------------------------------------------------------------
 
 Family: 8.B.5
@@ -7197,24 +7190,35 @@ Testing Set Statistics:
       - Accession: M5AY63 | Subfamily: 8.B.5.3 | Family: 8.B.5
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: B1P1H2 | Subfamily: 8.B.3.1 | Family: 8.B.3
+      1. Accession: Q7YT39 | Subfamily: 8.B.3.1 | Family: 8.B.3
       2. Accession: C3TS07 | Subfamily: 8.B.17.1 | Family: 8.B.17
-      3. Accession: P81790 | Subfamily: 8.B.19.2 | Family: 8.B.19
-      4. Accession: P86716 | Subfamily: 8.B.12.1 | Family: 8.B.12
-      5. Accession: Q7YT39 | Subfamily: 8.B.3.1 | Family: 8.B.3
-  - Correct predictions: 3
-  - Accuracy (Original Test Set): 100.00%
+      3. Accession: P86716 | Subfamily: 8.B.12.1 | Family: 8.B.12
+      4. Accession: B1B5I9 | Subfamily: 8.B.17.1 | Family: 8.B.17
+      5. Accession: B1P1H2 | Subfamily: 8.B.3.1 | Family: 8.B.3
+  - Correct predictions: 2
+  - Accuracy (Original Test Set): 66.67%
 
 Binary Classification Metrics (with negative controls):
-  - True Positives (TP): 3
-  - False Positives (FP): 2
-  - True Negatives (TN): 3
-  - False Negatives (FN): 0
-  - Precision: 0.6000
-  - Recall/Sensitivity: 1.0000
-  - Specificity: 0.6000
-  - F1 Score: 0.7500
-  - Accuracy (incl. Negative Controls): 75.0000
+  - True Positives (TP): 2
+  - False Positives (FP): 0
+  - True Negatives (TN): 5
+  - False Negatives (FN): 1
+  - Precision: 1.0000
+  - Recall/Sensitivity: 0.6667
+  - Specificity: 1.0000
+  - F1 Score: 0.8000
+  - Accuracy (incl. Negative Controls): 87.5000
+
+Misclassification Analysis:
+  - Total misclassifications: 1
+  - Same Superfamily errors: 1
+  - Different Superfamily errors: 0
+
+Misclassified Proteins Details:
+  - Protein: M5AY63
+    Predicted as: 8.B.3
+    Confidence: 0.6427
+    Error Type: same_superfamily
 ----------------------------------------------------------------------------------------------------
 
 Family: 8.B.7
@@ -7235,11 +7239,11 @@ Testing Set Statistics:
       - Accession: B8XH25 | Subfamily: 8.B.7.1 | Family: 8.B.7
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q07A30 | Subfamily: 1.C.47.4 | Family: 1.C.47
-      2. Accession: P60266 | Subfamily: 8.B.1.2 | Family: 8.B.1
-      3. Accession: AME17663 | Subfamily: 8.B.1.4 | Family: 8.B.1
-      4. Accession: P82270 | Subfamily: 1.C.19.1 | Family: 1.C.19
-      5. Accession: P45667 | Subfamily: 8.B.1.2 | Family: 8.B.1
+      1. Accession: P0C8R1 | Subfamily: 8.B.8.1 | Family: 8.B.8
+      2. Accession: Q9NJC6 | Subfamily: 1.C.47.3 | Family: 1.C.47
+      3. Accession: Q07A30 | Subfamily: 1.C.47.4 | Family: 1.C.47
+      4. Accession: F6LCB3 | Subfamily: 1.C.47.3 | Family: 1.C.47
+      5. Accession: AME17663 | Subfamily: 8.B.1.4 | Family: 8.B.1
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -7278,9 +7282,9 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: P82270 | Subfamily: 1.C.19.1 | Family: 1.C.19
-      2. Accession: Q6EZF9 | Subfamily: 1.C.19.1 | Family: 1.C.19
+      2. Accession: Q07A30 | Subfamily: 1.C.47.4 | Family: 1.C.47
       3. Accession: H2CYQ1 | Subfamily: 1.C.47.3 | Family: 1.C.47
-      4. Accession: Q9NJC6 | Subfamily: 1.C.47.3 | Family: 1.C.47
+      4. Accession: P60266 | Subfamily: 8.B.1.2 | Family: 8.B.1
       5. Accession: TKW02011 | Subfamily: 8.B.1.3 | Family: 8.B.1
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
@@ -7326,10 +7330,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: XP_008081830 | Subfamily: 1.C.104.2 | Family: 1.C.104
-      2. Accession: XP_015918646 | Subfamily: 1.C.63.1 | Family: 1.C.63
-      3. Accession: CCE37669 | Subfamily: 8.A.35.1 | Family: 8.A.35
-      4. Accession: XP_022087427 | Subfamily: 1.A.105.1 | Family: 1.A.105
-      5. Accession: RDI86773 | Subfamily: 1.C.104.3 | Family: 1.C.104
+      2. Accession: RDI86773 | Subfamily: 1.C.104.3 | Family: 1.C.104
+      3. Accession: XP_022087427 | Subfamily: 1.A.105.1 | Family: 1.A.105
+      4. Accession: CCE37669 | Subfamily: 8.A.35.1 | Family: 8.A.35
+      5. Accession: XP_015918646 | Subfamily: 1.C.63.1 | Family: 1.C.63
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -7404,11 +7408,11 @@ Testing Set Statistics:
       - Accession: WP_121250785 | Subfamily: 9.B.111.1 | Family: 9.B.111
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: KHN35905 | Subfamily: 5.B.2.3 | Family: 5.B.2
-      2. Accession: A8BIM9 | Subfamily: 2.A.48.1 | Family: 2.A.48
-      3. Accession: Q6MLJ0 | Subfamily: 2.A.100.2 | Family: 2.A.100
-      4. Accession: O45166 | Subfamily: 2.A.48.1 | Family: 2.A.48
-      5. Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
+      1. Accession: VDG77260 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      2. Accession: KHN35905 | Subfamily: 5.B.2.3 | Family: 5.B.2
+      3. Accession: A8BIM9 | Subfamily: 2.A.48.1 | Family: 2.A.48
+      4. Accession: OAJ10018 | Subfamily: 9.B.57.1 | Family: 9.B.57
+      5. Accession: G9NAJ2 | Subfamily: 5.B.2.3 | Family: 5.B.2
   - Correct predictions: 0
   - Accuracy (Original Test Set): 0.00%
 
@@ -7430,8 +7434,8 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: WP_121250785
-    Predicted as: 8.A.166
-    Confidence: 0.0442
+    Predicted as: 8.A.8
+    Confidence: 0.1137
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -7526,11 +7530,11 @@ Testing Set Statistics:
       - Accession: O55100 | Subfamily: 9.B.130.2 | Family: 9.B.130
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q7Z7J7 | Subfamily: 1.A.82.1 | Family: 1.A.82
-      2. Accession: TGO16390 | Subfamily: 1.A.81.4 | Family: 1.A.81
-      3. Accession: H9H2J6 | Subfamily: 9.B.41.2 | Family: 9.B.41
-      4. Accession: CAF0733683 | Subfamily: 1.A.82.1 | Family: 1.A.82
-      5. Accession: Q8N4S9 | Subfamily: 9.B.41.2 | Family: 9.B.41
+      1. Accession: TGO16390 | Subfamily: 1.A.81.4 | Family: 1.A.81
+      2. Accession: Q8I132 | Subfamily: 1.A.36.2 | Family: 1.A.36
+      3. Accession: CAF0733683 | Subfamily: 1.A.82.1 | Family: 1.A.82
+      4. Accession: Q7Z7J7 | Subfamily: 1.A.82.1 | Family: 1.A.82
+      5. Accession: J0DPD5 | Subfamily: 1.A.36.2 | Family: 1.A.36
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -7608,11 +7612,11 @@ Testing Set Statistics:
       - Accession: Q1IUU0 | Subfamily: 9.B.170.1 | Family: 9.B.170
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: Q7UGJ0 | Subfamily: 1.B.16.2 | Family: 1.B.16
-      2. Accession: E8M3M3 | Subfamily: 1.B.21.3 | Family: 1.B.21
-      3. Accession: O66915 | Subfamily: 1.B.16.2 | Family: 1.B.16
-      4. Accession: WP_105313043 | Subfamily: 1.B.95.5 | Family: 1.B.95
-      5. Accession: F7NHB4 | Subfamily: 9.B.50.2 | Family: 9.B.50
+      1. Accession: Q72TA0 | Subfamily: 9.B.50.1 | Family: 9.B.50
+      2. Accession: Q1CVQ0 | Subfamily: 1.B.18.3 | Family: 1.B.18
+      3. Accession: J4K5X9 | Subfamily: 1.B.13.3 | Family: 1.B.13
+      4. Accession: F5SXN1 | Subfamily: 1.B.5.1 | Family: 1.B.5
+      5. Accession: WP_146917420 | Subfamily: 1.B.95.5 | Family: 1.B.95
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -7693,11 +7697,11 @@ Testing Set Statistics:
       - Accession: MBE0344742 | Subfamily: 9.B.191.2 | Family: 9.B.191
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_092498738 | Subfamily: 2.A.119.3 | Family: 2.A.119
-      2. Accession: C1D347 | Subfamily: 2.A.52.2 | Family: 2.A.52
-      3. Accession: C7PI41 | Subfamily: 2.A.52.2 | Family: 2.A.52
-      4. Accession: OIO63212 | Subfamily: 2.A.119.3 | Family: 2.A.119
-      5. Accession: KKP64473 | Subfamily: 2.A.104.3 | Family: 2.A.104
+      1. Accession: C7PI41 | Subfamily: 2.A.52.2 | Family: 2.A.52
+      2. Accession: WP_057569963 | Subfamily: 2.A.119.3 | Family: 2.A.119
+      3. Accession: OIO63212 | Subfamily: 2.A.119.3 | Family: 2.A.119
+      4. Accession: KKP64473 | Subfamily: 2.A.104.3 | Family: 2.A.104
+      5. Accession: KOO28456 | Subfamily: 3.E.3.1 | Family: 3.E.3
   - Correct predictions: 3
   - Accuracy (Original Test Set): 100.00%
 
@@ -7733,11 +7737,11 @@ Testing Set Statistics:
       - Accession: WP_062417086 | Subfamily: 9.B.218.3 | Family: 9.B.218
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: WP_038794236 | Subfamily: 9.B.250.1 | Family: 9.B.250
-      2. Accession: PAW60084 | Subfamily: 9.B.297.4 | Family: 9.B.297
-      3. Accession: WP_008488490 | Subfamily: 8.A.150.1 | Family: 8.A.150
+      1. Accession: TWJ13789 | Subfamily: 9.B.297.4 | Family: 9.B.297
+      2. Accession: WP_038794236 | Subfamily: 9.B.250.1 | Family: 9.B.250
+      3. Accession: PAW60084 | Subfamily: 9.B.297.4 | Family: 9.B.297
       4. Accession: WP_050765824 | Subfamily: 9.B.297.4 | Family: 9.B.297
-      5. Accession: TWJ13789 | Subfamily: 9.B.297.4 | Family: 9.B.297
+      5. Accession: WP_008488490 | Subfamily: 8.A.150.1 | Family: 8.A.150
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -7848,10 +7852,10 @@ Testing Set Statistics:
   - Number of negative controls: 5
     Negative Controls:
       1. Accession: WP_008488490 | Subfamily: 8.A.150.1 | Family: 8.A.150
-      2. Accession: PAW60084 | Subfamily: 9.B.297.4 | Family: 9.B.297
-      3. Accession: WP_050765824 | Subfamily: 9.B.297.4 | Family: 9.B.297
-      4. Accession: WP_332355618 | Subfamily: 9.B.297.4 | Family: 9.B.297
-      5. Accession: TWJ13789 | Subfamily: 9.B.297.4 | Family: 9.B.297
+      2. Accession: TWJ13789 | Subfamily: 9.B.297.4 | Family: 9.B.297
+      3. Accession: PAW60084 | Subfamily: 9.B.297.4 | Family: 9.B.297
+      4. Accession: WP_050765824 | Subfamily: 9.B.297.4 | Family: 9.B.297
+      5. Accession: WP_332355618 | Subfamily: 9.B.297.4 | Family: 9.B.297
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
@@ -8043,12 +8047,12 @@ Misclassification Analysis:
 
 Misclassified Proteins Details:
   - Protein: WP_143505982
-    Predicted as: 8.B.11
-    Confidence: 0.0381
+    Predicted as: 1.B.69
+    Confidence: 0.0731
     Error Type: different_superfamily
   - Protein: WP_119313807
-    Predicted as: 1.B.16
-    Confidence: 0.0429
+    Predicted as: 1.B.69
+    Confidence: 0.0677
     Error Type: different_superfamily
 ----------------------------------------------------------------------------------------------------
 
@@ -8071,11 +8075,11 @@ Testing Set Statistics:
       - Accession: H9H2J6 | Subfamily: 9.B.41.2 | Family: 9.B.41
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: U6J488 | Subfamily: 9.B.130.2 | Family: 9.B.130
-      2. Accession: Q8I132 | Subfamily: 1.A.36.2 | Family: 1.A.36
-      3. Accession: O55100 | Subfamily: 9.B.130.2 | Family: 9.B.130
-      4. Accession: J0DPD5 | Subfamily: 1.A.36.2 | Family: 1.A.36
-      5. Accession: CAF0733683 | Subfamily: 1.A.82.1 | Family: 1.A.82
+      1. Accession: Q7Z7J7 | Subfamily: 1.A.82.1 | Family: 1.A.82
+      2. Accession: CAF0733683 | Subfamily: 1.A.82.1 | Family: 1.A.82
+      3. Accession: U6J488 | Subfamily: 9.B.130.2 | Family: 9.B.130
+      4. Accession: M7B5M6 | Subfamily: 9.B.130.2 | Family: 9.B.130
+      5. Accession: J0DPD5 | Subfamily: 1.A.36.2 | Family: 1.A.36
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -8146,11 +8150,11 @@ Testing Set Statistics:
       - Accession: F7NHB4 | Subfamily: 9.B.50.2 | Family: 9.B.50
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: E8M3M3 | Subfamily: 1.B.21.3 | Family: 1.B.21
-      2. Accession: D0X4R0 | Subfamily: 1.B.21.3 | Family: 1.B.21
-      3. Accession: WP_146917420 | Subfamily: 1.B.95.5 | Family: 1.B.95
-      4. Accession: A6DTR9 | Subfamily: 1.B.62.1 | Family: 1.B.62
-      5. Accession: Q7UGJ0 | Subfamily: 1.B.16.2 | Family: 1.B.16
+      1. Accession: Q72DY0 | Subfamily: 1.B.61.1 | Family: 1.B.61
+      2. Accession: A5GAN4 | Subfamily: 1.B.39.2 | Family: 1.B.39
+      3. Accession: D5CMQ7 | Subfamily: 1.B.5.2 | Family: 1.B.5
+      4. Accession: B8FMP7 | Subfamily: 9.B.170.1 | Family: 9.B.170
+      5. Accession: Q1DFS2 | Subfamily: 1.B.61.1 | Family: 1.B.61
   - Correct predictions: 2
   - Accuracy (Original Test Set): 100.00%
 
@@ -8255,11 +8259,11 @@ Testing Set Statistics:
       - Accession: OAJ10018 | Subfamily: 9.B.57.1 | Family: 9.B.57
   - Number of negative controls: 5
     Negative Controls:
-      1. Accession: VDG77260 | Subfamily: 4.H.1.2 | Family: 4.H.1
-      2. Accession: W2qlk8 | Subfamily: 2.A.71.2 | Family: 2.A.71
-      3. Accession: G9NAJ2 | Subfamily: 5.B.2.3 | Family: 5.B.2
-      4. Accession: EQK99033 | Subfamily: 5.B.2.3 | Family: 5.B.2
-      5. Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
+      1. Accession: XP_012758493 | Subfamily: 2.A.100.2 | Family: 2.A.100
+      2. Accession: WP_083289127 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      3. Accession: WP_046728225 | Subfamily: 4.H.1.2 | Family: 4.H.1
+      4. Accession: Q8IBB7 | Subfamily: 2.A.71.2 | Family: 2.A.71
+      5. Accession: VDG77260 | Subfamily: 4.H.1.2 | Family: 4.H.1
   - Correct predictions: 1
   - Accuracy (Original Test Set): 100.00%
 
