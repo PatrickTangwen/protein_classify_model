@@ -41,7 +41,7 @@ Suppose a superfamily contains four families: Family A, Family B, Family C, and 
 For each subfamily/family, the evaluation creates a **separate binary classification problem**:
 
 -   **Positive samples**: Test proteins that actually belong to this specific subfamily/family.
--   **Negative samples**: Carefully selected negative control proteins from other families within the same superfamily.
+-   **Negative samples**: Selected negative control proteins from other families within the same superfamily.
 
 ### The Binary Classification Per Class
 

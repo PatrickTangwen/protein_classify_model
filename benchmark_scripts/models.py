@@ -1,24 +1,16 @@
 import torch
 import torch.nn as nn
-from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
-from sklearn.tree import DecisionTreeClassifier
 try:
     import xgboost as xgb
     XGBOOST_AVAILABLE = True
 except ImportError:
     XGBOOST_AVAILABLE = False
     print("XGBoost not available. Install with: pip install xgboost")
-
-try:
-    import lightgbm as lgb
-    LIGHTGBM_AVAILABLE = True
-except ImportError:
-    LIGHTGBM_AVAILABLE = False
-    print("LightGBM not available. Install with: pip install lightgbm")
 
 class ImprovedProteinClassifier(nn.Module):
     """
@@ -63,12 +55,8 @@ MODELS = {
         'model': RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1),
         'type': 'sklearn'
     },
-    'svm': {
-        'model': SVC(kernel='rbf', probability=True, random_state=42),
-        'type': 'sklearn'
-    },
     'neural_network': {
-        'model': ImprovedProteinClassifier, # The class, not an instance
+        'model': ImprovedProteinClassifier,
         'type': 'pytorch'
     },
     'logistic_regression': {
@@ -87,14 +75,6 @@ MODELS = {
         'model': GaussianNB(),
         'type': 'sklearn'
     },
-    # 'decision_tree': {
-    #     'model': DecisionTreeClassifier(random_state=42, max_depth=20),
-    #     'type': 'sklearn'
-    # },
-    # 'adaboost': {
-    #     'model': AdaBoostClassifier(random_state=42, n_estimators=100),
-    #     'type': 'sklearn'
-    # }
 }
 
 # Add XGBoost if available
@@ -110,17 +90,3 @@ if XGBOOST_AVAILABLE:
         ),
         'type': 'sklearn'
     }
-
-# Add LightGBM if available
-# if LIGHTGBM_AVAILABLE:
-#     MODELS['lightgbm'] = {
-#         'model': lgb.LGBMClassifier(
-#             random_state=42,
-#             n_estimators=100,
-#             max_depth=6,
-#             learning_rate=0.1,
-#             n_jobs=-1,
-#             verbose=-1
-#         ),
-#         'type': 'sklearn'
-#     } 

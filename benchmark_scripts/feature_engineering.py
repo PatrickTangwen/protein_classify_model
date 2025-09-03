@@ -61,10 +61,9 @@ def build_features(df, level='subfamily', max_domains=50, max_separators=20, eva
         separators_to_process = row['Seperators'][:max_separators] 
         for sep in separators_to_process:
             _, start_pos, end_pos = sep
-            start_norm = start_pos / row['Length']
-            end_norm = end_pos / row['Length']
-            length_norm = end_norm - start_norm
-            separator_features.extend([start_norm, end_norm, length_norm])
+            length = end_pos - start_pos
+            separator_features.extend([start_pos, end_pos, length])
+        
 
         # Pad to FIXED size
         separator_feature_size = max_separators * 3 
